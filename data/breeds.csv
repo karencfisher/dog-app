@@ -1,0 +1,292 @@
+Name,ID
+affenpinscher,74
+afghan hound,75
+airedale terrier,76
+akbash,77
+akita,78
+alaskan malamute,79
+american bulldog,80
+american eskimo dog,81
+american staffordshire terrier,82
+anatolian shepherd,83
+australian cattle dog/blue heeler,84
+australian kelpie,85
+australian shepherd,86
+australian terrier,87
+basenji,88
+basset hound,89
+beagle,90
+bearded collie,91
+beauceron,92
+belgian shepherd dog sheepdog,93
+bernese mountain dog,94
+bichon frise,95
+black and tan coonhound,96
+black mouth cur,97
+bloodhound,98
+border collie,99
+bordeaux,100
+borzoi,101
+boston terrier,102
+bouvier des flandres,103
+boxer,104
+briard,105
+brittany,106
+brussels griffon,107
+bull terrier,108
+bulldog,109
+bullmastiff,110
+cairn terrier,111
+cane corso mastiff,112
+carolina dog,113
+catahoula leopard dog,114
+cattle dog,115
+cavalier king charles spaniel,116
+chesapeake bay retriever,117
+chihuahua,118
+chinese crested-hairless,119
+chinese shar-pei,120
+chow chow,121
+cockapoo,122
+cocker spaniel,123
+collie,124
+coonhound,125
+corgi,126
+dachshund,127
+dalmatian,128
+dandie dinmont terrier,129
+doberman pinscher,130
+dutch shepherd,131
+english pointer,132
+english setter,133
+english shepherd,134
+english springer spaniel,135
+english toy spaniel,136
+eskimo dog,137
+finnish spitz,138
+flat-coated retriever,139
+fox terrier,140
+foxhound,141
+german shepherd dog,142
+german shorthaired pointer,143
+german wirehaired pointer,144
+golden retriever,145
+gordon setter,146
+great dane,147
+great pyrenees,148
+greater swiss mountain dog,149
+greyhound,150
+hound,151
+husky,152
+irish setter,153
+irish wolfhound,154
+italian greyhound,155
+italian spinone,156
+jack russell terrier,157
+japanese chin,158
+jindo (korean),159
+keeshond,160
+kuvasz,161
+labrador retriever,162
+lhasa apso,163
+leonberger,164
+maltese,165
+manchester terrier,166
+mastiff,167
+miniature pinscher,168
+mountain dog,169
+neapolitan mastiff,170
+newfoundland dog,171
+norwegian elkhound,172
+old english sheepdog,173
+otterhound,174
+papillon,175
+petit basset griffon vendeen,176
+pekingese,177
+pharaoh hound,178
+pit bull terrier,179
+pointer,180
+polish lowland sheepdog,181
+pomeranian,182
+poodle (unknown type),183
+portuguese water dog,184
+pug,185
+rat terrier,186
+retriever,187
+rhodesian ridgeback,188
+rottweiler,189
+saluki greyhound,190
+saint bernard,191
+samoyed,192
+schipperke,193
+schnauzer,194
+scottish terrier scottie,195
+setter,196
+shar pei,197
+sheep dog,198
+shetland sheepdog sheltie,199
+shiba inu,200
+shih tzu,201
+siberian husky,202
+silky terrier,203
+smooth fox terrier,204
+spaniel,205
+spitz,206
+staffordshire bull terrier,207
+terrier,208
+tibetan terrier,209
+toy fox terrier,210
+treeing walker coonhound,211
+vizsla,212
+weimaraner,213
+welsh corgi,214
+welsh terrier,215
+welsh springer spaniel,216
+west highland white terrier westie,217
+wheaten terrier,218
+whippet,219
+white german shepherd,220
+wire-haired pointing griffon,221
+wirehaired fox terrier,222
+wolf dog,223
+yorkshire terrier yorkie,224
+american water spaniel,325
+appenzell mountain dog,327
+bedlington terrier,329
+belgian shepherd laekenois,330
+belgian shepherd malinois,331
+belgian shepherd tervuren,332
+black labrador retriever,333
+black russian terrier,334
+bluetick coonhound,335
+border terrier,336
+boykin spaniel,338
+canaan dog,339
+caucasian sheepdog (caucasian ovtcharka),340
+chinese foo dog,342
+chinook,343
+chocolate labrador retriever,344
+clumber spaniel,345
+coton de tulear,346
+curly-coated retriever,347
+dogo argentino,348
+dogue de bordeaux,349
+english bulldog,350
+english cocker spaniel,351
+english coonhound,352
+entlebucher,353
+eurasier,354
+field spaniel,355
+fila brasileiro,356
+finnish lapphund,357
+french bulldog,358
+galgo spanish greyhound,359
+german pinscher,360
+german spitz,361
+giant schnauzer,363
+glen of imaal terrier,364
+harrier,367
+havanese,368
+hovawart,369
+ibizan hound,371
+illyrian sheepdog,372
+irish terrier,373
+irish water spaniel,374
+kai dog,375
+karelian bear dog,376
+kerry blue terrier,377
+kishu,378
+klee kai,379
+komondor,380
+kyi leo,381
+lakeland terrier,382
+lancashire heeler,383
+löwchen,384
+maremma sheepdog,385
+mcnab,387
+mountain cur,388
+munsterlander,389
+new guinea singing dog,390
+norfolk terrier,392
+norwich terrier,393
+norwegian buhund,394
+norwegian lundehund,395
+nova scotia duck-tolling retriever,396
+patterdale terrier (fell terrier),397
+peruvian inca orchid,398
+plott hound,400
+podengo portugueso,401
+presa canario,404
+puli,405
+pumi,406
+redbone coonhound,407
+saluki,408
+scottish deerhound,409
+sealyham terrier,410
+shepherd,411
+skye terrier,413
+sloughi,414
+poodle (standard),415
+south russian ovcharka,416
+swedish vallhund,417
+thai ridgeback,418
+tibetan mastiff,419
+tibetan spaniel,420
+tosa inu,421
+yellow labrador retriever,422
+xoloitzcuintle/mexican hairless,424
+cardigan welsh corgi,584
+pembroke welsh corgi,585
+miniature schnauzer,586
+poodle (toy),587
+red heeler,588
+saarlooswolfhond,589
+soft-coated wheaten terrier,590
+springer spaniel,591
+toy terrier,593
+argentinian mastiff,602
+belgian griffon,603
+bobtail,604
+brazilian mastiff,605
+chinese crested-powder puff,606
+elkhound,607
+english mastiff,608
+english sheepdog,609
+eskimo spitz,610
+feist,611
+french mastiff,613
+halden hound (haldenstrover),614
+italian mastiff,615
+mexican hairless,616
+queensland heeler,617
+russian wolfhound,618
+schiller hound,619
+sussex spaniel,620
+poodle (t-cup),621
+american foxhound,728
+american pit bull terrier,729
+anatolian karabash dog,730
+basset griffon vendeen,731
+bolognese,732
+deerhound,733
+english foxhound,734
+miniature bull terrier,736
+poodle (miniature),737
+parson russell terrier,738
+spinone italiano,739
+markiesje,740
+hollandse tulphond,741
+blue lacy,751
+cirneco delletna,752
+jack russell terrier (parson russell terrier),753
+french brittany,836
+alaskan klee kai,893
+biewer,952
+spanish mastiff,953
+boerboel mastiff,954
+american hairless terrier,958
+picardy shepherd,959
+danish broholmer,960
+tamaskan,963
+white swiss shepherd dog (swiss berger),964
+smooth collie,976

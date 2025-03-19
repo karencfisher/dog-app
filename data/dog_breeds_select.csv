@@ -17,10 +17,8 @@ medium,average,Regular Exercise,May be Stubborn,2-3 Times a Week Brushing,Season
 medium,rare,Regular Exercise,May be Stubborn,Occasional Bath/Brush,Regularly,Reserved with Strangers,low
 medium,rare,Regular Exercise,Eager to Please,Daily Brushing,Occasional,Outgoing,high
 large,average,Needs Lots of Activity,Independent,Weekly Brushing,Seasonal,Reserved with Strangers,low
-small,rare,Regular Exercise,Agreeable,Daily Brushing,Seasonal,Friendly,medium
 large,rare,Energetic,Easy Training,2-3 Times a Week Brushing,Frequent,Reserved with Strangers,high
 medium,rare,Energetic,Independent,Weekly Brushing,Seasonal,Friendly,low
-large,rare,Regular Exercise,Easy Training,Weekly Brushing,Seasonal,Friendly,high
 medium,rare,Couch Potato,Independent,2-3 Times a Week Brushing,Occasional,Friendly,high
 small,rare,Regular Exercise,Agreeable,Weekly Brushing,Regularly,Friendly,high
 medium,rare,Regular Exercise,Eager to Please,Weekly Brushing,Infrequent,Outgoing,high
@@ -30,7 +28,6 @@ large,rare,Energetic,Agreeable,Occasional Bath/Brush,Seasonal,Alert/Responsive,l
 large,rare,Regular Exercise,Agreeable,Weekly Brushing,Seasonal,Reserved with Strangers,low
 large,rare,Energetic,Eager to Please,Weekly Brushing,Seasonal,Friendly,high
 large,rare,Energetic,Eager to Please,Daily Brushing,Seasonal,Alert/Responsive,low
-medium,rare,Regular Exercise,Eager to Please,2-3 Times a Week Brushing,Seasonal,Reserved with Strangers,medium
 large,rare,Regular Exercise,Independent,Weekly Brushing,Seasonal,Alert/Responsive,low
 large,average,Needs Lots of Activity,Agreeable,2-3 Times a Week Brushing,Seasonal,Outgoing,high
 large,popular,Regular Exercise,Independent,Specialty/Professional,Seasonal,Reserved with Strangers,low
@@ -53,31 +50,20 @@ small,average,Regular Exercise,Independent,Weekly Brushing,Seasonal,Reserved wit
 medium,average,Regular Exercise,Easy Training,2-3 Times a Week Brushing,Seasonal,Friendly,high
 small,average,Energetic,Eager to Please,Weekly Brushing,Seasonal,Outgoing,high
 medium,popular,Regular Exercise,Eager to Please,2-3 Times a Week Brushing,Infrequent,Friendly,low
-large,average,Regular Exercise,Independent,Weekly Brushing,Seasonal,Reserved with Strangers,low
-medium,rare,Regular Exercise,Agreeable,Weekly Brushing,Infrequent,Friendly,high
-large,average,Calm,Agreeable,Occasional Bath/Brush,Occasional,Reserved with Strangers,low
-large,rare,Energetic,Easy Training,Occasional Bath/Brush,Occasional,Alert/Responsive,medium
-large,rare,Energetic,Agreeable,Occasional Bath/Brush,Occasional,Alert/Responsive,low
 small,average,Regular Exercise,Easy Training,Daily Brushing,Occasional,Outgoing,high
 small,rare,Regular Exercise,Eager to Please,Weekly Brushing,Seasonal,Outgoing,high
 medium,popular,Energetic,Easy Training,Occasional Bath/Brush,Infrequent,Alert/Responsive,low
-medium,popular,Energetic,Agreeable,Occasional Bath/Brush,Infrequent,Alert/Responsive,low
 large,popular,Regular Exercise,Independent,2-3 Times a Week Brushing,Seasonal,Alert/Responsive,low
 medium,rare,Energetic,Independent,2-3 Times a Week Brushing,Seasonal,Friendly,high
 small,average,Energetic,Independent,Weekly Brushing,Seasonal,Alert/Responsive,low
 large,rare,Regular Exercise,Independent,Weekly Brushing,Seasonal,Alert/Responsive,medium
-small,rare,Regular Exercise,Agreeable,Weekly Brushing,Infrequent,Friendly,low
-medium,average,Needs Lots of Activity,Easy Training,Weekly Brushing,Seasonal,Friendly,medium
 medium,average,Regular Exercise,Agreeable,Occasional Bath/Brush,unknown,Alert/Responsive,low
 small,average,Regular Exercise,Independent,Occasional Bath/Brush,Seasonal,Aloof/Wary,high
 small,rare,Calm,Eager to Please,Weekly Brushing,Occasional,Friendly,high
 large,rare,Energetic,Independent,2-3 Times a Week Brushing,Seasonal,Friendly,low
-medium,rare,Needs Lots of Activity,May be Stubborn,Occasional Bath/Brush,Regularly,Reserved with Strangers,low
 small,average,Regular Exercise,Independent,Occasional Bath/Brush,Infrequent,Alert/Responsive,medium
-large,rare,Energetic,Easy Training,Weekly Brushing,Seasonal,Reserved with Strangers,low
 medium,average,Energetic,May be Stubborn,Weekly Brushing,Occasional,Friendly,medium
 medium,average,Regular Exercise,Agreeable,Occasional Bath/Brush,Occasional,Alert/Responsive,medium
 medium,rare,Energetic,Eager to Please,Weekly Brushing,Seasonal,Alert/Responsive,medium
 small,rare,Energetic,Agreeable,Weekly Brushing,Regularly,Outgoing,medium
-small,rare,Regular Exercise,May be Stubborn,Specialty/Professional,Infrequent,Friendly,high
 small,rare,Calm,Agreeable,Occasional Bath/Brush,Regularly,Alert/Responsive,high
