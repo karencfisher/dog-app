@@ -18,6 +18,10 @@ class SelectedDogsRepository(
         selectedDogsDao.insertSelectedDog(selectedDog)
     }
 
+    suspend fun updateSelectedDog(selectedDog: SelectedDogs) {
+        selectedDogsDao.updateSelectedDog(selectedDog)
+    }
+
     suspend fun removeSelectedDog(selectedDog: SelectedDogs) {
         selectedDogsDao.deleteSelectedDog(selectedDog)
     }
