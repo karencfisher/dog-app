@@ -4,9 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "dogBreedsSelectors")
+@Entity
 data class DogBreedsSelectors(
-    @PrimaryKey(autoGenerate = true) var id: Int,
+    @PrimaryKey var id: Int,
     @ColumnInfo val size: String,
     @ColumnInfo val popularity: String,
     @ColumnInfo val energy: String,

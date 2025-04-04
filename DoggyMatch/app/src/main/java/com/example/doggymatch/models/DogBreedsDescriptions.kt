@@ -4,9 +4,10 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "dogBreedsDescriptions")
+@Entity
 data class DogBreedsDescriptions(
-    @PrimaryKey(autoGenerate = true) var id: Int,
+    @PrimaryKey var id: Int,
+    @ColumnInfo val breedId: Int,
     @ColumnInfo val name: String,
     @ColumnInfo val description: String,
     @ColumnInfo val temperament: String,
