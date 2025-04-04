@@ -12,7 +12,7 @@ abstract class DogsBreedsSelectorsDao {
     abstract suspend fun getPopularity(): List<String>
 
     @Query("SELECT DISTINCT energy FROM DogBreedsSelectors")
-    abstract suspend fun getEnergies(): List<String>
+    abstract suspend fun getEnergy(): List<String>
 
     @Query("SELECT DISTINCT trainability FROM DogBreedsSelectors")
     abstract suspend fun getTrainability(): List<String>
