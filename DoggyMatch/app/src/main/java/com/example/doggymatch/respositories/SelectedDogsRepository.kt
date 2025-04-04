@@ -10,6 +10,10 @@ class SelectedDogsRepository(
         return selectedDogsDao.getAllSelectedDogs()
     }
 
+    suspend fun getSelectedDogById(id: Int): SelectedDogs? {
+        return selectedDogsDao.getSelectedDogById(id)
+    }
+
     suspend fun addSelectedDog(selectedDog: SelectedDogs) {
         selectedDogsDao.insertSelectedDog(selectedDog)
     }
