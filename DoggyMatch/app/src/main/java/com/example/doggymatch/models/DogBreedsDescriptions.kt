@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class DogBreedsDescriptions(
     @PrimaryKey var id: Int,
-    @ColumnInfo val breedId: Int,
     @ColumnInfo val name: String,
     @ColumnInfo val description: String,
     @ColumnInfo val temperament: String,

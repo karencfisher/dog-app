@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Organizations (
-    @PrimaryKey(autoGenerate = true) var orgId: Int? = null,
+    @PrimaryKey(autoGenerate = true) var id: Int? = null,
     @ColumnInfo val name: String,
     @ColumnInfo val about: String,
     @ColumnInfo val adoptionProcess: String,

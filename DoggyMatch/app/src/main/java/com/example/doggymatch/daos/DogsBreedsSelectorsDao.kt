@@ -9,25 +9,25 @@ abstract class DogsBreedsSelectorsDao {
     abstract suspend fun getSizes(): List<String>
 
     @Query("SELECT DISTINCT popularity FROM DogBreedsSelectors")
-    abstract suspend fun getPopularities(): List<String>
+    abstract suspend fun getPopularity(): List<String>
 
     @Query("SELECT DISTINCT energy FROM DogBreedsSelectors")
     abstract suspend fun getEnergies(): List<String>
 
     @Query("SELECT DISTINCT trainability FROM DogBreedsSelectors")
-    abstract suspend fun getTrainabilities(): List<String>
+    abstract suspend fun getTrainability(): List<String>
 
     @Query("SELECT DISTINCT grooming FROM DogBreedsSelectors")
-    abstract suspend fun getGroomings(): List<String>
+    abstract suspend fun getGrooming(): List<String>
 
     @Query("SELECT DISTINCT shedding FROM DogBreedsSelectors")
-    abstract suspend fun getSheddings(): List<String>
+    abstract suspend fun getShedding(): List<String>
 
     @Query("SELECT DISTINCT demeanor FROM DogBreedsSelectors")
-    abstract suspend fun getDemeanors(): List<String>
+    abstract suspend fun getDemeanor(): List<String>
 
     @Query("SELECT DISTINCT friendliness FROM DogBreedsSelectors")
-    abstract suspend fun getFriendlinesses(): List<String>
+    abstract suspend fun getFriendliness(): List<String>
 
     @Query("""
         SELECT id FROM DogBreedsSelectors
@@ -45,5 +45,5 @@ abstract class DogsBreedsSelectorsDao {
         shedding: String,
         demeanor: String,
         friendliness: String
-    ): Int?
+    ): List<Int>?
 }

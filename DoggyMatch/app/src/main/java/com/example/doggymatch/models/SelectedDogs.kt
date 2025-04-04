@@ -7,13 +7,13 @@ import androidx.room.PrimaryKey
 @Entity(foreignKeys = [
     androidx.room.ForeignKey(
         entity = DogBreedsDescriptions::class,
-        parentColumns = ["breedId"],
+        parentColumns = ["id"],
         childColumns = ["breedId"],
         onDelete = androidx.room.ForeignKey.CASCADE
     ),
     androidx.room.ForeignKey(
         entity = Organizations::class,
-        parentColumns = ["orgId"],
+        parentColumns = ["id"],
         childColumns = ["orgId"],
         onDelete = androidx.room.ForeignKey.CASCADE
     )
