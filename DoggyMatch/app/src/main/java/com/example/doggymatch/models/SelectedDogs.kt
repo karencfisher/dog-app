@@ -2,31 +2,34 @@ package com.example.doggymatch.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(foreignKeys = [
-    androidx.room.ForeignKey(
+@Entity(
+    tableName = "selectedDogs",
+    foreignKeys = [
+    ForeignKey(
         entity = DogBreedsDescriptions::class,
-        parentColumns = ["id"],
+        parentColumns = ["breedId"],
         childColumns = ["breedId"],
-        onDelete = androidx.room.ForeignKey.CASCADE
+        onDelete = ForeignKey.NO_ACTION
     ),
-    androidx.room.ForeignKey(
+    ForeignKey(
         entity = Organizations::class,
         parentColumns = ["id"],
         childColumns = ["orgId"],
-        onDelete = androidx.room.ForeignKey.CASCADE
+        onDelete = ForeignKey.NO_ACTION
     )
 ])
 data class SelectedDogs (
-    @PrimaryKey(autoGenerate = true) var selectedDogId: Int? = null,
-    @ColumnInfo val breedId: Int,
-    @ColumnInfo val orgId: Int,
-    @ColumnInfo val dogId: Int,
-    @ColumnInfo val name: String,
-    @ColumnInfo val sex: String,
-    @ColumnInfo val age: Int,
-    @ColumnInfo val size: String,
-    @ColumnInfo val description: String,
-    @ColumnInfo val imageUrl: String,
+    @PrimaryKey(autoGenerate = true) var id: Int? = null,
+    @ColumnInfo val breedId: Int?,
+    @ColumnInfo val orgId: Int?,
+    @ColumnInfo val dogId: Int?,
+    @ColumnInfo val name: String?,
+    @ColumnInfo val sex: String?,
+    @ColumnInfo val age: Int?,
+    @ColumnInfo val size: String?,
+    @ColumnInfo val description: String?,
+    @ColumnInfo val imageUrl: String?,
 )

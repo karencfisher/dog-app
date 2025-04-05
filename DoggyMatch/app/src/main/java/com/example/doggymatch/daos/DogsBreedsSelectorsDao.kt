@@ -30,7 +30,7 @@ abstract class DogsBreedsSelectorsDao {
     abstract suspend fun getFriendliness(): List<String>
 
     @Query("""
-        SELECT id FROM DogBreedsSelectors
+        SELECT breedId FROM DogBreedsSelectors
         WHERE size = :size AND popularity = :popularity AND energy = :energy AND
               trainability = :trainability AND grooming = :grooming AND
               shedding = :shedding AND demeanor = :demeanor AND

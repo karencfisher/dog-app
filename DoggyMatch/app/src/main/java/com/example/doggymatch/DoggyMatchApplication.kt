@@ -14,24 +14,27 @@ class DoggyMatchApplication: Application() {
             this,
             AppDatabase::class.java,
             "doggy-match-db"
-        ).createFromAsset("database/doggy.db").build()
+        )
+            .createFromAsset("database/doggy.db")
+            .fallbackToDestructiveMigration()
+            .build()
     }
-    val dogBreedsDescriptionsDao by lazy {
+    val dogBreedsDescriptionsRepository by lazy {
         DogsBreedsDescriptionsRepository(
             db.dogBreedsDescriptionsDao
         )
     }
-    val dogBreedsSelectorsDao by lazy {
+    val dogBreedsSelectorsRepository by lazy {
         DogsBreedsSelectorsRepository(
             db.dogBreedsSelectorsDao
         )
     }
-    val organizationsDao by lazy {
+    val organizationsRepository by lazy {
         OrganizationsRepository(
             db.organizationsDao
         )
     }
-    val selectedDogsDao by lazy {
+    val selectedDogsRepository by lazy {
         SelectedDogsRepository(
             db.selectedDogsDao
         )

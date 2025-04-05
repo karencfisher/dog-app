@@ -6,6 +6,6 @@ import com.example.doggymatch.models.DogBreedsDescriptions
 
 @Dao
 abstract class DogsBreedsDescriptionsDao {
-    @Query("SELECT * FROM DogBreedsDescriptions WHERE id IN (:ids)")
+    @Query("SELECT * FROM dogBreedsDescription WHERE breedId IN (:ids)")
     abstract suspend fun getDogBreedDescriptions(ids: List<Int>): List<DogBreedsDescriptions>
 }

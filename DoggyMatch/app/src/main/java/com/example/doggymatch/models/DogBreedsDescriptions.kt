@@ -4,14 +4,14 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity(tableName = "dogBreedsDescription")
 data class DogBreedsDescriptions(
-    @PrimaryKey var id: Int,
-    @ColumnInfo val name: String,
-    @ColumnInfo val description: String,
-    @ColumnInfo val temperament: String,
-    @ColumnInfo val maxLifeExpectancy: String,
-    @ColumnInfo val imageUrl: String,
-    @ColumnInfo val rescueApiId: Int,
-    @ColumnInfo val selected: Boolean = false,
+    @PrimaryKey var breedId: Int?,
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "description") val description: String,
+    @ColumnInfo(name = "temperament") val temperament: String,
+    @ColumnInfo(name = "maxLifeExpectancy") val maxLifeExpectancy: Int,
+    @ColumnInfo(name = "imageUrl") val imageUrl: String,
+    @ColumnInfo(name = "rescueApiId") val rescueApiId: Int,
+    @ColumnInfo(name = "selected") val selected: Int = 0,
 )
