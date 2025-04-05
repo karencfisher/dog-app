@@ -43,6 +43,13 @@ class DogsBreedsSelectorsViewModel(
     init {
         viewModelScope.launch {
             _sizes.value = dogsBreedsSelectorsRepository.getSizes()
+            _popularity.value = dogsBreedsSelectorsRepository.getPopularity()
+            _energy.value = dogsBreedsSelectorsRepository.getEnergy()
+            _trainability.value = dogsBreedsSelectorsRepository.getTrainability()
+            _grooming.value = dogsBreedsSelectorsRepository.getGrooming()
+            _shedding.value = dogsBreedsSelectorsRepository.getShedding()
+            _demeanor.value = dogsBreedsSelectorsRepository.getDemeanor()
+            _friendliness.value = dogsBreedsSelectorsRepository.getFriendliness()
         }
     }
 
