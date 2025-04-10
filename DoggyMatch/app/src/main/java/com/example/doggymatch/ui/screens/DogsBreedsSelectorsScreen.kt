@@ -25,92 +25,83 @@ import com.example.doggymatch.ui.components.AttributesDropdown
 import com.example.doggymatch.viewmodels.DogsBreedsSelectorsViewModel
 
 @Composable
-fun DogsBreedsSelectorsScreen(
-    goToDescriptions: () -> Unit,
-    viewModel: DogsBreedsSelectorsViewModel = viewModel(
-        factory = DogsBreedsSelectorsViewModel.Factory),
-) {
-    // Your UI code here
-    val sizes = viewModel.sizes.collectAsState()
-    val popularity = viewModel.popularity.collectAsState()
-    val energy = viewModel.energy.collectAsState()
-    val trainability = viewModel.trainability.collectAsState()
-    val grooming = viewModel.grooming.collectAsState()
-    val shedding = viewModel.shedding.collectAsState()
-    val demeanor = viewModel.demeanor.collectAsState()
-    val friendliness = viewModel.friendliness.collectAsState()
-
-    var selectedSize by remember { mutableStateOf("") }
-    var selectedPopularity by remember { mutableStateOf("") }
-    var selectedEnergy by remember { mutableStateOf("") }
-    var selectedTrainability by remember { mutableStateOf("") }
-    var selectedGrooming by remember { mutableStateOf("") }
-    var selectedShedding by remember { mutableStateOf("") }
-    var selectedDemeanor by remember { mutableStateOf("") }
-    var selectedFriendliness by remember { mutableStateOf("") }
-
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
-            .verticalScroll(rememberScrollState())
+    fun DogsBreedsSelectorsScreen(
+        goToDescriptions: () -> Unit,
+        viewModel: DogsBreedsSelectorsViewModel = viewModel(
+            factory = DogsBreedsSelectorsViewModel.Factory),
     ) {
-        Text(
-            text = "Select the attributes of the dog you want to adopt",
-            modifier = Modifier.padding(bottom = 16.dp)
-        )
-        Text(text = "Desired size of the dog?")
-        AttributesDropdown("Sizes", sizes.value,
-            selectedSize, { selectedSize = it })
-        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-        Text(text = "How common or uncommon the dog is?")
-        AttributesDropdown("Popularity", popularity.value,
-            selectedPopularity, { selectedPopularity = it })
-        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-        Text(text = "The dog's energy level?")
-        AttributesDropdown("Energy", energy.value,
-            selectedEnergy, { selectedEnergy = it })
-        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-        Text(text = "How easy is it to train the dog?")
-        AttributesDropdown("Trainability", trainability.value,
-            selectedTrainability, { selectedTrainability = it })
-        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-        Text(text = "How much grooming does the dog need?")
-        AttributesDropdown("Grooming", grooming.value,
-            selectedGrooming, { selectedGrooming = it })
-        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-        Text(text = "How much shedding does the dog do?")
-        AttributesDropdown("Shedding", shedding.value,
-            selectedShedding, { selectedShedding = it })
-        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-        Text(text = "What is the dog's demeanor?")
-        AttributesDropdown("Demeanor", demeanor.value,
-            selectedDemeanor, { selectedDemeanor = it })
-        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-        Text(text = "How friendly is the dog, including with children and other dogs?")
-        AttributesDropdown("Friendliness", friendliness.value,
-            selectedFriendliness, { selectedFriendliness = it })
-        HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-        Button(
-            onClick = {
-                // Handle the button click
-                viewModel.getIdByAllFields(
-                    selectedSize,
-                    selectedPopularity,
-                    selectedEnergy,
-                    selectedTrainability,
-                    selectedGrooming,
-                    selectedShedding,
-                    selectedDemeanor,
-                    selectedFriendliness
-                )
-                goToDescriptions()
+        // Collect StateFlow values as immutable State objects
+        val sizes = viewModel.sizes.collectAsState()
+        val popularity = viewModel.popularity.collectAsState()
+        val energy = viewModel.energy.collectAsState()
+        val trainability = viewModel.trainability.collectAsState()
+        val grooming = viewModel.grooming.collectAsState()
+        val shedding = viewModel.shedding.collectAsState()
+        val demeanor = viewModel.demeanor.collectAsState()
+        val friendliness = viewModel.friendliness.collectAsState()
 
-            },
-            modifier = Modifier.padding(top = 16.dp)
+        // Collect selected values from ViewModel
+        val selectedSize = viewModel.selectedSize.collectAsState()
+        val selectedPopularity = viewModel.selectedPopularity.collectAsState()
+        val selectedEnergy = viewModel.selectedEnergy.collectAsState()
+        val selectedTrainability = viewModel.selectedTrainability.collectAsState()
+        val selectedGrooming = viewModel.selectedGrooming.collectAsState()
+        val selectedShedding = viewModel.selectedShedding.collectAsState()
+        val selectedDemeanor = viewModel.selectedDemeanor.collectAsState()
+        val selectedFriendliness = viewModel.selectedFriendliness.collectAsState()
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(16.dp)
+                .verticalScroll(rememberScrollState())
         ) {
-            Text(text = "Find my breed!")
+            Text(
+                text = "Select the attributes of the dog you want to adopt",
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+            Text(text = "Desired size of the dog?")
+            AttributesDropdown("Sizes", sizes.value,
+                selectedSize.value
+            ) { viewModel.updateSelectedSize(it) }
+            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            Text(text = "How common or uncommon the dog is?")
+            AttributesDropdown("Popularity", popularity.value,
+                selectedPopularity.value, { viewModel.updateSelectedPopularity(it) })
+            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            Text(text = "The dog's energy level?")
+            AttributesDropdown("Energy", energy.value,
+                selectedEnergy.value, { viewModel.updateSelectedEnergy(it) })
+            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            Text(text = "How easy is it to train the dog?")
+            AttributesDropdown("Trainability", trainability.value,
+                selectedTrainability.value, { viewModel.updateSelectedTrainability(it) })
+            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            Text(text = "How much grooming does the dog need?")
+            AttributesDropdown("Grooming", grooming.value,
+                selectedGrooming.value, { viewModel.updateSelectedGrooming(it) })
+            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            Text(text = "How much shedding does the dog do?")
+            AttributesDropdown("Shedding", shedding.value,
+                selectedShedding.value, { viewModel.updateSelectedShedding(it) })
+            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            Text(text = "What is the dog's demeanor?")
+            AttributesDropdown("Demeanor", demeanor.value,
+                selectedDemeanor.value, { viewModel.updateSelectedDemeanor(it) })
+            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            Text(text = "How friendly is the dog, including with children and other dogs?")
+            AttributesDropdown("Friendliness", friendliness.value,
+                selectedFriendliness.value, { viewModel.updateSelectedFriendliness(it) })
+            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            Button(
+                onClick = {
+                    // The ViewModel already has the selected values
+                    viewModel.getIdByAllFields()
+                    goToDescriptions()
+                },
+                modifier = Modifier.padding(top = 16.dp)
+            ) {
+                Text(text = "Find my breed!")
+            }
         }
     }
-}

@@ -143,7 +143,9 @@ class MainActivity : ComponentActivity() {
                             })
                         }
                         composable<Destinations.BreedDescriptions> {
-                            DogsBreedsDescriptionsScreen()
+                            DogsBreedsDescriptionsScreen(goBack = {
+                                navController.popBackStack()
+                            })
                         }
                         composable<Destinations.DogSearch> {
 

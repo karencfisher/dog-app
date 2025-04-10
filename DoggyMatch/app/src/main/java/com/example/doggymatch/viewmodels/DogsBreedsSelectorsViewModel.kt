@@ -42,20 +42,71 @@ class DogsBreedsSelectorsViewModel(
     private val _friendliness = MutableStateFlow(emptyList<String>())
     val friendliness: StateFlow<List<String>> = _friendliness
 
-    fun getIdByAllFields(
-        size: String,
-        popularity: String,
-        energy: String,
-        trainability: String,
-        grooming: String,
-        shedding: String,
-        demeanor: String,
-        friendliness: String
-    ) {
+    // selected attributes states
+    private val _selectedSize = MutableStateFlow("")
+    var selectedSize: StateFlow<String> = _selectedSize
+    private val _selectedPopularity = MutableStateFlow("")
+    var selectedPopularity: StateFlow<String> = _selectedPopularity
+    private val _selectedEnergy = MutableStateFlow("")
+    var selectedEnergy: StateFlow<String> = _selectedEnergy
+    private val _selectedTrainability = MutableStateFlow("")
+    var selectedTrainability: StateFlow<String> = _selectedTrainability
+    private val _selectedGrooming = MutableStateFlow("")
+    var selectedGrooming: StateFlow<String> = _selectedGrooming
+    private val _selectedShedding = MutableStateFlow("")
+    var selectedShedding: StateFlow<String> = _selectedShedding
+    private val _selectedDemeanor = MutableStateFlow("")
+    var selectedDemeanor: StateFlow<String> = _selectedDemeanor
+    private val _selectedFriendliness = MutableStateFlow("")
+    var selectedFriendliness: StateFlow<String> = _selectedFriendliness
+
+    // Function to update the selected attributes
+    // Add these update methods
+    fun updateSelectedSize(size: String) {
+        _selectedSize.value = size
+    }
+
+    fun updateSelectedPopularity(popularity: String) {
+        _selectedPopularity.value = popularity
+    }
+
+    fun updateSelectedEnergy(energy: String) {
+        _selectedEnergy.value = energy
+    }
+
+    fun updateSelectedTrainability(trainability: String) {
+        _selectedTrainability.value = trainability
+    }
+
+    fun updateSelectedGrooming(grooming: String) {
+        _selectedGrooming.value = grooming
+    }
+
+    fun updateSelectedShedding(shedding: String) {
+        _selectedShedding.value = shedding
+    }
+
+    fun updateSelectedDemeanor(demeanor: String) {
+        _selectedDemeanor.value = demeanor
+    }
+
+    fun updateSelectedFriendliness(friendliness: String) {
+        _selectedFriendliness.value = friendliness
+    }
+
+    // Modify getIdByAllFields to use the stored state values
+    fun getIdByAllFields() {
         viewModelScope.launch {
-            // Get the breed IDs that match the criteria
+            // Get the breed IDs that match the criteria using internal state values
             val breedIds = dogsBreedsSelectorsRepository.getIdByAllFields(
-                size, popularity, energy, trainability, grooming, shedding, demeanor, friendliness
+                _selectedSize.value,
+                _selectedPopularity.value,
+                _selectedEnergy.value,
+                _selectedTrainability.value,
+                _selectedGrooming.value,
+                _selectedShedding.value,
+                _selectedDemeanor.value,
+                _selectedFriendliness.value
             ) ?: emptyList()
 
             // Update the selected status in the descriptions table
