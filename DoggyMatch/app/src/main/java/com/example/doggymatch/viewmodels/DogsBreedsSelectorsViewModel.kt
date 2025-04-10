@@ -8,13 +8,15 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.doggymatch.DoggyMatchApplication
+import com.example.doggymatch.respositories.DogsBreedsDescriptionsRepository
 
 
 import com.example.doggymatch.respositories.DogsBreedsSelectorsRepository
 import kotlinx.coroutines.launch
 
 class DogsBreedsSelectorsViewModel(
-    private val dogsBreedsSelectorsRepository: DogsBreedsSelectorsRepository
+    private val dogsBreedsSelectorsRepository: DogsBreedsSelectorsRepository,
+    private val dogBreedsDescriptionsRepository: DogsBreedsDescriptionsRepository
 ) : ViewModel() {
     private val _sizes = MutableStateFlow(emptyList<String>())
     val sizes: StateFlow<List<String>> = _sizes
@@ -40,6 +42,27 @@ class DogsBreedsSelectorsViewModel(
     private val _friendliness = MutableStateFlow(emptyList<String>())
     val friendliness: StateFlow<List<String>> = _friendliness
 
+    fun getIdByAllFields(
+        size: String,
+        popularity: String,
+        energy: String,
+        trainability: String,
+        grooming: String,
+        shedding: String,
+        demeanor: String,
+        friendliness: String
+    ) {
+        viewModelScope.launch {
+            // Get the breed IDs that match the criteria
+            val breedIds = dogsBreedsSelectorsRepository.getIdByAllFields(
+                size, popularity, energy, trainability, grooming, shedding, demeanor, friendliness
+            ) ?: emptyList()
+
+            // Update the selected status in the descriptions table
+            dogBreedsDescriptionsRepository.updateSelectedStatus(breedIds)
+        }
+    }
+
     init {
         viewModelScope.launch {
             _sizes.value = dogsBreedsSelectorsRepository.getSizes()
@@ -58,7 +81,8 @@ class DogsBreedsSelectorsViewModel(
             initializer {
                 val application = this[APPLICATION_KEY] as DoggyMatchApplication
                 DogsBreedsSelectorsViewModel(
-                    application.dogBreedsSelectorsRepository
+                    application.dogBreedsSelectorsRepository,
+                    application.dogBreedsDescriptionsRepository
                 )
             }
         }

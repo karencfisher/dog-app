@@ -26,6 +26,7 @@ import com.example.doggymatch.viewmodels.DogsBreedsSelectorsViewModel
 
 @Composable
 fun DogsBreedsSelectorsScreen(
+    goToDescriptions: () -> Unit,
     viewModel: DogsBreedsSelectorsViewModel = viewModel(
         factory = DogsBreedsSelectorsViewModel.Factory),
 ) {
@@ -94,6 +95,18 @@ fun DogsBreedsSelectorsScreen(
         Button(
             onClick = {
                 // Handle the button click
+                viewModel.getIdByAllFields(
+                    selectedSize,
+                    selectedPopularity,
+                    selectedEnergy,
+                    selectedTrainability,
+                    selectedGrooming,
+                    selectedShedding,
+                    selectedDemeanor,
+                    selectedFriendliness
+                )
+                goToDescriptions()
+
             },
             modifier = Modifier.padding(top = 16.dp)
         ) {

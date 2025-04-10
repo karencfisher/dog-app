@@ -42,6 +42,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.coil.kt.coil.compose)
     implementation(libs.androidx.navigation.compose.v285)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)

@@ -16,4 +16,6 @@ data class Organizations (
     @ColumnInfo val state: String?,
     @ColumnInfo val zip: String?,
     @ColumnInfo val email: String?,
+    @ColumnInfo val latitude: Float?,
+    @ColumnInfo val longitude: Float?,
 )
