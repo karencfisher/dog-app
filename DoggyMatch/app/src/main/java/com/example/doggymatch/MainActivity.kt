@@ -34,6 +34,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.doggymatch.ui.screens.DogsBreedsDescriptionsScreen
 import com.example.doggymatch.ui.screens.DogsBreedsSelectorsScreen
+import com.example.doggymatch.ui.screens.HomeScreen
 import com.example.doggymatch.ui.theme.DoggyMatchTheme
 
 class MainActivity : ComponentActivity() {
@@ -85,57 +86,13 @@ class MainActivity : ComponentActivity() {
                         Modifier.padding(innerPadding)
                     ) {
                         composable<Destinations.Home> {
-                            Column (
-                                modifier = Modifier
-                                    .fillMaxSize()
-                                    .padding(16.dp)
-                            )  {
-                                Box(
-                                    modifier = Modifier
-                                        .padding(16.dp)
-                                        .clickable { navController.navigate(Destinations.BreedSelection) },
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Text(
-                                        text = "Select the breed of dog you want to adopt",
-                                        style = MaterialTheme.typography.headlineSmall,
-                                        color = MaterialTheme.colorScheme.primary,
-                                        textAlign = TextAlign.Center
-                                    )
+                            HomeScreen(goToScreen = { screen ->
+                                when (screen) {
+                                    "BreedSelection" -> navController.navigate(Destinations.BreedSelection)
+                                    "BreedDescription" -> navController.navigate(Destinations.BreedDescriptions)
+                                    else -> {}
                                 }
-                                HorizontalDivider(
-                                    modifier = Modifier.padding(vertical = 8.dp)
-                                )
-                                Box(
-                                    modifier = Modifier
-                                        .padding(16.dp)
-                                        .clickable { navController.navigate(Destinations.BreedDescriptions) },
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Text(
-                                        text = "View your chosen breed",
-                                        style = MaterialTheme.typography.headlineSmall,
-                                        color = MaterialTheme.colorScheme.primary,
-                                        textAlign = TextAlign.Center
-                                    )
-                                }
-                                HorizontalDivider(
-                                    modifier = Modifier.padding(vertical = 8.dp)
-                                )
-                                Box(
-                                    modifier = Modifier
-                                        .padding(16.dp)
-                                        .clickable { navController.navigate(Destinations.BreedSelection) },
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Text(
-                                        text = "View your possible dog matches",
-                                        style = MaterialTheme.typography.headlineSmall,
-                                        color = MaterialTheme.colorScheme.primary,
-                                        textAlign = TextAlign.Center
-                                    )
-                                }
-                            }
+                            })
                         }
                         composable<Destinations.BreedSelection> {
                             DogsBreedsSelectorsScreen(goToDescriptions = {
