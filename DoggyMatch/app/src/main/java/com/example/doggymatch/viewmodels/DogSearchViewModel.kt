@@ -69,7 +69,7 @@ class DogSearchViewModel(
                         filterProcessing = "1",
                         filterRadius = FilterRadius(
                             miles = miles,
-                            postalCode = postalCode
+                            postalcode = postalCode
                         )
                     )
                 )

@@ -27,7 +27,7 @@ data class Filter(
 
 data class FilterRadius(
     val miles: Int,
-    val postalCode: String
+    val postalcode: String
 )
 
 data class RescueRequestBody(
@@ -35,12 +35,12 @@ data class RescueRequestBody(
 )
 
 data class AnimalResponse(
-    val meta: List<Any>,
+    val meta: Any,
     val data: List<Any>,
     val included: List<Any>
 )
 
 data class OrgDetailsResponse(
-    val data: List<Any>,
-    val meta: List<Any>
+    val data: Any,
+    val meta: Any
 )

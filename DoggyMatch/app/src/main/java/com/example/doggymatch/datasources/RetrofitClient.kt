@@ -30,4 +30,5 @@ object RetrofitClient {
         .build()
 
     val api: RescueApiService = retrofit.create(RescueApiService::class.java)
+
 }
