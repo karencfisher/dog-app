@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class DogSearchViewModel(
-    private val breedId: Int?
+    private val breedId: Int? = null,
 ) : ViewModel(){
 
     private val _animals = MutableStateFlow<List<Any>>(emptyList())
@@ -74,13 +74,10 @@ class DogSearchViewModel(
                     )
                 )
 
-                val response = RetrofitClient.api.searchAnimals(body).execute()
+                // Use suspend function instead of execute()
+                val response = RetrofitClient.api.searchAnimals(body)
+                _animals.value = response.data as? List<Any> ?: emptyList()
 
-                if (response.isSuccessful && response.body() != null) {
-                    _animals.value = response.body()!!.data
-                } else {
-                    _error.value = "API error: ${response.code()}"
-                }
             } catch (e: Exception) {
                 _error.value = "Network error: ${e.message}"
             } finally {
@@ -93,7 +90,8 @@ class DogSearchViewModel(
         val BREED_ID_KEY = object: CreationExtras.Key<Int> {}
         val Factory = viewModelFactory {
             initializer {
-                val breedId = this[BREED_ID_KEY]
+                // Try to get breedId from extras, but don't fail if missing
+                val breedId = runCatching { this[BREED_ID_KEY] }.getOrNull()
                 val app = this[APPLICATION_KEY] as DoggyMatchApplication
                 DogSearchViewModel(breedId)
             }

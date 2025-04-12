@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import com.example.doggymatch.ui.screens.DogSearchScreen
 import com.example.doggymatch.ui.screens.DogsBreedsDescriptionsScreen
 import com.example.doggymatch.ui.screens.DogsBreedsSelectorsScreen
 import com.example.doggymatch.ui.screens.HomeScreen
@@ -98,10 +100,19 @@ class MainActivity : ComponentActivity() {
                         composable<Destinations.BreedDescriptions> {
                             DogsBreedsDescriptionsScreen(goBack = {
                                 navController.popBackStack()
+                            },
+                            goToDogSearch = { breedId, breedName ->
+                                navController.navigate(Destinations.DogSearch(
+                                    breedId,
+                                    breedName = breedName)
+                                )
                             })
                         }
                         composable<Destinations.DogSearch> {
-
+                            DogSearchScreen(
+                                breedId = it.toRoute<Destinations.DogSearch>().breedId ?: 0,
+                                breedName = it.toRoute<Destinations.DogSearch>().breedName ?: "",
+                            )
                         }
                         composable<Destinations.DogDetails> {
 

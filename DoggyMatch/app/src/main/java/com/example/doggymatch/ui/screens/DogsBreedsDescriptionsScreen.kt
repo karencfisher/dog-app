@@ -15,6 +15,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.doggymatch.ui.components.DogBreedCard
@@ -22,6 +23,7 @@ import com.example.doggymatch.viewmodels.DogsBreedsDescriptionsViewModel
 
 @Composable
 fun DogsBreedsDescriptionsScreen(
+    goToDogSearch: (Int, String) -> Unit,
     goBack: () -> Unit,
     viewModel: DogsBreedsDescriptionsViewModel = viewModel(factory = DogsBreedsDescriptionsViewModel.Factory)
 ) {
@@ -42,7 +44,7 @@ fun DogsBreedsDescriptionsScreen(
                     Text(
                         text = "No dog breeds match your selection.",
                         style = MaterialTheme.typography.headlineMedium,
-                        textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                        textAlign = TextAlign.Center,
                         modifier = Modifier.padding(16.dp)
                     )
                 }
@@ -54,7 +56,11 @@ fun DogsBreedsDescriptionsScreen(
                     verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
                     items(selectedDogBreeds) { breed ->
-                        DogBreedCard(breed = breed)
+                        DogBreedCard(
+                            breed = breed,
+                            goToDogSearch = { breedId ->
+                                goToDogSearch(breedId, breed.name)
+                            })
                     }
                 }
             }

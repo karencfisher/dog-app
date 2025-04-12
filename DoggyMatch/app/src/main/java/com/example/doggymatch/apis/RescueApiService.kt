@@ -1,16 +1,16 @@
 package com.example.doggymatch.apis
 
-import retrofit2.Call
+import com.google.gson.annotations.SerializedName
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface RescueApiService {
     @POST("v5/public/animals/search/available")
-    fun searchAnimals(@Body body: RescueRequestBody): Call<AnimalResponse>
+    suspend fun searchAnimals(@Body body: RescueRequestBody): AnimalResponse
 
     @GET("v5/public/orgs/{orgId.toString()}")
-    fun getOrgDetails(@Body orgId: Int): Call<OrgDetailsResponse>
+    suspend fun getOrgDetails(@Body orgId: Int): OrgDetailsResponse
 }
 
 data class DataWrapper(
@@ -31,7 +31,7 @@ data class FilterRadius(
 )
 
 data class RescueRequestBody(
-    val data: DataWrapper
+    @SerializedName("data") val data: DataWrapper
 )
 
 data class AnimalResponse(

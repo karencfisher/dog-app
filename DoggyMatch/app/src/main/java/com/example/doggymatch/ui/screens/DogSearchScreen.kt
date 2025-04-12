@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -15,6 +16,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.MutableCreationExtras
@@ -26,6 +28,7 @@ import com.example.doggymatch.viewmodels.DogSearchViewModel.Companion.BREED_ID_K
 @Composable
 fun DogSearchScreen(
     breedId: Int,
+    breedName: String,
     viewModel: DogSearchViewModel = viewModel(
         factory = DogSearchViewModel.Factory,
         extras = MutableCreationExtras().apply {
@@ -39,6 +42,8 @@ fun DogSearchScreen(
     val postalCode by viewModel.postalCode.collectAsState()
     val miles by viewModel.miles.collectAsState()
 
+    println("rescue id: $breedId")
+
     fun searchAnimals() {
         viewModel.searchAnimals(postalCode, miles)
     }
@@ -48,23 +53,48 @@ fun DogSearchScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp)
+        ) {
+            Text(
+                text = "Search for $breedName",
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.weight(1f),
+                textAlign = TextAlign.Center
+            )
+        }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 8.dp)
         ) {
             TextField(
+                modifier = Modifier.weight(1f),
                 value = postalCode,
                 onValueChange = { viewModel.setPostalCode(it) },
-                label = { Text("Postal Code") }
+                label = { Text("My Postal Code") }
             )
             TextField(
+                modifier = Modifier
+                    .weight(1f)
+                    .padding(start = 8.dp),
                 value = miles.toString(),
                 onValueChange = { viewModel.setMiles(it.toIntOrNull() ?: 0) },
-                label = { Text("Miles") }
+                label = { Text("Miles I'll Travel") }
             )
-            Button(onClick = { searchAnimals() }) {
-                Text(text = "Search")
+        }
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 8.dp)
+        ) {
+            Button(
+                onClick = { searchAnimals() },
+                modifier = Modifier.weight(1f)
+            ) {
+                Text(text = "Search for your next best friend")
             }
         }
         Row(
