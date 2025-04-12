@@ -63,7 +63,7 @@ fun HomeScreen(
             Box(
                 modifier = Modifier
                     .padding(16.dp)
-                    .clickable { goToScreen("DogsDescription") },
+                    .clickable { goToScreen("DogsDetails") },
                 contentAlignment = Alignment.Center
             ) {
                 Text(

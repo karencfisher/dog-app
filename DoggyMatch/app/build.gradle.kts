@@ -1,3 +1,12 @@
+import java.util.Properties
+import java.io.FileInputStream
+
+val localProperties = Properties().apply {
+    load(FileInputStream(rootProject.file("local.properties")))
+}
+
+val rescueApiKey: String = localProperties.getProperty("RESCUE_API_KEY") ?: ""
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -10,6 +19,10 @@ android {
     namespace = "com.example.doggymatch"
     compileSdk = 35
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     defaultConfig {
         applicationId = "com.example.doggymatch"
         minSdk = 24
@@ -18,6 +31,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "RESCUE_API_KEY", "\"$rescueApiKey\"")
     }
 
     buildTypes {
@@ -42,6 +56,9 @@ android {
 }
 
 dependencies {
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
     implementation(libs.coil.kt.coil.compose)
     implementation(libs.androidx.navigation.compose.v285)
     implementation(libs.kotlinx.serialization.json)

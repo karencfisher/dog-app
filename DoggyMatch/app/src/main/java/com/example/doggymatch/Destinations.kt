@@ -6,7 +6,6 @@ class Destinations {
     @Serializable object Home
     @Serializable object BreedSelection
     @Serializable object BreedDescriptions
-    @Serializable object DogSearch
+    @Serializable class DogSearch(val breedId: Int)
     @Serializable object DogDetails
-    @Serializable object DogAdoptionDetails
 }

@@ -85,6 +85,7 @@ class MainActivity : ComponentActivity() {
                                 when (screen) {
                                     "BreedSelection" -> navController.navigate(Destinations.BreedSelection)
                                     "BreedDescription" -> navController.navigate(Destinations.BreedDescriptions)
+                                    "DogDetails" -> navController.navigate(Destinations.DogDetails)
                                     else -> {}
                                 }
                             })
@@ -103,9 +104,6 @@ class MainActivity : ComponentActivity() {
 
                         }
                         composable<Destinations.DogDetails> {
-
-                        }
-                        composable<Destinations.DogAdoptionDetails> {
 
                         }
                     }
