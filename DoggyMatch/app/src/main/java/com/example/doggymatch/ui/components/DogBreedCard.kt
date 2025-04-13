@@ -90,11 +90,6 @@ fun DogBreedCard(breed: DogBreedsDescriptions, goToDogSearch: (Int) -> Unit) {
                             "${breed.maxLifeExpectancy} years",
                             Modifier.weight(1f)
                         )
-                        BreedAttribute(
-                            "rescue id",
-                            "${breed.rescueApiId}",
-                            Modifier.weight(1f)
-                        )
                     }
 
                     HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))

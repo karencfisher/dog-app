@@ -1,9 +1,11 @@
 package com.example.doggymatch.ui.screens
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -14,13 +16,16 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.MutableCreationExtras
 import androidx.lifecycle.viewmodel.compose.viewModel
+import coil.compose.AsyncImage
 import com.example.doggymatch.DoggyMatchApplication
 import com.example.doggymatch.viewmodels.DogSearchViewModel
 import com.example.doggymatch.viewmodels.DogSearchViewModel.Companion.BREED_ID_KEY
@@ -109,8 +114,53 @@ fun DogSearchScreen(
             } else if (animals.isNotEmpty()) {
                 LazyColumn {
                     items(animals) { animal ->
-                        Text(text = animal.toString()) // Replace with your animal item UI
+                        Column(modifier = Modifier.padding(vertical = 8.dp)) {
+                            Text(
+                                text = animal.attributes.name ?: "Unknown Animal",
+                                style = MaterialTheme.typography.titleMedium
+                            )
+                            animal.attributes.largerThumbnailUrl?.takeIf { it.isNotEmpty() }?.let { imageUrl ->
+                                AsyncImage(
+                                    model = imageUrl,
+                                    contentDescription = "Photo of ${animal.attributes.name ?: "pet"}",
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .height(200.dp),
+                                    contentScale = ContentScale.Inside
+                                )
+                            }
+                            Text(text = "Breed: ${animal.attributes.breedString ?: "Unknown"}")
+                            Text(text = "Age: ${animal.attributes.ageString ?: "Unknown"}")
+                            Text(text = "Size: ${animal.attributes.sizeGroup ?: "Unknown"}")
+                            Text(text = "Description: ${animal.attributes.cleanDescription}")
+                            Text(text = "Distance: ${animal.attributes.distance ?: "Unknown"} miles")
+
+                            // You can access relationships like:
+                            animal.relationships.orgs?.data?.firstOrNull()?.id?.let {
+                                Text(text = "Organization ID: $it")
+                            }
+                        }
                     }
+                }
+            }
+            else {
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Text(
+                        text = "No adoptable $breedName in your search radius.",
+                        style = MaterialTheme.typography.headlineMedium,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(16.dp)
+                    )
+                    Text(
+                        text = "Try a different breed or adjust your search radius.",
+                        style = MaterialTheme.typography.bodyMedium,
+                        textAlign = TextAlign.Center,
+                        modifier = Modifier.padding(16.dp)
+                    )
                 }
             }
         }

@@ -12,6 +12,7 @@ import com.example.doggymatch.apis.Filter
 import com.example.doggymatch.apis.FilterRadius
 import com.example.doggymatch.apis.RescueRequestBody
 import com.example.doggymatch.datasources.RetrofitClient
+import com.example.doggymatch.models.Animal
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -20,8 +21,8 @@ class DogSearchViewModel(
     private val breedId: Int? = null,
 ) : ViewModel(){
 
-    private val _animals = MutableStateFlow<List<Any>>(emptyList())
-    val animals: StateFlow<List<Any>> = _animals
+    private val _animals = MutableStateFlow<List<Animal>>(emptyList())
+    val animals: StateFlow<List<Animal>> = _animals
 
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading
@@ -76,7 +77,7 @@ class DogSearchViewModel(
 
                 // Use suspend function instead of execute()
                 val response = RetrofitClient.api.searchAnimals(body)
-                _animals.value = response.data as? List<Any> ?: emptyList()
+                _animals.value = response.data as? List<Animal> ?: emptyList()
 
             } catch (e: Exception) {
                 _error.value = "Network error: ${e.message}"

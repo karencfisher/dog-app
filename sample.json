@@ -1,0 +1,2013 @@
+{
+  "meta": {
+    "count": 13,
+    "countReturned": 13,
+    "pageReturned": 1,
+    "limit": 25,
+    "pages": 1,
+    "transactionId": "wcMBRwYTHAFR"
+  },
+  "data": [
+    {
+      "type": "animals",
+      "id": "21013133",
+      "attributes": {
+        "distance": 42.43,
+        "activityLevel": "Moderately Active",
+        "isAdoptionPending": false,
+        "adultSexesOk": "All",
+        "ageGroup": "Adult",
+        "ageString": "6 Years 11 Months",
+        "birthDate": "2017-11-03T00:00:00Z",
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever / Chow Chow / Mixed",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "breedSecondary": "Chow Chow",
+        "breedSecondaryId": 121,
+        "isBreedMixed": true,
+        "isCatsOk": false,
+        "isCourtesyListing": false,
+        "isDeclawed": false,
+        "descriptionHtml": "<p>Gingerbread is a golden retriever and ChowChow mix.&nbsp; &nbsp;She is approximately 7 years old.&nbsp; &nbsp;Feisty and pushy she packs a lot of personality in her 60 lbs.&nbsp; She cannot be placed with dogs, cats, children, or small animals.&nbsp; &nbsp;She needs a calm, confident leader that has lots of patience.&nbsp; &nbsp;She is a beautiful girl but don&#39;t let her good looks deceive you.&nbsp; If you are interested in Gingerbread, please complete an application on line at www.ahome4everrescue.org.&nbsp;</p><img src=\"https://tracker.rescuegroups.org/pet?21013133\" width=\"0\" height=\"0\" alt=\"\" />",
+        "descriptionText": "Gingerbread is a golden retriever and ChowChow mix.&nbsp; &nbsp;She is approximately 7 years old.&nbsp; &nbsp;Feisty and pushy she packs a lot of personality in her 60 lbs.&nbsp; She cannot be placed with dogs, cats, children, or small animals.&nbsp; &nbsp;She needs a calm, confident leader that has lots of patience.&nbsp; &nbsp;She is a beautiful girl but don&#39;t let her good looks deceive you.&nbsp; If you are interested in Gingerbread, please complete an application on line at www.ahome4everrescue.org.&nbsp;",
+        "isDogsOk": false,
+        "energyLevel": "Moderate",
+        "exerciseNeeds": "Moderate",
+        "fenceNeeds": "6 foot",
+        "isFound": false,
+        "groomingNeeds": "Moderate",
+        "priority": 10,
+        "isHousetrained": true,
+        "indoorOutdoor": "Indoor and Outdoor",
+        "isKidsOk": false,
+        "name": "Gingerbread",
+        "newPeopleReaction": "Protective",
+        "obedienceTraining": "Has Basic Training",
+        "ownerExperience": "Species",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/3448/pictures/animals/21013/21013133/99808634.jpg?width=100",
+        "qualities": [
+          "intelligent",
+          "leashtrained",
+          "noFemaleDogs",
+          "noLargeDogs",
+          "noMaleDogs",
+          "noSmallDogs",
+          "obedient",
+          "olderKidsOnly",
+          "protective"
+        ],
+        "searchString": "Gingerbread   Yellow Female Large   Dogs Golden Retriever / Chow Chow / Mixeds",
+        "sex": "Female",
+        "sheddingLevel": "Moderate",
+        "sizeCurrent": 60,
+        "sizeGroup": "Large",
+        "sizeUOM": "Pounds",
+        "slug": "adopt-gingerbread-golden-retriever-dog",
+        "isSpecialNeeds": false,
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21013133",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "vocalLevel": "Some",
+        "isYardRequired": true,
+        "createdDate": "2024-11-02T06:15:15Z",
+        "updatedDate": "2024-11-02T06:15:16Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            },
+            {
+              "type": "breeds",
+              "id": "121"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "58"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000003448"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "3448"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "99808634"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21277067",
+      "attributes": {
+        "distance": 2.09,
+        "isAdoptionPending": false,
+        "ageGroup": "Adult",
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<p>Please click &quot;Read More&quot; for more info, photos and adoption fee</p><p>&nbsp;</p><p>Tucker is finally coming to find his forever home. He is one of our older but beautiful golden boys.&nbsp;&nbsp;He was the clown of the shelter. His role was to carry around a pair of gloves. We also need a good foster for him. We look forward to hearing from you!&nbsp;</p><img src=\"https://tracker.rescuegroups.org/pet?21277067\" width=\"0\" height=\"0\" alt=\"\" />",
+        "descriptionText": "Please click &quot;Read More&quot; for more info, photos and adoption fee&nbsp;Tucker is finally coming to find his forever home. He is one of our older but beautiful golden boys.&nbsp;&nbsp;He was the clown of the shelter. His role was to carry around a pair of gloves. We also need a good foster for him. We look forward to hearing from you!&nbsp;",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": true,
+        "name": "Tucker",
+        "pictureCount": 4,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433745.jpg?width=100",
+        "searchString": "Tucker   Red Male Large   Dogs Golden Retrievers",
+        "sex": "Male",
+        "sizeGroup": "Large",
+        "slug": "adopt-tucker-golden-retriever-dog",
+        "isSpecialNeeds": false,
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21277067",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-02-12T05:11:54Z",
+        "updatedDate": "2025-02-12T05:28:08Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "55"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000011058"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "11058"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100433742"
+            },
+            {
+              "type": "pictures",
+              "id": "100433743"
+            },
+            {
+              "type": "pictures",
+              "id": "100433744"
+            },
+            {
+              "type": "pictures",
+              "id": "100433745"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21344053",
+      "attributes": {
+        "distance": 2.09,
+        "isAdoptionPending": false,
+        "ageGroup": "Young",
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<p>Meet Ben, a gentle golden retriever with a heart full of potential. Rescued from China, Ben spent the first few years of his life confined to a cage, missing out on the joys most dogs take for granted. As a result of his past and limited activity, he is currently overweight and still learning how to simply be a dog. Despite everything, Ben is incredibly sweet and craves kindness and consistency. He can be protective of his belongings like blankets and toys, a reflection of never having had anything to call his own before. Ben is searching for a committed foster or adopter who will patiently show him what it means to be part of a loving home. While he adjusts and gains confidence, Ben would do best in a quiet home without other pets or small children. He deserves a fresh start&mdash;and someone willing to help him discover the good life he&#39;s always deserved.</p><p>4o</p><p>&nbsp;</p><img src=\"https://tracker.rescuegroups.org/pet?21344053\" width=\"0\" height=\"0\" alt=\"\" />",
+        "descriptionText": "Meet Ben, a gentle golden retriever with a heart full of potential. Rescued from China, Ben spent the first few years of his life confined to a cage, missing out on the joys most dogs take for granted. As a result of his past and limited activity, he is currently overweight and still learning how to simply be a dog. Despite everything, Ben is incredibly sweet and craves kindness and consistency. He can be protective of his belongings like blankets and toys, a reflection of never having had anything to call his own before. Ben is searching for a committed foster or adopter who will patiently show him what it means to be part of a loving home. While he adjusts and gains confidence, Ben would do best in a quiet home without other pets or small children. He deserves a fresh start&mdash;and someone willing to help him discover the good life he&#39;s always deserved.4o&nbsp;",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": true,
+        "name": "Ben",
+        "pictureCount": 4,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740885.jpg?width=100",
+        "searchString": "Ben   Red Male Large   Dogs Golden Retrievers",
+        "sex": "Male",
+        "sizeGroup": "Large",
+        "slug": "adopt-ben-golden-retriever-dog",
+        "isSpecialNeeds": false,
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21344053",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-03-12T04:54:20Z",
+        "updatedDate": "2025-04-06T05:09:59Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "55"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000011058"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "11058"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100740882"
+            },
+            {
+              "type": "pictures",
+              "id": "100740883"
+            },
+            {
+              "type": "pictures",
+              "id": "100740884"
+            },
+            {
+              "type": "pictures",
+              "id": "100740885"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21385893",
+      "attributes": {
+        "distance": 11.45,
+        "isAdoptionPending": false,
+        "ageGroup": "Adult",
+        "ageString": "4 Years",
+        "birthDate": "2021-03-28T00:00:00Z",
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever (medium coat)",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "coatLength": "Medium",
+        "isCourtesyListing": false,
+        "descriptionHtml": "<img src=\"https://tracker.rescuegroups.org/pet?21385893\" width=\"0\" height=\"0\" alt=\"\" />",
+        "isFound": false,
+        "priority": 10,
+        "name": "OBI",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/2014/pictures/animals/21385/21385893/100755731.jpg?width=100",
+        "rescueId": "A2189375",
+        "searchString": "OBI   Brown/Chocolate Male  A2189375  Dogs Golden Retriever (medium coat)s",
+        "sex": "Male",
+        "slug": "adopt-obi-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21385893",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-03-28T23:32:43Z",
+        "updatedDate": "2025-04-08T20:22:44Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "colors": {
+          "data": [
+            {
+              "type": "colors",
+              "id": "28"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000002014"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "2014"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100755731"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21413198",
+      "attributes": {
+        "distance": 44.76,
+        "isAdoptionPending": false,
+        "ageGroup": "Young",
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever / Border Collie / Mixed (long coat)",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "breedSecondary": "Border Collie",
+        "breedSecondaryId": 99,
+        "isBreedMixed": true,
+        "coatLength": "Long",
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<p class=\"p1\" style=\"margin: 0px; font-stretch: normal; font-size: 17px; line-height: normal; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; -webkit-text-size-adjust: auto;\">\n<span class=\"s1\" style=\"font-family: UICTFontTextStyleBody;\">At less than a year old, Winston is one of the most well-rounded dogs. We simply can&rsquo;t imagine him giving his last owners a problem to put him in the shelter because he is such a great dog.&nbsp;</span>\n</p>\n\n<p class=\"p1\" style=\"margin: 0px; font-stretch: normal; font-size: 17px; line-height: normal; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; -webkit-text-size-adjust: auto;\">\n<span class=\"s1\" style=\"font-family: UICTFontTextStyleBody;\">Winston is amazing with other dogs on and off the leash, great with kids, and walks nicely on a leash. He knows basic commands such as sit, down, and paw.&nbsp;</span>\n</p>\n\n<p class=\"p2\" style=\"margin: 0px; font-stretch: normal; font-size: 17px; line-height: normal; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; min-height: 22px; -webkit-text-size-adjust: auto;\">&nbsp;</p>\n\n<p class=\"p1\" style=\"margin: 0px; font-stretch: normal; font-size: 17px; line-height: normal; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; -webkit-text-size-adjust: auto;\">\n<span class=\"s1\" style=\"font-family: UICTFontTextStyleBody;\">He is house trained and would make a great addition to any family.&nbsp;</span>\n</p>\n\n<p class=\"p2\" style=\"margin: 0px; font-stretch: normal; font-size: 17px; line-height: normal; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; min-height: 22px; -webkit-text-size-adjust: auto;\">&nbsp;</p>\n\n<p class=\"p1\" style=\"margin: 0px; font-stretch: normal; font-size: 17px; line-height: normal; font-size-adjust: none; font-kerning: auto; font-variant-alternates: normal; font-variant-ligatures: normal; font-variant-numeric: normal; font-variant-east-asian: normal; font-variant-position: normal; font-feature-settings: normal; font-optical-sizing: auto; font-variation-settings: normal; -webkit-text-size-adjust: auto;\">\n<span class=\"s1\" style=\"font-family: UICTFontTextStyleBody;\">Apply for Winston at&nbsp;<a href=\"https://www.muttsinneed.org/adoption-application.html\">https://www.muttsinneed.org/adoption-application.html</a></span>\n</p><img src=\"https://tracker.rescuegroups.org/pet?21413198\" width=\"0\" height=\"0\" alt=\"\" />",
+        "descriptionText": "\nAt less than a year old, Winston is one of the most well-rounded dogs. We simply can&rsquo;t imagine him giving his last owners a problem to put him in the shelter because he is such a great dog.&nbsp;\n\n\n\nWinston is amazing with other dogs on and off the leash, great with kids, and walks nicely on a leash. He knows basic commands such as sit, down, and paw.&nbsp;\n\n\n&nbsp;\n\n\nHe is house trained and would make a great addition to any family.&nbsp;\n\n\n&nbsp;\n\n\nApply for Winston at&nbsp;https://www.muttsinneed.org/adoption-application.html\n",
+        "isDogsOk": true,
+        "isFound": false,
+        "priority": 10,
+        "isKidsOk": true,
+        "name": "Winston",
+        "pictureCount": 2,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/2103/pictures/animals/21413/21413198/100752831.jpg?width=100",
+        "searchString": "Winston    Male Large   Dogs Golden Retriever / Border Collie / Mixed (long coat)s",
+        "sex": "Male",
+        "sizeGroup": "Large",
+        "sizeUOM": "Pounds",
+        "slug": "adopt-winston-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21413198",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-04-08T15:07:59Z",
+        "updatedDate": "2025-04-08T15:08:01Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            },
+            {
+              "type": "breeds",
+              "id": "99"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000002103"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "2103"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100752830"
+            },
+            {
+              "type": "pictures",
+              "id": "100752831"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21425363",
+      "attributes": {
+        "distance": 2.87,
+        "isAdoptionPending": false,
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<img src=\"https://tracker.rescuegroups.org/pet?21425363\" width=\"0\" height=\"0\" alt=\"\" />",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": false,
+        "name": "Margarita #5850",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425363/100781712.jpg?width=100",
+        "searchString": "Margarita #5850    Female    Dogs Golden Retrievers",
+        "sex": "Female",
+        "slug": "adopt-margarita-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21425363",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-04-12T05:33:01Z",
+        "updatedDate": "2025-04-12T05:50:16Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000010354"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "10354"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100781712"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21425364",
+      "attributes": {
+        "distance": 2.87,
+        "isAdoptionPending": false,
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<img src=\"https://tracker.rescuegroups.org/pet?21425364\" width=\"0\" height=\"0\" alt=\"\" />",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": false,
+        "name": "Mojito #6181",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425364/100781716.jpg?width=100",
+        "searchString": "Mojito #6181    Male    Dogs Golden Retrievers",
+        "sex": "Male",
+        "slug": "adopt-mojito-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21425364",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-04-12T05:33:01Z",
+        "updatedDate": "2025-04-12T05:50:20Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000010354"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "10354"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100781716"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21425366",
+      "attributes": {
+        "distance": 2.87,
+        "isAdoptionPending": false,
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<img src=\"https://tracker.rescuegroups.org/pet?21425366\" width=\"0\" height=\"0\" alt=\"\" />",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": false,
+        "name": "Mai Tai #6192",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425366/100781714.jpg?width=100",
+        "searchString": "Mai Tai #6192    Female    Dogs Golden Retrievers",
+        "sex": "Female",
+        "slug": "adopt-mai-tai-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21425366",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-04-12T05:33:01Z",
+        "updatedDate": "2025-04-12T05:50:18Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000010354"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "10354"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100781714"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21425367",
+      "attributes": {
+        "distance": 2.87,
+        "isAdoptionPending": false,
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<img src=\"https://tracker.rescuegroups.org/pet?21425367\" width=\"0\" height=\"0\" alt=\"\" />",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": false,
+        "name": "Paloma #6185",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425367/100781715.jpg?width=100",
+        "searchString": "Paloma #6185    Female    Dogs Golden Retrievers",
+        "sex": "Female",
+        "slug": "adopt-paloma-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21425367",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-04-12T05:33:01Z",
+        "updatedDate": "2025-04-12T05:50:19Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000010354"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "10354"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100781715"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21425368",
+      "attributes": {
+        "distance": 2.87,
+        "isAdoptionPending": false,
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<img src=\"https://tracker.rescuegroups.org/pet?21425368\" width=\"0\" height=\"0\" alt=\"\" />",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": false,
+        "name": "Pina Colada #6191",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425368/100781713.jpg?width=100",
+        "searchString": "Pina Colada #6191    Female    Dogs Golden Retrievers",
+        "sex": "Female",
+        "slug": "adopt-pina-colada-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21425368",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-04-12T05:33:01Z",
+        "updatedDate": "2025-04-12T05:50:17Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000010354"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "10354"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100781713"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21425369",
+      "attributes": {
+        "distance": 2.87,
+        "isAdoptionPending": false,
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<img src=\"https://tracker.rescuegroups.org/pet?21425369\" width=\"0\" height=\"0\" alt=\"\" />",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": false,
+        "name": "Cosmopolitan #6188",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425369/100781717.jpg?width=100",
+        "searchString": "Cosmopolitan #6188    Male    Dogs Golden Retrievers",
+        "sex": "Male",
+        "slug": "adopt-cosmopolitan-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21425369",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-04-12T05:33:01Z",
+        "updatedDate": "2025-04-12T05:50:21Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000010354"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "10354"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100781717"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21425370",
+      "attributes": {
+        "distance": 2.87,
+        "isAdoptionPending": false,
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<img src=\"https://tracker.rescuegroups.org/pet?21425370\" width=\"0\" height=\"0\" alt=\"\" />",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": false,
+        "name": "Martini #6182",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425370/100781718.jpg?width=100",
+        "searchString": "Martini #6182    Male    Dogs Golden Retrievers",
+        "sex": "Male",
+        "slug": "adopt-martini-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21425370",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-04-12T05:33:01Z",
+        "updatedDate": "2025-04-12T05:50:22Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000010354"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "10354"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100781718"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "animals",
+      "id": "21425371",
+      "attributes": {
+        "distance": 2.87,
+        "isAdoptionPending": false,
+        "isBirthDateExact": false,
+        "breedString": "Golden Retriever",
+        "breedPrimary": "Golden Retriever",
+        "breedPrimaryId": 145,
+        "isBreedMixed": false,
+        "isCourtesyListing": false,
+        "isCurrentVaccinations": true,
+        "descriptionHtml": "<img src=\"https://tracker.rescuegroups.org/pet?21425371\" width=\"0\" height=\"0\" alt=\"\" />",
+        "isDogsOk": true,
+        "isNeedingFoster": false,
+        "isFound": false,
+        "priority": 10,
+        "isHousetrained": false,
+        "name": "Daiquiri #6189",
+        "pictureCount": 1,
+        "pictureThumbnailUrl": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425371/100781719.jpg?width=100",
+        "searchString": "Daiquiri #6189    Male    Dogs Golden Retrievers",
+        "sex": "Male",
+        "slug": "adopt-daiquiri-golden-retriever-dog",
+        "isSponsorable": false,
+        "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21425371",
+        "videoCount": 0,
+        "videoUrlCount": 0,
+        "createdDate": "2025-04-12T05:33:01Z",
+        "updatedDate": "2025-04-12T05:50:23Z"
+      },
+      "relationships": {
+        "breeds": {
+          "data": [
+            {
+              "type": "breeds",
+              "id": "145"
+            }
+          ]
+        },
+        "species": {
+          "data": [
+            {
+              "type": "species",
+              "id": "8"
+            }
+          ]
+        },
+        "statuses": {
+          "data": [
+            {
+              "type": "statuses",
+              "id": "1"
+            }
+          ]
+        },
+        "locations": {
+          "data": [
+            {
+              "type": "locations",
+              "id": "1000010354"
+            }
+          ]
+        },
+        "orgs": {
+          "data": [
+            {
+              "type": "orgs",
+              "id": "10354"
+            }
+          ]
+        },
+        "pictures": {
+          "data": [
+            {
+              "type": "pictures",
+              "id": "100781719"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "included": [
+    {
+      "type": "breeds",
+      "id": "145",
+      "attributes": {
+        "name": "Golden Retriever"
+      },
+      "links": {
+        "self": "/public/animals/breeds/145"
+      }
+    },
+    {
+      "type": "breeds",
+      "id": "121",
+      "attributes": {
+        "name": "Chow Chow"
+      },
+      "links": {
+        "self": "/public/animals/breeds/121"
+      }
+    },
+    {
+      "type": "colors",
+      "id": "58",
+      "attributes": {
+        "name": "Yellow"
+      },
+      "links": {
+        "self": "/public/animals/colors/58"
+      }
+    },
+    {
+      "type": "species",
+      "id": "8",
+      "attributes": {
+        "singular": "Dog",
+        "plural": "Dogs",
+        "youngSingular": "Puppy",
+        "youngPlural": "Puppies"
+      },
+      "links": {
+        "self": "/public/animals/species/8"
+      }
+    },
+    {
+      "type": "statuses",
+      "id": "1",
+      "attributes": {
+        "name": "Available",
+        "description": "Available for Adoption"
+      },
+      "links": {
+        "self": "/public/animals/statuses/1"
+      }
+    },
+    {
+      "type": "locations",
+      "id": "1000003448",
+      "attributes": {
+        "phone": "(702) 249-3817",
+        "lat": 33.649,
+        "lon": -117.918,
+        "coordinates": "33.649, -117.918"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "3448",
+      "attributes": {
+        "name": "A Home 4 Ever Rescue",
+        "city": "Costa Mesa",
+        "state": "CA",
+        "postalcode": "92627",
+        "country": "United States",
+        "phone": "(702) 249-3817",
+        "url": "http://ahome4everrescue.org",
+        "adoptionProcess": "adoption application-interview-home visit-pay adoption fee $250-complete and sign contract. Adopters must live within the LA and Orange county area. We do not ship our dogs.",
+        "about": "Our organization rescues dogs from cruelty situations and from high kill shelters to help end euthanasia as a means of pet population control.",
+        "services": "Adoptions",
+        "type": "Rescue",
+        "lat": 33.64899826049805,
+        "lon": -117.91799926757812,
+        "coordinates": "33.649, -117.918",
+        "citystate": "Costa Mesa, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "99808634",
+      "attributes": {
+        "original": {
+          "filesize": 79315,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https://cdn.rescuegroups.org/3448/pictures/animals/21013/21013133/99808634.jpg"
+        },
+        "large": {
+          "filesize": 79315,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https://cdn.rescuegroups.org/3448/pictures/animals/21013/21013133/99808634.jpg?width=500"
+        },
+        "small": {
+          "filesize": 79315,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https://cdn.rescuegroups.org/3448/pictures/animals/21013/21013133/99808634.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2024-11-02T06:15:15Z",
+        "updated": "2024-11-02T06:15:16Z"
+      }
+    },
+    {
+      "type": "colors",
+      "id": "55",
+      "attributes": {
+        "name": "Red"
+      },
+      "links": {
+        "self": "/public/animals/colors/55"
+      }
+    },
+    {
+      "type": "locations",
+      "id": "1000011058",
+      "attributes": {
+        "street": "9000 Cynthia St #208",
+        "city": "West Hollywood",
+        "state": "CA",
+        "citystate": "West Hollywood, CA",
+        "postalcode": "90069",
+        "country": "United States",
+        "phone": "(303) 667-7622",
+        "lat": 34.0942,
+        "lon": -118.381,
+        "coordinates": "34.0942, -118.381"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "11058",
+      "attributes": {
+        "name": "Hope For China Dogs Rescue",
+        "street": "9000 Cynthia St #208",
+        "city": "West Hollywood",
+        "state": "CA",
+        "postalcode": "90069",
+        "country": "United States",
+        "phone": "(303) 667-7622",
+        "email": "info@hopeforchinadogsrescue.org",
+        "url": "https://www.hopeforchinadogsrescue.org/",
+        "facebookUrl": "https://",
+        "adoptionProcess": "We speak to the adopter, they fill out an application, we conduct a home check, they sign a contract, we collect an adoption fee",
+        "about": "At Hope for China Dogs, we are committed to combating the cruel and inhumane practice of the dog meat trade in China.  We believe that every dog deserves to live a life free from pain and suffering, which is why we are dedicated to rescuing and rehabilitating dogs who have been victims of this trade.\nOur mission is to provide a safe haven for these dogs, promote education and awareness around the dog meat trade, and advocate for its abolition.  We work closely with our volunteers in China to rescue dogs from slaughterhouses, meat markets & trucks, and other dangerous situations, and bring them to immediate safety in China.  From there we address any immediate medical needs, and begin the process of flying them to the US where we find their loving forever homes.\nThrough our work, we save lives, end suffering, and bring happiness to dogs and humans.  We ultimately hope to bring an end to the dog meat trade, and create a more compassionate world for all dogs and animals. \n",
+        "services": "fosters & adoptions",
+        "type": "Rescue",
+        "lat": 34.094200134277344,
+        "lon": -118.38099670410156,
+        "coordinates": "34.0942, -118.381",
+        "citystate": "West Hollywood, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100433742",
+      "attributes": {
+        "original": {
+          "filesize": 620411,
+          "resolutionX": 879,
+          "resolutionY": 768,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433742.jpg"
+        },
+        "large": {
+          "filesize": 620411,
+          "resolutionX": 500,
+          "resolutionY": 437,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433742.jpg?width=500"
+        },
+        "small": {
+          "filesize": 620411,
+          "resolutionX": 100,
+          "resolutionY": 87,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433742.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-02-12T05:28:03Z",
+        "updated": "2025-02-12T05:28:05Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100433743",
+      "attributes": {
+        "original": {
+          "filesize": 84281,
+          "resolutionX": 882,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433743.jpg"
+        },
+        "large": {
+          "filesize": 84281,
+          "resolutionX": 500,
+          "resolutionY": 567,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433743.jpg?width=500"
+        },
+        "small": {
+          "filesize": 84281,
+          "resolutionX": 100,
+          "resolutionY": 113,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433743.jpg?width=100"
+        },
+        "order": 2,
+        "created": "2025-02-12T05:28:05Z",
+        "updated": "2025-02-12T05:28:06Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100433744",
+      "attributes": {
+        "original": {
+          "filesize": 221008,
+          "resolutionX": 1000,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433744.jpg"
+        },
+        "large": {
+          "filesize": 221008,
+          "resolutionX": 500,
+          "resolutionY": 500,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433744.jpg?width=500"
+        },
+        "small": {
+          "filesize": 221008,
+          "resolutionX": 100,
+          "resolutionY": 100,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433744.jpg?width=100"
+        },
+        "order": 3,
+        "created": "2025-02-12T05:28:06Z",
+        "updated": "2025-02-12T05:28:07Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100433745",
+      "attributes": {
+        "original": {
+          "filesize": 222515,
+          "resolutionX": 640,
+          "resolutionY": 853,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433745.jpg"
+        },
+        "large": {
+          "filesize": 222515,
+          "resolutionX": 500,
+          "resolutionY": 666,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433745.jpg?width=500"
+        },
+        "small": {
+          "filesize": 222515,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21277/21277067/100433745.jpg?width=100"
+        },
+        "order": 4,
+        "created": "2025-02-12T05:28:07Z",
+        "updated": "2025-02-12T05:28:08Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100740882",
+      "attributes": {
+        "original": {
+          "filesize": 363034,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740882.jpg"
+        },
+        "large": {
+          "filesize": 363034,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740882.jpg?width=500"
+        },
+        "small": {
+          "filesize": 363034,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740882.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-06T05:09:55Z",
+        "updated": "2025-04-06T05:09:56Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100740883",
+      "attributes": {
+        "original": {
+          "filesize": 463146,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740883.jpg"
+        },
+        "large": {
+          "filesize": 463146,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740883.jpg?width=500"
+        },
+        "small": {
+          "filesize": 463146,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740883.jpg?width=100"
+        },
+        "order": 2,
+        "created": "2025-04-06T05:09:56Z",
+        "updated": "2025-04-06T05:09:57Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100740884",
+      "attributes": {
+        "original": {
+          "filesize": 365658,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740884.jpg"
+        },
+        "large": {
+          "filesize": 365658,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740884.jpg?width=500"
+        },
+        "small": {
+          "filesize": 365658,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740884.jpg?width=100"
+        },
+        "order": 3,
+        "created": "2025-04-06T05:09:57Z",
+        "updated": "2025-04-06T05:09:58Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100740885",
+      "attributes": {
+        "original": {
+          "filesize": 220799,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740885.jpg"
+        },
+        "large": {
+          "filesize": 220799,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740885.jpg?width=500"
+        },
+        "small": {
+          "filesize": 220799,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/11058/pictures/animals/21344/21344053/100740885.jpg?width=100"
+        },
+        "order": 4,
+        "created": "2025-04-06T05:09:58Z",
+        "updated": "2025-04-06T05:09:59Z"
+      }
+    },
+    {
+      "type": "colors",
+      "id": "28",
+      "attributes": {
+        "name": "Brown/Chocolate"
+      },
+      "links": {
+        "self": "/public/animals/colors/28"
+      }
+    },
+    {
+      "type": "locations",
+      "id": "1000002014",
+      "attributes": {
+        "street": "3201 Lacy Street",
+        "city": "Los Angeles",
+        "state": "CA",
+        "citystate": "Los Angeles, CA",
+        "postalcode": "90031",
+        "country": "United States",
+        "phone": "(888) 452-7381",
+        "lat": 34.0791,
+        "lon": -118.218,
+        "coordinates": "34.0791, -118.218"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "2014",
+      "attributes": {
+        "name": "North Central Animal Care and Control",
+        "street": "3201 Lacy Street",
+        "city": "Los Angeles",
+        "state": "CA",
+        "postalcode": "90031",
+        "country": "United States",
+        "phone": "(888) 452-7381",
+        "url": "http://www.laanimalservices.com",
+        "adoptionProcess": "Please contact shelter for details.",
+        "services": "Please contact shelter for details.",
+        "type": "Shelter",
+        "lat": 34.0791015625,
+        "lon": -118.21800231933594,
+        "coordinates": "34.0791, -118.218",
+        "citystate": "Los Angeles, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100755731",
+      "attributes": {
+        "original": {
+          "filesize": 70644,
+          "resolutionX": 640,
+          "resolutionY": 480,
+          "url": "https://cdn.rescuegroups.org/2014/pictures/animals/21385/21385893/100755731.jpg"
+        },
+        "large": {
+          "filesize": 70644,
+          "resolutionX": 500,
+          "resolutionY": 375,
+          "url": "https://cdn.rescuegroups.org/2014/pictures/animals/21385/21385893/100755731.jpg?width=500"
+        },
+        "small": {
+          "filesize": 70644,
+          "resolutionX": 100,
+          "resolutionY": 75,
+          "url": "https://cdn.rescuegroups.org/2014/pictures/animals/21385/21385893/100755731.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-08T20:22:43Z",
+        "updated": "2025-04-08T20:22:44Z"
+      }
+    },
+    {
+      "type": "breeds",
+      "id": "99",
+      "attributes": {
+        "name": "Border Collie"
+      },
+      "links": {
+        "self": "/public/animals/breeds/99"
+      }
+    },
+    {
+      "type": "locations",
+      "id": "1000002103",
+      "attributes": {
+        "lat": 33.638,
+        "lon": -117.873,
+        "coordinates": "33.638, -117.873"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "2103",
+      "attributes": {
+        "name": "Mutts in Need",
+        "city": "Newport Beach",
+        "state": "CA",
+        "postalcode": "92660",
+        "country": "United States",
+        "email": "MuttsInNeed@gmail.com",
+        "url": "MuttsInNeed.org",
+        "adoptionProcess": "Adoption and volunteer applications may be downloaded from our website and returned to us by email to:  CrittersRescue@gmail.com",
+        "about": "We are a group of volunteers in Southern California, primarily in Los Angeles and Orange Counties, dedicated to saving the lives of abandoned animals. We care for  strays, abandoned animals, victims of abuse, and have rescued many from euthanization in animal shelters across California. \n\nAt the present time we do not have a facility of our own to keep them, so we rely solely on the good will of foster families who care for them until they can be placed in permanent homes.\n\nWe also work closely with other rescue groups and we are always in need of volunteers to assist in showing the animals on weekends and especially to foster pets until they are adopted. \n\nOur founders started many years ago as volunteers with various non-profit organizations across the United States and have made pet rescue a major part of their lives. Most of us have our own families of dogs, cats, and other pets who once were also rescues. \n\n\"Critters in Need Pet Rescue\" is an established animal rescue and placement group. With your help and the help of our friends, we will be able to save many lives and bring much happiness to many people and animals alike.\n\nWe are constantly in need of help in various fields of pet adoption. Volunteers are desperately needed to provide foster homes, help showing animals to the public in pet shows and events, home visitations, publicity, pet transportation and a number of other projects aimed at placing as many animals as we can in the very best of homes.\n\nIf you would like to become a volunteer please send an E-Mail to CrittersRescue@gmail.com",
+        "services": "Adoptions",
+        "type": "Rescue",
+        "lat": 33.63800048828125,
+        "lon": -117.87300109863281,
+        "coordinates": "33.638, -117.873",
+        "citystate": "Newport Beach, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100752830",
+      "attributes": {
+        "original": {
+          "filesize": 917331,
+          "resolutionX": 1536,
+          "resolutionY": 2048,
+          "url": "https://cdn.rescuegroups.org/2103/pictures/animals/21413/21413198/100752830.jpg"
+        },
+        "large": {
+          "filesize": 917331,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/2103/pictures/animals/21413/21413198/100752830.jpg?width=500"
+        },
+        "small": {
+          "filesize": 917331,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/2103/pictures/animals/21413/21413198/100752830.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-08T15:07:59Z",
+        "updated": "2025-04-08T15:08:00Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100752831",
+      "attributes": {
+        "original": {
+          "filesize": 2340319,
+          "resolutionX": 2365,
+          "resolutionY": 2819,
+          "url": "https://cdn.rescuegroups.org/2103/pictures/animals/21413/21413198/100752831.jpg"
+        },
+        "large": {
+          "filesize": 2340319,
+          "resolutionX": 500,
+          "resolutionY": 596,
+          "url": "https://cdn.rescuegroups.org/2103/pictures/animals/21413/21413198/100752831.jpg?width=500"
+        },
+        "small": {
+          "filesize": 2340319,
+          "resolutionX": 100,
+          "resolutionY": 119,
+          "url": "https://cdn.rescuegroups.org/2103/pictures/animals/21413/21413198/100752831.jpg?width=100"
+        },
+        "order": 2,
+        "created": "2025-04-08T15:08:00Z",
+        "updated": "2025-04-08T15:08:01Z"
+      }
+    },
+    {
+      "type": "locations",
+      "id": "1000010354",
+      "attributes": {
+        "street": "11939 Ventura Blvd.",
+        "city": "Studio City",
+        "state": "CA",
+        "citystate": "Studio City, CA",
+        "postalcode": "91604",
+        "country": "United States",
+        "phone": "(818) 691-3466",
+        "lat": 34.1391,
+        "lon": -118.391,
+        "coordinates": "34.1391, -118.391"
+      }
+    },
+    {
+      "type": "orgs",
+      "id": "10354",
+      "attributes": {
+        "name": "Wagmor Pets",
+        "street": "11939 Ventura Blvd.",
+        "city": "Studio City",
+        "state": "CA",
+        "postalcode": "91604",
+        "country": "United States",
+        "phone": "(818) 691-3466",
+        "email": "adoption@wagmorpets.org",
+        "url": "https://www.wagmorpets.org",
+        "facebookUrl": "https://www.facebook.com/Wagmorpets/",
+        "adoptionProcess": "Find a dog you are interested in (on our Available Dogs page)\nClick the blue button to apply and fill out the application online\nIf you have a question about the adoption fee, please email Adoption@WagmorPets.org. Adoptions start at $600 but can be more depending on breed, age and the dogs needs.\nWe read all applications and we will contact people for phone interviews within 24-48 hours. While we read all applications, not everyone will be selected for a phone interview.\nOnce we do your phone interview, if you are approved, we will send you an invoice for the adoption fee.\nYou will receive three documents through Docusign to finalize your adoption.\nYou will receive an approximate pick up date and time. This is based on a normal 2 week hold.\nPick up your puppy!",
+        "about": "We are committed to preventing cruelty and promoting kindness to animals. Through our activities, we aim to reduce animal suffering and increase animal wellbeing and aiming to rehome them to responsible and caring homes where they can thrive and live happy lives.",
+        "services": "Adoptions, fostering",
+        "type": "Rescue",
+        "lat": 34.13909912109375,
+        "lon": -118.39099884033203,
+        "coordinates": "34.1391, -118.391",
+        "citystate": "Studio City, CA"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100781712",
+      "attributes": {
+        "original": {
+          "filesize": 163526,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425363/100781712.jpg"
+        },
+        "large": {
+          "filesize": 163526,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425363/100781712.jpg?width=500"
+        },
+        "small": {
+          "filesize": 163526,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425363/100781712.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-12T05:50:15Z",
+        "updated": "2025-04-12T05:50:16Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100781716",
+      "attributes": {
+        "original": {
+          "filesize": 89773,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425364/100781716.jpg"
+        },
+        "large": {
+          "filesize": 89773,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425364/100781716.jpg?width=500"
+        },
+        "small": {
+          "filesize": 89773,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425364/100781716.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-12T05:50:19Z",
+        "updated": "2025-04-12T05:50:20Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100781714",
+      "attributes": {
+        "original": {
+          "filesize": 134775,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425366/100781714.jpg"
+        },
+        "large": {
+          "filesize": 134775,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425366/100781714.jpg?width=500"
+        },
+        "small": {
+          "filesize": 134775,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425366/100781714.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-12T05:50:17Z",
+        "updated": "2025-04-12T05:50:18Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100781715",
+      "attributes": {
+        "original": {
+          "filesize": 134893,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425367/100781715.jpg"
+        },
+        "large": {
+          "filesize": 134893,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425367/100781715.jpg?width=500"
+        },
+        "small": {
+          "filesize": 134893,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425367/100781715.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-12T05:50:18Z",
+        "updated": "2025-04-12T05:50:19Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100781713",
+      "attributes": {
+        "original": {
+          "filesize": 144998,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425368/100781713.jpg"
+        },
+        "large": {
+          "filesize": 144998,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425368/100781713.jpg?width=500"
+        },
+        "small": {
+          "filesize": 144998,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425368/100781713.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-12T05:50:16Z",
+        "updated": "2025-04-12T05:50:17Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100781717",
+      "attributes": {
+        "original": {
+          "filesize": 108439,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425369/100781717.jpg"
+        },
+        "large": {
+          "filesize": 108439,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425369/100781717.jpg?width=500"
+        },
+        "small": {
+          "filesize": 108439,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425369/100781717.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-12T05:50:20Z",
+        "updated": "2025-04-12T05:50:21Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100781718",
+      "attributes": {
+        "original": {
+          "filesize": 155512,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425370/100781718.jpg"
+        },
+        "large": {
+          "filesize": 155512,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425370/100781718.jpg?width=500"
+        },
+        "small": {
+          "filesize": 155512,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425370/100781718.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-12T05:50:21Z",
+        "updated": "2025-04-12T05:50:22Z"
+      }
+    },
+    {
+      "type": "pictures",
+      "id": "100781719",
+      "attributes": {
+        "original": {
+          "filesize": 122106,
+          "resolutionX": 750,
+          "resolutionY": 1000,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425371/100781719.jpg"
+        },
+        "large": {
+          "filesize": 122106,
+          "resolutionX": 500,
+          "resolutionY": 667,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425371/100781719.jpg?width=500"
+        },
+        "small": {
+          "filesize": 122106,
+          "resolutionX": 100,
+          "resolutionY": 133,
+          "url": "https://cdn.rescuegroups.org/10354/pictures/animals/21425/21425371/100781719.jpg?width=100"
+        },
+        "order": 1,
+        "created": "2025-04-12T05:50:22Z",
+        "updated": "2025-04-12T05:50:23Z"
+      }
+    }
+  ]
+}

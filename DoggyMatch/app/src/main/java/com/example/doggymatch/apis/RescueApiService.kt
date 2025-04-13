@@ -1,5 +1,6 @@
 package com.example.doggymatch.apis
 
+import com.example.doggymatch.models.Animal
 import com.google.gson.annotations.SerializedName
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -36,7 +37,7 @@ data class RescueRequestBody(
 
 data class AnimalResponse(
     val meta: Any,
-    val data: List<Any>,
+    val data: List<Animal>,
     val included: List<Any>
 )
 
