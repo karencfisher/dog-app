@@ -10,12 +10,19 @@ import com.example.doggymatch.respositories.SelectedDogsRepository
 
 class DoggyMatchApplication: Application() {
     private val db by lazy {
+        val dbFile = getDatabasePath("doggy-match-db")
+        val dbExists = dbFile.exists()
+
         Room.databaseBuilder(
-            this,
-            AppDatabase::class.java,
-            "doggy-match-db"
-        )
-            .createFromAsset("database/doggy.db")
+                this,
+                AppDatabase::class.java,
+                "doggy-match-db"
+            )
+            .apply {
+                if (!dbExists) {
+                    createFromAsset("database/doggy.db")
+                }
+            }
             .fallbackToDestructiveMigration()
             .build()
     }

@@ -112,6 +112,9 @@ class MainActivity : ComponentActivity() {
                             DogSearchScreen(
                                 breedId = it.toRoute<Destinations.DogSearch>().breedId ?: 0,
                                 breedName = it.toRoute<Destinations.DogSearch>().breedName ?: "",
+                                goBack = {
+                                    navController.popBackStack()
+                                },
                             )
                         }
                         composable<Destinations.DogDetails> {

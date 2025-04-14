@@ -52,6 +52,7 @@ fun DogBreedCard(breed: DogBreedsDescriptions, goToDogSearch: (Int) -> Unit) {
                     modifier = Modifier.weight(1f)
                 )
             }
+            Spacer(modifier = Modifier.height(8.dp))
             AnimatedVisibility(visible = isVisible) {
                 Column(
                     modifier = Modifier.fillMaxWidth()

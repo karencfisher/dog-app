@@ -1,6 +1,7 @@
 package com.example.doggymatch.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,8 +10,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Button
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -27,6 +33,7 @@ import androidx.lifecycle.viewmodel.MutableCreationExtras
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.doggymatch.DoggyMatchApplication
+import com.example.doggymatch.ui.components.DogCard
 import com.example.doggymatch.viewmodels.DogSearchViewModel
 import com.example.doggymatch.viewmodels.DogSearchViewModel.Companion.BREED_ID_KEY
 
@@ -34,6 +41,7 @@ import com.example.doggymatch.viewmodels.DogSearchViewModel.Companion.BREED_ID_K
 fun DogSearchScreen(
     breedId: Int,
     breedName: String,
+    goBack: () -> Unit,
     viewModel: DogSearchViewModel = viewModel(
         factory = DogSearchViewModel.Factory,
         extras = MutableCreationExtras().apply {
@@ -102,48 +110,30 @@ fun DogSearchScreen(
                 Text(text = "Search for your next best friend")
             }
         }
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 8.dp)
-        ) {
-            if (isLoading) {
-                Text(text = "Loading...")
-            } else if (error != null) {
-                Text(text = "Error: $error")
-            } else if (animals.isNotEmpty()) {
-                LazyColumn {
-                    items(animals) { animal ->
-                        Column(modifier = Modifier.padding(vertical = 8.dp)) {
-                            Text(
-                                text = animal.attributes.name ?: "Unknown Animal",
-                                style = MaterialTheme.typography.titleMedium
-                            )
-                            animal.attributes.largerThumbnailUrl?.takeIf { it.isNotEmpty() }?.let { imageUrl ->
-                                AsyncImage(
-                                    model = imageUrl,
-                                    contentDescription = "Photo of ${animal.attributes.name ?: "pet"}",
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .height(200.dp),
-                                    contentScale = ContentScale.Inside
-                                )
-                            }
-                            Text(text = "Breed: ${animal.attributes.breedString ?: "Unknown"}")
-                            Text(text = "Age: ${animal.attributes.ageString ?: "Unknown"}")
-                            Text(text = "Size: ${animal.attributes.sizeGroup ?: "Unknown"}")
-                            Text(text = "Description: ${animal.attributes.cleanDescription}")
-                            Text(text = "Distance: ${animal.attributes.distance ?: "Unknown"} miles")
 
-                            // You can access relationships like:
-                            animal.relationships.orgs?.data?.firstOrNull()?.id?.let {
-                                Text(text = "Organization ID: $it")
-                            }
-                        }
+        Box(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            Surface(
+                modifier = Modifier.fillMaxSize(),
+                color = MaterialTheme.colorScheme.background
+            ) {
+                if (animals.isEmpty() && isLoading) {
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = "Searching for adoptable $breedName...",
+                            style = MaterialTheme.typography.headlineMedium,
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.padding(16.dp)
+                        )
                     }
                 }
             }
-            else {
+            if (animals.isEmpty() && !isLoading && error == null) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Center,
@@ -162,6 +152,31 @@ fun DogSearchScreen(
                         modifier = Modifier.padding(16.dp)
                     )
                 }
+            }
+
+            if (isLoading) {
+                Text(text = "Loading...")
+            } else if (error != null) {
+                Text(text = "Error: $error")
+            } else if (animals.isNotEmpty()) {
+                LazyColumn {
+                    items(animals) { animal ->
+                        DogCard(animal = animal)
+                    }
+                }
+            }
+
+            // FAB in bottom-right corner
+            FloatingActionButton(
+                onClick = goBack,
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(16.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                    contentDescription = "Go Back"
+                )
             }
         }
     }
