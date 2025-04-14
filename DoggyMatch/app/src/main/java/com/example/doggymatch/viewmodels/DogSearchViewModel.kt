@@ -35,10 +35,10 @@ class DogSearchViewModel(
     private val _error = MutableStateFlow<String?>(null)
     val error: StateFlow<String?> = _error
 
-    private val _postalCode = MutableStateFlow<String>("90210")
+    private val _postalCode = MutableStateFlow("90210")
     val postalCode: StateFlow<String> = _postalCode
 
-    private val _miles = MutableStateFlow<Int>(50)
+    private val _miles = MutableStateFlow(50)
     val miles: StateFlow<Int> = _miles
 
     fun searchAnimals(postalCode: String, miles: Int) {
