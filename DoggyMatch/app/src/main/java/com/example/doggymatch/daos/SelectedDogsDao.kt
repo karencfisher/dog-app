@@ -12,9 +12,7 @@ abstract class SelectedDogsDao {
     @Query("SELECT * FROM SelectedDogs")
     abstract suspend fun getAllSelectedDogs(): List<SelectedDogs>
 
-    @Query("SELECT * FROM SelectedDogs " +
-           "INNER JOIN Organizations ON SelectedDogs.orgId = Organizations.id " +
-           "WHERE SelectedDogs.id = :id")
+    @Query("SELECT * FROM SelectedDogs WHERE dogId = :id")
     abstract suspend fun getSelectedDogById(id: Int): SelectedDogs?
 
     @Insert

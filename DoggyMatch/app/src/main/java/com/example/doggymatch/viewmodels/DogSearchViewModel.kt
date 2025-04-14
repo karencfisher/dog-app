@@ -13,16 +13,21 @@ import com.example.doggymatch.apis.FilterRadius
 import com.example.doggymatch.apis.RescueRequestBody
 import com.example.doggymatch.datasources.RetrofitClient
 import com.example.doggymatch.models.Animal
+import com.example.doggymatch.models.SelectedDogs
+import com.example.doggymatch.respositories.SelectedDogsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class DogSearchViewModel(
-    private val breedId: Int? = null,
+    private val breedId: Int?,
+    private val selectedDogsRepository: SelectedDogsRepository
 ) : ViewModel(){
 
-    private val _animals = MutableStateFlow<List<Animal>>(emptyList())
-    val animals: StateFlow<List<Animal>> = _animals
+    private var _animals: List<Animal> = emptyList()
+
+    private val _dogs = MutableStateFlow<List<SelectedDogs>>(emptyList())
+    val dogs: StateFlow<List<SelectedDogs>> = _dogs
 
     private val _isLoading = MutableStateFlow(false)
     val isLoading: StateFlow<Boolean> = _isLoading
@@ -52,6 +57,71 @@ class DogSearchViewModel(
         _miles.value = miles
     }
 
+    fun addDogToSelectedDogs(dog: SelectedDogs) {
+        viewModelScope.launch {
+            try {
+                selectedDogsRepository.addSelectedDog(dog)
+            } catch (e: Exception) {
+                // Check if it's a SQLite constraint exception (likely PRIMARY KEY or UNIQUE constraint)
+                if (e.message?.contains("UNIQUE constraint failed", ignoreCase = true) == true ||
+                    e.message?.contains("constraint violation", ignoreCase = true) == true) {
+                    // Dog already exists in DB, silently ignore
+                } else {
+                    // For other exceptions, update error state
+                    _error.value = "Failed to add dog: ${e.message}"
+                }
+            }
+        }
+    }
+
+    fun removeDogFromSelectedDogs(dog: SelectedDogs) {
+        viewModelScope.launch {
+            try {
+                selectedDogsRepository.removeSelectedDog(dog)
+            } catch (e: Exception) {
+                _error.value = "Failed to remove dog: ${e.message}"
+            }
+        }
+    }
+    fun getSelectedDogs() {
+        viewModelScope.launch {
+            try {
+                val selectedDogs = selectedDogsRepository.getSelectedDogs()
+                _dogs.value = selectedDogs
+            } catch (e: Exception) {
+                _error.value = "Failed to fetch selected dogs: ${e.message}"
+            }
+        }
+    }
+
+    suspend fun isDogInSelectedDogs(dogId: Int): Boolean {
+        return try {
+            val dog = selectedDogsRepository.getSelectedDogById(dogId)
+            dog != null
+        } catch (e: Exception) {
+            _error.value = "Failed to check if dog is in selected dogs: ${e.message}"
+            false
+        }
+    }
+
+    private fun makeSelectedDogs() {
+        for (selectedDog in _animals) {
+            val newDog = SelectedDogs(
+                dogId = selectedDog.id.toIntOrNull() ?: 0,
+                orgId = selectedDog.relationships.orgs?.data?.firstOrNull()?.id?.toIntOrNull() ?: 0,
+                name = selectedDog.attributes.name,
+                distance = selectedDog.attributes.distance,
+                breed = selectedDog.attributes.breedString,
+                sex = selectedDog.attributes.sex,
+                age = selectedDog.attributes.ageString,
+                size = selectedDog.attributes.sizeGroup,
+                description = selectedDog.attributes.cleanDescription,
+                imageUrl = selectedDog.attributes.largerThumbnailUrl,
+            )
+            _dogs.value = _dogs.value.plus(newDog)
+        }
+    }
+
     private fun fetchAnimals(breedId: Int, postalCode: String, miles: Int) {
         viewModelScope.launch {
             _isLoading.value = true
@@ -77,7 +147,8 @@ class DogSearchViewModel(
 
                 // Use suspend function instead of execute()
                 val response = RetrofitClient.api.searchAnimals(body)
-                _animals.value = response.data as? List<Animal> ?: emptyList()
+                _animals = response.data as? List<Animal> ?: emptyList()
+                makeSelectedDogs()
 
             } catch (e: Exception) {
                 _error.value = "Network error: ${e.message}"
@@ -94,7 +165,10 @@ class DogSearchViewModel(
                 // Try to get breedId from extras, but don't fail if missing
                 val breedId = runCatching { this[BREED_ID_KEY] }.getOrNull()
                 val app = this[APPLICATION_KEY] as DoggyMatchApplication
-                DogSearchViewModel(breedId)
+                DogSearchViewModel(
+                    breedId,
+                    app.selectedDogsRepository
+                )
             }
         }
     }

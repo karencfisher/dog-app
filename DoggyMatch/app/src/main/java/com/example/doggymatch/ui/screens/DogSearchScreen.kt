@@ -22,6 +22,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -36,6 +37,7 @@ import com.example.doggymatch.DoggyMatchApplication
 import com.example.doggymatch.ui.components.DogCard
 import com.example.doggymatch.viewmodels.DogSearchViewModel
 import com.example.doggymatch.viewmodels.DogSearchViewModel.Companion.BREED_ID_KEY
+import kotlinx.coroutines.launch
 
 @Composable
 fun DogSearchScreen(
@@ -49,16 +51,27 @@ fun DogSearchScreen(
             this[BREED_ID_KEY] = breedId
         })
 ) {
-    val animals by viewModel.animals.collectAsState()
+    val dogs by viewModel.dogs.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
     val error by viewModel.error.collectAsState()
     val postalCode by viewModel.postalCode.collectAsState()
     val miles by viewModel.miles.collectAsState()
 
+    val coroutineScope = rememberCoroutineScope()
+
     println("rescue id: $breedId")
 
     fun searchAnimals() {
         viewModel.searchAnimals(postalCode, miles)
+    }
+
+    fun isDogInSelectedDogs(dogId: Int): Boolean {
+        // This function cannot directly return from the coroutine scope
+        // Instead, return a placeholder value
+        coroutineScope.launch {
+            viewModel.isDogInSelectedDogs(dogId)
+        }
+        return false // This will always return false immediately
     }
 
     Column(
@@ -118,7 +131,7 @@ fun DogSearchScreen(
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background
             ) {
-                if (animals.isEmpty() && isLoading) {
+                if (dogs.isEmpty() && isLoading) {
                     Column(
                         modifier = Modifier.fillMaxSize(),
                         verticalArrangement = Arrangement.Center,
@@ -133,7 +146,7 @@ fun DogSearchScreen(
                     }
                 }
             }
-            if (animals.isEmpty() && !isLoading && error == null) {
+            if (dogs.isEmpty() && !isLoading && error == null) {
                 Column(
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Center,
@@ -158,10 +171,24 @@ fun DogSearchScreen(
                 Text(text = "Loading...")
             } else if (error != null) {
                 Text(text = "Error: $error")
-            } else if (animals.isNotEmpty()) {
+            } else if (dogs.isNotEmpty()) {
                 LazyColumn {
-                    items(animals) { animal ->
-                        DogCard(animal = animal)
+                    items(dogs) { dog ->
+                        DogCard(
+                            dog,
+                            saveFavorite = { favDog ->
+                                viewModel.addDogToSelectedDogs(favDog)
+                            },
+                            removeFavorite = { favDog ->
+                                viewModel.removeDogFromSelectedDogs(favDog)
+                            },
+                            isFavorite = { dogId, callback ->
+                                coroutineScope.launch {
+                                    val isFavorite = viewModel.isDogInSelectedDogs(dogId)
+                                    callback(isFavorite)
+                                }
+                            }
+                        )
                     }
                 }
             }

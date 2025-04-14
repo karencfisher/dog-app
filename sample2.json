@@ -1,0 +1,130 @@
+{
+    "type": "animals",
+    "id": "21013133",
+    "attributes": {
+      "distance": 42.43,
+      "activityLevel": "Moderately Active",
+      "isAdoptionPending": false,
+      "adultSexesOk": "All",
+      "ageGroup": "Adult",
+      "ageString": "6 Years 11 Months",
+      "birthDate": "2017-11-03T00:00:00Z",
+      "isBirthDateExact": false,
+      "breedString": "Golden Retriever / Chow Chow / Mixed",
+      "breedPrimary": "Golden Retriever",
+      "breedPrimaryId": 145,
+      "breedSecondary": "Chow Chow",
+      "breedSecondaryId": 121,
+      "isBreedMixed": true,
+      "isCatsOk": false,
+      "isCourtesyListing": false,
+      "isDeclawed": false,
+      "descriptionHtml": "<p>Gingerbread is a golden retriever and ChowChow mix.&nbsp; &nbsp;She is approximately 7 years old.&nbsp; &nbsp;Feisty and pushy she packs a lot of personality in her 60 lbs.&nbsp; She cannot be placed with dogs, cats, children, or small animals.&nbsp; &nbsp;She needs a calm, confident leader that has lots of patience.&nbsp; &nbsp;She is a beautiful girl but don&#39;t let her good looks deceive you.&nbsp; If you are interested in Gingerbread, please complete an application on line at www.ahome4everrescue.org.&nbsp;</p><img src=\"https://tracker.rescuegroups.org/pet?21013133\" width=\"0\" height=\"0\" alt=\"\" />",
+      "descriptionText": "Gingerbread is a golden retriever and ChowChow mix.&nbsp; &nbsp;She is approximately 7 years old.&nbsp; &nbsp;Feisty and pushy she packs a lot of personality in her 60 lbs.&nbsp; She cannot be placed with dogs, cats, children, or small animals.&nbsp; &nbsp;She needs a calm, confident leader that has lots of patience.&nbsp; &nbsp;She is a beautiful girl but don&#39;t let her good looks deceive you.&nbsp; If you are interested in Gingerbread, please complete an application on line at www.ahome4everrescue.org.&nbsp;",
+      "isDogsOk": false,
+      "energyLevel": "Moderate",
+      "exerciseNeeds": "Moderate",
+      "fenceNeeds": "6 foot",
+      "isFound": false,
+      "groomingNeeds": "Moderate",
+      "priority": 10,
+      "isHousetrained": true,
+      "indoorOutdoor": "Indoor and Outdoor",
+      "isKidsOk": false,
+      "name": "Gingerbread",
+      "newPeopleReaction": "Protective",
+      "obedienceTraining": "Has Basic Training",
+      "ownerExperience": "Species",
+      "pictureCount": 1,
+      "pictureThumbnailUrl": "https://cdn.rescuegroups.org/3448/pictures/animals/21013/21013133/99808634.jpg?width=100",
+      "qualities": [
+        "intelligent",
+        "leashtrained",
+        "noFemaleDogs",
+        "noLargeDogs",
+        "noMaleDogs",
+        "noSmallDogs",
+        "obedient",
+        "olderKidsOnly",
+        "protective"
+      ],
+      "searchString": "Gingerbread   Yellow Female Large   Dogs Golden Retriever / Chow Chow / Mixeds",
+      "sex": "Female",
+      "sheddingLevel": "Moderate",
+      "sizeCurrent": 60,
+      "sizeGroup": "Large",
+      "sizeUOM": "Pounds",
+      "slug": "adopt-gingerbread-golden-retriever-dog",
+      "isSpecialNeeds": false,
+      "isSponsorable": false,
+      "trackerimageUrl": "https://tracker.rescuegroups.org/pet?21013133",
+      "videoCount": 0,
+      "videoUrlCount": 0,
+      "vocalLevel": "Some",
+      "isYardRequired": true,
+      "createdDate": "2024-11-02T06:15:15Z",
+      "updatedDate": "2024-11-02T06:15:16Z"
+    },
+    "relationships": {
+      "breeds": {
+        "data": [
+          {
+            "type": "breeds",
+            "id": "145"
+          },
+          {
+            "type": "breeds",
+            "id": "121"
+          }
+        ]
+      },
+      "colors": {
+        "data": [
+          {
+            "type": "colors",
+            "id": "58"
+          }
+        ]
+      },
+      "species": {
+        "data": [
+          {
+            "type": "species",
+            "id": "8"
+          }
+        ]
+      },
+      "statuses": {
+        "data": [
+          {
+            "type": "statuses",
+            "id": "1"
+          }
+        ]
+      },
+      "locations": {
+        "data": [
+          {
+            "type": "locations",
+            "id": "1000003448"
+          }
+        ]
+      },
+      "orgs": {
+        "data": [
+          {
+            "type": "orgs",
+            "id": "3448"
+          }
+        ]
+      },
+      "pictures": {
+        "data": [
+          {
+            "type": "pictures",
+            "id": "99808634"
+          }
+        ]
+      }
+    }
+  }
