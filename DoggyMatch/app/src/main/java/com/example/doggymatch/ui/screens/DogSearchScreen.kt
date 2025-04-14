@@ -35,6 +35,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.doggymatch.DoggyMatchApplication
 import com.example.doggymatch.ui.components.DogCard
+import com.example.doggymatch.ui.components.DogCardsList
 import com.example.doggymatch.viewmodels.DogSearchViewModel
 import com.example.doggymatch.viewmodels.DogSearchViewModel.Companion.BREED_ID_KEY
 import kotlinx.coroutines.launch
@@ -43,7 +44,6 @@ import kotlinx.coroutines.launch
 fun DogSearchScreen(
     breedId: Int,
     breedName: String,
-    goBack: () -> Unit,
     viewModel: DogSearchViewModel = viewModel(
         factory = DogSearchViewModel.Factory,
         extras = MutableCreationExtras().apply {
@@ -57,21 +57,8 @@ fun DogSearchScreen(
     val postalCode by viewModel.postalCode.collectAsState()
     val miles by viewModel.miles.collectAsState()
 
-    val coroutineScope = rememberCoroutineScope()
-
-    println("rescue id: $breedId")
-
     fun searchAnimals() {
         viewModel.searchAnimals(postalCode, miles)
-    }
-
-    fun isDogInSelectedDogs(dogId: Int): Boolean {
-        // This function cannot directly return from the coroutine scope
-        // Instead, return a placeholder value
-        coroutineScope.launch {
-            viewModel.isDogInSelectedDogs(dogId)
-        }
-        return false // This will always return false immediately
     }
 
     Column(
@@ -124,87 +111,15 @@ fun DogSearchScreen(
             }
         }
 
-        Box(
-            modifier = Modifier.fillMaxSize()
-        ) {
-            Surface(
-                modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background
-            ) {
-                if (dogs.isEmpty() && isLoading) {
-                    Column(
-                        modifier = Modifier.fillMaxSize(),
-                        verticalArrangement = Arrangement.Center,
-                        horizontalAlignment = Alignment.CenterHorizontally
-                    ) {
-                        Text(
-                            text = "Searching for adoptable $breedName...",
-                            style = MaterialTheme.typography.headlineMedium,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier.padding(16.dp)
-                        )
-                    }
-                }
-            }
-            if (dogs.isEmpty() && !isLoading && error == null) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = "No adoptable $breedName in your search radius.",
-                        style = MaterialTheme.typography.headlineMedium,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(16.dp)
-                    )
-                    Text(
-                        text = "Try a different breed or adjust your search radius.",
-                        style = MaterialTheme.typography.bodyMedium,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(16.dp)
-                    )
-                }
-            }
-
-            if (isLoading) {
-                Text(text = "Loading...")
-            } else if (error != null) {
-                Text(text = "Error: $error")
-            } else if (dogs.isNotEmpty()) {
-                LazyColumn {
-                    items(dogs) { dog ->
-                        DogCard(
-                            dog,
-                            saveFavorite = { favDog ->
-                                viewModel.addDogToSelectedDogs(favDog)
-                            },
-                            removeFavorite = { favDog ->
-                                viewModel.removeDogFromSelectedDogs(favDog)
-                            },
-                            isFavorite = { dogId, callback ->
-                                coroutineScope.launch {
-                                    val isFavorite = viewModel.isDogInSelectedDogs(dogId)
-                                    callback(isFavorite)
-                                }
-                            }
-                        )
-                    }
-                }
-            }
-
-            // FAB in bottom-right corner
-            FloatingActionButton(
-                onClick = goBack,
-                modifier = Modifier
-                    .align(Alignment.BottomEnd)
-                    .padding(16.dp)
-            ) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                    contentDescription = "Go Back"
-                )
-            }
+        if (isLoading) {
+            Text(text = "Loading...")
+        } else if (error != null) {
+            Text(text = "Error: $error")
+        } else {
+            DogCardsList(
+                dogs = dogs,
+                viewModel = viewModel
+            )
         }
     }
 }

@@ -24,7 +24,6 @@ import com.example.doggymatch.viewmodels.DogsBreedsDescriptionsViewModel
 @Composable
 fun DogsBreedsDescriptionsScreen(
     goToDogSearch: (Int, String) -> Unit,
-    goBack: () -> Unit,
     viewModel: DogsBreedsDescriptionsViewModel = viewModel(factory = DogsBreedsDescriptionsViewModel.Factory)
 ) {
     val selectedDogBreeds by viewModel.selectedDogBreeds.collectAsState()
@@ -64,19 +63,6 @@ fun DogsBreedsDescriptionsScreen(
                     }
                 }
             }
-        }
-
-        // FAB in bottom-right corner
-        FloatingActionButton(
-            onClick = goBack,
-            modifier = Modifier
-                .align(Alignment.BottomEnd)
-                .padding(16.dp)
-        ) {
-            Icon(
-                imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                contentDescription = "Go Back"
-            )
         }
     }
 }

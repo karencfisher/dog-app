@@ -105,6 +105,7 @@ class DogSearchViewModel(
     }
 
     private fun makeSelectedDogs() {
+        _dogs.value = emptyList()
         for (selectedDog in _animals) {
             val newDog = SelectedDogs(
                 dogId = selectedDog.id.toIntOrNull() ?: 0,

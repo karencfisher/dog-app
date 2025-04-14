@@ -11,7 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -68,9 +68,9 @@ class MainActivity : ComponentActivity() {
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
                             ) {
-                                IconButton(onClick = { navController.navigate(Destinations.Home) }) {
-                                    Icon(imageVector = Icons.Default.Home,
-                                        contentDescription = "Home",
+                                IconButton(onClick = { navController.popBackStack() }) {
+                                    Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                        contentDescription = "Back",
                                         modifier = Modifier.size(30.dp))
                                 }
                             }
@@ -98,9 +98,7 @@ class MainActivity : ComponentActivity() {
                             })
                         }
                         composable<Destinations.BreedDescriptions> {
-                            DogsBreedsDescriptionsScreen(goBack = {
-                                navController.popBackStack()
-                            },
+                            DogsBreedsDescriptionsScreen(
                             goToDogSearch = { breedId, breedName ->
                                 navController.navigate(Destinations.DogSearch(
                                     breedId,
@@ -110,11 +108,8 @@ class MainActivity : ComponentActivity() {
                         }
                         composable<Destinations.DogSearch> {
                             DogSearchScreen(
-                                breedId = it.toRoute<Destinations.DogSearch>().breedId ?: 0,
-                                breedName = it.toRoute<Destinations.DogSearch>().breedName ?: "",
-                                goBack = {
-                                    navController.popBackStack()
-                                },
+                                breedId = it.toRoute<Destinations.DogSearch>().breedId,
+                                breedName = it.toRoute<Destinations.DogSearch>().breedName
                             )
                         }
                         composable<Destinations.DogDetails> {
