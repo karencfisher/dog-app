@@ -27,12 +27,10 @@ fun DogCardsList(
 ) {
     val coroutineScope = rememberCoroutineScope()
     fun isDogInSelectedDogs(dogId: Int): Boolean {
-        // This function cannot directly return from the coroutine scope
-        // Instead, return a placeholder value
         coroutineScope.launch {
             viewModel.isDogInSelectedDogs(dogId)
         }
-        return false // This will always return false immediately
+        return false
     }
 
     Box(
