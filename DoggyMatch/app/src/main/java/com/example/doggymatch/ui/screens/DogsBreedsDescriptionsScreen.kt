@@ -28,7 +28,22 @@ fun DogsBreedsDescriptionsScreen(
 ) {
     val selectedDogBreeds by viewModel.selectedDogBreeds.collectAsState()
 
-    Box(modifier = Modifier.fillMaxSize()) {  // Add this Box wrapper
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {  // Add this Box wrapper
+        Row (
+            modifier = Modifier
+                .fillMaxWidth()
+        ) {
+            Text(
+                text = "Selected Dog Breeds",
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.weight(1f),
+                textAlign = TextAlign.Center
+            )
+        }
         Surface(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
@@ -51,8 +66,6 @@ fun DogsBreedsDescriptionsScreen(
                 // Display the list of breeds
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
-                    contentPadding = PaddingValues(bottom = 80.dp, start = 16.dp, end = 16.dp, top = 16.dp),
-                    verticalArrangement = Arrangement.spacedBy(16.dp)
                 ) {
                     items(selectedDogBreeds) { breed ->
                         DogBreedCard(

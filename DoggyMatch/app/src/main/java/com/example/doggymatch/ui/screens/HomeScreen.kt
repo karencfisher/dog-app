@@ -4,6 +4,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
@@ -30,6 +31,7 @@ fun HomeScreen(
         ) {
             Box(
                 modifier = Modifier
+                    .fillMaxWidth()  // Add this to make Box take full width
                     .padding(16.dp)
                     .clickable { goToScreen("BreedSelection") },
                 contentAlignment = Alignment.Center
@@ -46,6 +48,7 @@ fun HomeScreen(
             )
             Box(
                 modifier = Modifier
+                    .fillMaxWidth()  // Add this to make Box take full width
                     .padding(16.dp)
                     .clickable { goToScreen("BreedDescription") },
                 contentAlignment = Alignment.Center
@@ -62,12 +65,13 @@ fun HomeScreen(
             )
             Box(
                 modifier = Modifier
+                    .fillMaxWidth()  // Add this to make Box take full width
                     .padding(16.dp)
-                    .clickable { goToScreen("DogsDetails") },
+                    .clickable { goToScreen("DogDetails") },
                 contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "View your possible dog matches",
+                    text = "View your favorite dogs",
                     style = MaterialTheme.typography.headlineSmall,
                     color = MaterialTheme.colorScheme.primary,
                     textAlign = TextAlign.Center
@@ -76,5 +80,3 @@ fun HomeScreen(
         }
     }
 }
-
-

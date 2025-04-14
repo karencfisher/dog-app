@@ -1,6 +1,7 @@
 package com.example.doggymatch.ui.screens
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -11,6 +12,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -19,6 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.doggymatch.ui.components.AttributesDropdown
@@ -55,11 +58,18 @@ import com.example.doggymatch.viewmodels.DogsBreedsSelectorsViewModel
                 .fillMaxSize()
                 .padding(16.dp)
                 .verticalScroll(rememberScrollState())
+        ) { Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = 8.dp)
         ) {
             Text(
-                text = "Select the attributes of the dog you want to adopt",
-                modifier = Modifier.padding(bottom = 16.dp)
+                text = "Select Breed Attributes",
+                style = MaterialTheme.typography.titleLarge,
+                modifier = Modifier.weight(1f),
+                textAlign = TextAlign.Center
             )
+        }
             Text(text = "Desired size of the dog?")
             AttributesDropdown("Sizes", sizes.value,
                 selectedSize.value
