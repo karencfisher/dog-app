@@ -157,9 +157,6 @@ class MainActivity : ComponentActivity() {
                         composable<Destinations.OrganizationDetails> {
                             OrganizationDetailsScreen(
                                 orgId = it.toRoute<Destinations.OrganizationDetails>().orgId,
-                                goToOrganizationDetails = { orgId ->
-                                    navController.navigate(Destinations.OrganizationDetails(orgId))
-                                }
                             )
                         }
                     }

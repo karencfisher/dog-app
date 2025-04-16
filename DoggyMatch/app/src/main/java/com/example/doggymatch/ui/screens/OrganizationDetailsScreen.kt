@@ -16,7 +16,6 @@ import com.example.doggymatch.viewmodels.OrganizationDetailsViewModel.Companion.
 @Composable
 fun OrganizationDetailsScreen(
     orgId: Int,
-    goToOrganizationDetails: (Int) -> Unit,
     viewModel: OrganizationDetailsViewModel = viewModel(
         factory = OrganizationDetailsViewModel.Factory,
         extras = MutableCreationExtras().apply {
