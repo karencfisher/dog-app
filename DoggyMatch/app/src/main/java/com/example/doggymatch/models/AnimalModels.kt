@@ -2,7 +2,7 @@ package com.example.doggymatch.models
 
 import androidx.core.text.HtmlCompat
 
-// Create these data classes in a new file like AnimalModels.kt
+// Models for GSON parsing of the API response
 data class Animal(
     val type: String,
     val id: String,

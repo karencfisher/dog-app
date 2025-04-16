@@ -1,6 +1,7 @@
 package com.example.doggymatch.apis
 
 import com.example.doggymatch.models.Animal
+import com.example.doggymatch.models.Organization
 import com.google.gson.annotations.SerializedName
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -42,6 +43,6 @@ data class AnimalResponse(
 )
 
 data class OrgDetailsResponse(
-    val data: Any,
+    val data: Organization,
     val meta: Any
 )
