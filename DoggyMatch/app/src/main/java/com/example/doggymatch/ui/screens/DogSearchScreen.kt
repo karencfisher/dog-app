@@ -29,6 +29,7 @@ import com.example.doggymatch.viewmodels.DogSearchViewModel.Companion.BREED_ID_K
 fun DogSearchScreen(
     breedId: Int,
     breedName: String,
+    goToOrganizationDetails: (Int) -> Unit = {},
     viewModel: DogSearchViewModel = viewModel(
         factory = DogSearchViewModel.Factory,
         extras = MutableCreationExtras().apply {
@@ -105,7 +106,10 @@ fun DogSearchScreen(
         } else {
             DogCardsList(
                 dogs = dogs,
-                viewModel = viewModel
+                viewModel = viewModel,
+                goToOrganizationDetails = { orgId ->
+                    goToOrganizationDetails(orgId)
+                }
             )
         }
     }

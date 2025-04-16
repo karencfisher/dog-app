@@ -6,13 +6,14 @@ import com.google.gson.annotations.SerializedName
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface RescueApiService {
     @POST("v5/public/animals/search/available")
     suspend fun searchAnimals(@Body body: RescueRequestBody): AnimalResponse
 
-    @GET("v5/public/orgs/{orgId.toString()}")
-    suspend fun getOrgDetails(@Body orgId: Int): OrgDetailsResponse
+    @GET("v5/public/orgs/{orgId}")
+    suspend fun getOrgDetails(@Path("orgId") orgId: Int): OrgDetailsResponse
 }
 
 data class DataWrapper(
@@ -43,6 +44,6 @@ data class AnimalResponse(
 )
 
 data class OrgDetailsResponse(
-    val data: Organization,
+    val data: List<Organization>,
     val meta: Any
 )

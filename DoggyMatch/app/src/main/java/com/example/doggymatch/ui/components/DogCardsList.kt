@@ -23,7 +23,8 @@ import kotlinx.coroutines.launch
 @Composable
 fun DogCardsList(
     dogs: List<SelectedDogs>,
-    viewModel: DogSearchViewModel
+    viewModel: DogSearchViewModel,
+    goToOrganizationDetails: (Int) -> Unit = {}
 ) {
     val coroutineScope = rememberCoroutineScope()
     fun isDogInSelectedDogs(dogId: Int): Boolean {
@@ -75,6 +76,9 @@ fun DogCardsList(
                                     val isFavorite = viewModel.isDogInSelectedDogs(dogId)
                                     callback(isFavorite)
                                 }
+                            },
+                            goToOrganizationDetails = { orgId ->
+                                goToOrganizationDetails(orgId)
                             }
                         )
                     }

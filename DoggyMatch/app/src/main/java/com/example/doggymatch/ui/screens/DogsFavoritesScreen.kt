@@ -24,6 +24,7 @@ import com.example.doggymatch.ui.components.DogCardsList
 
 @Composable
 fun DogsFavoritesScreen(
+    goToOrganizationDetails: (Int) -> Unit = {},
     viewModel: DogSearchViewModel = viewModel(
         factory = DogSearchViewModel.Factory,
         extras = MutableCreationExtras().apply {
@@ -55,7 +56,10 @@ fun DogsFavoritesScreen(
         }
         DogCardsList(
             dogs = dogs,
-            viewModel = viewModel
+            viewModel = viewModel,
+            goToOrganizationDetails = { orgId ->
+                goToOrganizationDetails(orgId)
+            }
         )
     }
 }

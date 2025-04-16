@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -35,6 +36,7 @@ import com.example.doggymatch.ui.screens.DogsBreedsDescriptionsScreen
 import com.example.doggymatch.ui.screens.DogsBreedsSelectorsScreen
 import com.example.doggymatch.ui.screens.DogsFavoritesScreen
 import com.example.doggymatch.ui.screens.HomeScreen
+import com.example.doggymatch.ui.screens.OrganizationDetailsScreen
 import com.example.doggymatch.ui.theme.DoggyMatchTheme
 
 class MainActivity : ComponentActivity() {
@@ -85,6 +87,15 @@ class MainActivity : ComponentActivity() {
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
                             ) {
+                                IconButton(
+                                    onClick = { navController.navigate(Destinations.Home) }
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Home,
+                                        contentDescription = "Home",
+                                        modifier = Modifier.size(30.dp)
+                                    )
+                                }
                                 IconButton(onClick = { navController.popBackStack() }) {
                                     Icon(
                                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
@@ -130,11 +141,26 @@ class MainActivity : ComponentActivity() {
                         composable<Destinations.DogSearch> {
                             DogSearchScreen(
                                 breedId = it.toRoute<Destinations.DogSearch>().breedId,
-                                breedName = it.toRoute<Destinations.DogSearch>().breedName
+                                breedName = it.toRoute<Destinations.DogSearch>().breedName,
+                                goToOrganizationDetails = { dogId ->
+                                    navController.navigate(Destinations.OrganizationDetails(dogId))
+                                }
                             )
                         }
                         composable<Destinations.DogDetails> {
-                            DogsFavoritesScreen()
+                            DogsFavoritesScreen(
+                                goToOrganizationDetails = { orgId ->
+                                    navController.navigate(Destinations.OrganizationDetails(orgId))
+                                }
+                            )
+                        }
+                        composable<Destinations.OrganizationDetails> {
+                            OrganizationDetailsScreen(
+                                orgId = it.toRoute<Destinations.OrganizationDetails>().orgId,
+                                goToOrganizationDetails = { orgId ->
+                                    navController.navigate(Destinations.OrganizationDetails(orgId))
+                                }
+                            )
                         }
                     }
                 }

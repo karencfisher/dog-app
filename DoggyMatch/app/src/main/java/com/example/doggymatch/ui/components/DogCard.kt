@@ -29,7 +29,8 @@ fun DogCard(
     dog: SelectedDogs,
     saveFavorite: (SelectedDogs) -> Unit,
     removeFavorite: (SelectedDogs) -> Unit,
-    isFavorite: (Int, (Boolean) -> Unit) -> Unit
+    isFavorite: (Int, (Boolean) -> Unit) -> Unit,
+    goToOrganizationDetails: (Int) -> Unit = {}
 ) {
     Card(
         modifier = Modifier
@@ -114,7 +115,7 @@ fun DogCard(
                         Text(text = favoriteButtonText)
                     }
                     Button(
-                        onClick = { /* Handle button click */ },
+                        onClick = { goToOrganizationDetails(dog.orgId ?: 0) },
                         modifier = Modifier
                             .padding(top = 8.dp)
                             .fillMaxWidth()
