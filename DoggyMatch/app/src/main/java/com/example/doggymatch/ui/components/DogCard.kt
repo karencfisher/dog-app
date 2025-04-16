@@ -92,6 +92,7 @@ fun DogCard(
                         color = MaterialTheme.colorScheme.primary
                     )
                     Text(text = "Age: ${dog.age ?: "Unknown"}")
+                    Text(text = "Sex: ${dog.sex ?: "Unknown"}")
                     Text(text = "Size: ${dog.size ?: "Unknown"}")
                     Text(text = "Distance: ${dog.distance ?: "Unknown"} miles")
                     HorizontalDivider(
@@ -120,7 +121,7 @@ fun DogCard(
                             .padding(top = 8.dp)
                             .fillMaxWidth()
                     ) {
-                        Text(text = "Get adoption service information")
+                        Text(text = "How can I adopt this cutie?")
                     }
                 }
             }
