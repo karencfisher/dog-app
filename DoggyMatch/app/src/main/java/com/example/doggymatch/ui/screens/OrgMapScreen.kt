@@ -55,6 +55,7 @@ fun OrgMapScreen(
                             latitude = latitude,
                             longitude = longitude,
                             zoomLevel = 10.0,
+                            markerTitle = orgName,
                             modifier = Modifier.fillMaxSize()
                         )
                     }
