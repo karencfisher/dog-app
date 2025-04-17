@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
@@ -25,8 +26,10 @@ import com.example.doggymatch.models.Organizations
 @Composable
 fun OrganizationCard(
     organization: Organizations,
+    goToMap: (String, Double, Double) -> Unit = { _, _, _ -> },
 ) {
     var isVisible by remember { mutableStateOf(false) }
+
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -154,6 +157,18 @@ fun OrganizationCard(
                         style = MaterialTheme.typography.bodyLarge,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
+                    Button(
+                        onClick = {
+                            goToMap(
+                                organization.name ?: "Unknown Organization",
+                                organization.latitude?.toDouble() ?: 0.0,
+                                organization.longitude?.toDouble() ?: 0.0
+                            )
+                        },
+                        modifier = Modifier.padding(top = 8.dp)
+                    ) {
+                        Text(text = "View on Map")
+                    }
                 }
             }
         }

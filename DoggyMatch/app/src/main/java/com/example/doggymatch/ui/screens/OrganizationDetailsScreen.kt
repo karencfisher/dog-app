@@ -16,6 +16,7 @@ import com.example.doggymatch.viewmodels.OrganizationDetailsViewModel.Companion.
 @Composable
 fun OrganizationDetailsScreen(
     orgId: Int,
+    goToMap: (String, Double, Double) -> Unit = { _, _, _ -> },
     viewModel: OrganizationDetailsViewModel = viewModel(
         factory = OrganizationDetailsViewModel.Factory,
         extras = MutableCreationExtras().apply {
@@ -35,7 +36,7 @@ fun OrganizationDetailsScreen(
     } else {
         // Display organization details
         organization?.let {
-            OrganizationCard(it)
+            OrganizationCard(it, goToMap)
         }
     }
 }

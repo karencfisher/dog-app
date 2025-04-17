@@ -36,6 +36,7 @@ import com.example.doggymatch.ui.screens.DogsBreedsDescriptionsScreen
 import com.example.doggymatch.ui.screens.DogsBreedsSelectorsScreen
 import com.example.doggymatch.ui.screens.DogsFavoritesScreen
 import com.example.doggymatch.ui.screens.HomeScreen
+import com.example.doggymatch.ui.screens.OrgMapScreen
 import com.example.doggymatch.ui.screens.OrganizationDetailsScreen
 import com.example.doggymatch.ui.theme.DoggyMatchTheme
 
@@ -157,6 +158,23 @@ class MainActivity : ComponentActivity() {
                         composable<Destinations.OrganizationDetails> {
                             OrganizationDetailsScreen(
                                 orgId = it.toRoute<Destinations.OrganizationDetails>().orgId,
+                                goToMap = { orgName, latitude, longitude ->
+                                    navController.navigate(
+                                        Destinations.OrgMapScreen(
+                                            orgName,
+                                            latitude,
+                                            longitude
+                                        )
+                                    )
+                                }
+                            )
+                        }
+                        composable<Destinations.OrgMapScreen> {
+                            val orgDetails = it.toRoute<Destinations.OrgMapScreen>()
+                            OrgMapScreen(
+                                orgName = orgDetails.orgName,
+                                latitude = orgDetails.latitude,
+                                longitude = orgDetails.longitude
                             )
                         }
                     }
