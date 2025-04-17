@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
@@ -51,6 +52,7 @@ fun OrganizationCard(
                     Text(
                         text = organization.name ?: "Unknown Organization",
                         style = MaterialTheme.typography.titleLarge,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Box(
@@ -62,6 +64,7 @@ fun OrganizationCard(
                         Text(
                             "About (click to ${if (isVisible) "hide" else "show"})",
                             style = MaterialTheme.typography.titleMedium,
+                            color = MaterialTheme.colorScheme.secondary,
                             modifier = Modifier.padding(bottom = 8.dp),
                         )
                     }
@@ -72,6 +75,7 @@ fun OrganizationCard(
                         Text(
                             text = organization.about ?: "No description available",
                             style = MaterialTheme.typography.bodyLarge,
+                            color = MaterialTheme.colorScheme.secondary,
                             modifier = Modifier.padding(bottom = 8.dp)
                         )
                     }
@@ -81,12 +85,14 @@ fun OrganizationCard(
                     Text(
                         text = "Adoption Process",
                         style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
 
                     )
                     Text(
                         text = organization.adoptionProcess ?: "No adoption process available",
                         style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     HorizontalDivider(
@@ -95,26 +101,31 @@ fun OrganizationCard(
                     Text(
                         text = "Contact Information",
                         style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Text(
                         text = "Phone: ${organization.phone ?: "No phone number available"}",
                         style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Text(
                         text = "Email: ${organization.email ?: "No email available"}",
                         style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Text(
                         text = "Website: ${organization.website ?: "No website available"}",
                         style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Text(
                         text = "Facebook: ${organization.facebook ?: "No Facebook available"}",
                         style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     HorizontalDivider(
@@ -123,6 +134,7 @@ fun OrganizationCard(
                     Text(
                         text = "Location",
                         style = MaterialTheme.typography.titleMedium,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Text(
@@ -155,6 +167,7 @@ fun OrganizationCard(
                             if (isEmpty()) append("No address available")
                         },
                         style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Button(
@@ -165,7 +178,10 @@ fun OrganizationCard(
                                 organization.longitude?.toDouble() ?: 0.0
                             )
                         },
-                        modifier = Modifier.padding(top = 8.dp)
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.tertiary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary
+                        ),
                     ) {
                         Text(text = "View on Map")
                     }

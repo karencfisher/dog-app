@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -50,14 +51,15 @@ class MainActivity : ComponentActivity() {
             DoggyMatchTheme {
                 Scaffold(
                     modifier = Modifier
-                        .fillMaxSize(),
+                        .fillMaxSize()
+                        .background(MaterialTheme.colorScheme.background),
                     topBar = {
                         CenterAlignedTopAppBar(
                             colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                                containerColor = MaterialTheme.colorScheme.primaryContainer,
-                                titleContentColor = MaterialTheme.colorScheme.primary,
+                                containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                                titleContentColor = MaterialTheme.colorScheme.tertiary,
                             ),
-                            modifier = Modifier.height(122.dp),
+                            modifier = Modifier.height(130.dp),
                             title = {
                                 Column(
                                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -82,8 +84,8 @@ class MainActivity : ComponentActivity() {
                     bottomBar = {
                         BottomAppBar(
                             modifier = Modifier.height(56.dp),
-                            containerColor = MaterialTheme.colorScheme.primaryContainer,
-                            contentColor = MaterialTheme.colorScheme.primary,
+                            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                            contentColor = MaterialTheme.colorScheme.tertiary,
                         ) {
                             Row(
                                 modifier = Modifier.fillMaxWidth(),

@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
@@ -48,6 +49,7 @@ fun DogBreedCard(breed: DogBreedsDescriptions, goToDogSearch: (Int) -> Unit) {
                 Text(
                     text = breed.name,
                     style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.secondary,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.weight(1f)
                 )
@@ -72,7 +74,8 @@ fun DogBreedCard(breed: DogBreedsDescriptions, goToDogSearch: (Int) -> Unit) {
 
                     Text(
                         text = breed.description,
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.secondary,
                     )
 
                     HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
@@ -101,7 +104,11 @@ fun DogBreedCard(breed: DogBreedsDescriptions, goToDogSearch: (Int) -> Unit) {
                     ) {
                         Button(
                             onClick = { goToDogSearch(breed.rescueApiId) },
-                            modifier = Modifier.weight(1f)
+                            modifier = Modifier.weight(1f),
+                            colors = ButtonDefaults.buttonColors(
+                                containerColor = MaterialTheme.colorScheme.tertiary,
+                                contentColor = MaterialTheme.colorScheme.onPrimary
+                            )
                         ) {
                             Text(text = "Search for an adoptable ${breed.name}")
                         }
@@ -119,11 +126,13 @@ fun BreedAttribute(label: String, value: String, modifier: Modifier = Modifier) 
     ) {
         Text(
             text = label,
-            style = MaterialTheme.typography.labelSmall
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.secondary,
         )
         Text(
             text = value,
             style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.secondary,
             fontWeight = FontWeight.Bold
         )
     }

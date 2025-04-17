@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -59,50 +60,95 @@ import com.example.doggymatch.viewmodels.DogsBreedsSelectorsViewModel
             Text(
                 text = "Select Breed Attributes",
                 style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.secondary,
                 modifier = Modifier.weight(1f),
                 textAlign = TextAlign.Center
             )
         }
-            Text(text = "Desired size of the dog?")
+            Text(
+                text = "Desired size of the dog?",
+                color = MaterialTheme.colorScheme.secondary
+            )
             AttributesDropdown("Sizes", sizes.value,
                 selectedSize.value
             ) { viewModel.updateSelectedSize(it) }
+
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            Text(text = "How common or uncommon the dog is?")
+
+            Text(
+                text = "How common or uncommon the dog is?",
+                color = MaterialTheme.colorScheme.secondary
+            )
             AttributesDropdown("Popularity", popularity.value,
                 selectedPopularity.value, { viewModel.updateSelectedPopularity(it) })
+
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            Text(text = "The dog's energy level?")
+
+            Text(
+                text = "The dog's energy level?",
+                color = MaterialTheme.colorScheme.secondary
+            )
             AttributesDropdown("Energy", energy.value,
                 selectedEnergy.value, { viewModel.updateSelectedEnergy(it) })
+
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            Text(text = "How easy is it to train the dog?")
+
+            Text(
+                text = "How easy is it to train the dog?",
+                color = MaterialTheme.colorScheme.secondary
+            )
             AttributesDropdown("Trainability", trainability.value,
                 selectedTrainability.value, { viewModel.updateSelectedTrainability(it) })
+
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            Text(text = "How much grooming does the dog need?")
+
+            Text(
+                text = "How much grooming does the dog need?",
+                color = MaterialTheme.colorScheme.secondary
+            )
             AttributesDropdown("Grooming", grooming.value,
                 selectedGrooming.value, { viewModel.updateSelectedGrooming(it) })
+
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            Text(text = "How much shedding does the dog do?")
+
+            Text(
+                text = "How much shedding does the dog do?",
+                color = MaterialTheme.colorScheme.secondary
+            )
             AttributesDropdown("Shedding", shedding.value,
                 selectedShedding.value, { viewModel.updateSelectedShedding(it) })
+
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            Text(text = "What is the dog's demeanor?")
+
+            Text(
+                text = "What is the dog's demeanor?",
+                color = MaterialTheme.colorScheme.secondary
+            )
             AttributesDropdown("Demeanor", demeanor.value,
                 selectedDemeanor.value, { viewModel.updateSelectedDemeanor(it) })
+
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
-            Text(text = "How friendly is the dog, including with children and other dogs?")
+
+            Text(
+                text = "How friendly is the dog, including with children and other dogs?",
+                color = MaterialTheme.colorScheme.secondary
+            )
             AttributesDropdown("Friendliness", friendliness.value,
                 selectedFriendliness.value, { viewModel.updateSelectedFriendliness(it) })
+
             HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+
             Button(
                 onClick = {
                     // The ViewModel already has the selected values
                     viewModel.getIdByAllFields()
                     goToDescriptions()
                 },
-                modifier = Modifier.padding(top = 16.dp)
+                modifier = Modifier.padding(top = 16.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.tertiary,
+                    contentColor = MaterialTheme.colorScheme.onPrimary
+                )
             ) {
                 Text(text = "Find my breed!")
             }

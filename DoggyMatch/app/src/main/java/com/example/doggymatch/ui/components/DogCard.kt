@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
@@ -61,11 +62,13 @@ fun DogCard(
                 Text(
                     text = dog.name ?: "Unknown Animal",
                     style = MaterialTheme.typography.titleLarge,
+                    color = MaterialTheme.colorScheme.secondary,
                     fontWeight = FontWeight.Bold
                 )
                 Text(
-                    text = dog.breed ?: "Unknown",
+                    text = dog.breed ?: "Unknown breed",
                     style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.secondary,
                     fontStyle = androidx.compose.ui.text.font.FontStyle.Italic
                 )
                 Spacer(modifier = Modifier.height(8.dp))
@@ -86,18 +89,33 @@ fun DogCard(
                                 contentScale = ContentScale.Inside
                             )
                         }
-                    Text(text = dog.description ?: "No description available")
-                    HorizontalDivider(
-                        modifier = Modifier.padding(vertical = 8.dp),
-                        color = MaterialTheme.colorScheme.primary
+                    Text(
+                        text = dog.description ?: "No description available",
+                        color = MaterialTheme.colorScheme.secondary
                     )
-                    Text(text = "Age: ${dog.age ?: "Unknown"}")
-                    Text(text = "Sex: ${dog.sex ?: "Unknown"}")
-                    Text(text = "Size: ${dog.size ?: "Unknown"}")
-                    Text(text = "Distance: ${dog.distance ?: "Unknown"} miles")
                     HorizontalDivider(
                         modifier = Modifier.padding(vertical = 8.dp),
-                        color = MaterialTheme.colorScheme.primary
+                        color = MaterialTheme.colorScheme.secondary
+                    )
+                    Text(
+                        text = "Age: ${dog.age ?: "Unknown"}",
+                        color = MaterialTheme.colorScheme.secondary
+                    )
+                    Text(
+                        text = "Sex: ${dog.sex ?: "Unknown"}",
+                        color = MaterialTheme.colorScheme.secondary
+                    )
+                    Text(
+                        text = "Size: ${dog.size ?: "Unknown"}",
+                        color = MaterialTheme.colorScheme.secondary
+                    )
+                    Text(
+                        text = "Distance: ${dog.distance ?: "Unknown"} miles",
+                        color = MaterialTheme.colorScheme.secondary
+                    )
+                    HorizontalDivider(
+                        modifier = Modifier.padding(vertical = 8.dp),
+                        color = MaterialTheme.colorScheme.secondary
                     )
                     Button(
                         onClick = {
@@ -110,16 +128,22 @@ fun DogCard(
                             }
                         },
                         modifier = Modifier
-                            .padding(top = 8.dp)
-                            .fillMaxWidth()
+                            .fillMaxWidth(),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.tertiary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary
+                        )
                     ) {
                         Text(text = favoriteButtonText)
                     }
                     Button(
                         onClick = { goToOrganizationDetails(dog.orgId ?: 0) },
                         modifier = Modifier
-                            .padding(top = 8.dp)
-                            .fillMaxWidth()
+                            .fillMaxWidth(),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.tertiary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary
+                        )
                     ) {
                         Text(text = "How can I adopt this cutie?")
                     }

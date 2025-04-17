@@ -46,7 +46,8 @@ fun OrgMapScreen(
                         ) {
                             Text(
                                 text = "Map not available",
-                                style = MaterialTheme.typography.headlineMedium
+                                style = MaterialTheme.typography.headlineMedium,
+                                color = MaterialTheme.colorScheme.onBackground,
                             )
                         }
                     } else {

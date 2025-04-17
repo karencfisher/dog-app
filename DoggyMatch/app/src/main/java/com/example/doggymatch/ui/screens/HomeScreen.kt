@@ -39,7 +39,7 @@ fun HomeScreen(
                 Text(
                     text = "Select the breed of dog you want to adopt",
                     style = MaterialTheme.typography.headlineSmall,
-                    color = MaterialTheme.colorScheme.primary,
+                    color = MaterialTheme.colorScheme.secondary,
                     textAlign = TextAlign.Center
                 )
             }
@@ -56,7 +56,7 @@ fun HomeScreen(
                 Text(
                     text = "View your chosen breed",
                     style = MaterialTheme.typography.headlineSmall,
-                    color = MaterialTheme.colorScheme.primary,
+                    color = MaterialTheme.colorScheme.secondary,
                     textAlign = TextAlign.Center
                 )
             }
@@ -73,7 +73,7 @@ fun HomeScreen(
                 Text(
                     text = "View your favorite dogs",
                     style = MaterialTheme.typography.headlineSmall,
-                    color = MaterialTheme.colorScheme.primary,
+                    color = MaterialTheme.colorScheme.secondary,
                     textAlign = TextAlign.Center
                 )
             }

@@ -50,6 +50,7 @@ fun DogsFavoritesScreen(
             Text(
                 text = "Dog Favorites",
                 style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.secondary,
                 modifier = Modifier.weight(1f),
                 textAlign = TextAlign.Center
             )

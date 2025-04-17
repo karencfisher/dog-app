@@ -1,5 +1,6 @@
 package com.example.doggymatch.ui.screens
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -28,6 +29,7 @@ fun DogsBreedsDescriptionsScreen(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp)
+            .background(MaterialTheme.colorScheme.background)
     ) {  // Add this Box wrapper
         Row (
             modifier = Modifier
@@ -36,6 +38,7 @@ fun DogsBreedsDescriptionsScreen(
             Text(
                 text = "Selected Dog Breeds",
                 style = MaterialTheme.typography.titleLarge,
+                color = MaterialTheme.colorScheme.secondary,
                 modifier = Modifier.weight(1f),
                 textAlign = TextAlign.Center
             )
@@ -54,6 +57,7 @@ fun DogsBreedsDescriptionsScreen(
                     Text(
                         text = "No dog breeds match your selection.",
                         style = MaterialTheme.typography.headlineMedium,
+                        color = MaterialTheme.colorScheme.secondary,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.padding(16.dp)
                     )

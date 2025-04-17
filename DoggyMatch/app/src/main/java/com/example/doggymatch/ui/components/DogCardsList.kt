@@ -50,12 +50,14 @@ fun DogCardsList(
                     Text(
                         text = "No dogs found",
                         style = MaterialTheme.typography.headlineMedium,
+                        color = MaterialTheme.colorScheme.secondary,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.padding(16.dp)
                     )
                     Text(
                         text = "If searching adjust the postal code and/or miles, and try again",
                         style = MaterialTheme.typography.bodyLarge,
+                        color = MaterialTheme.colorScheme.secondary,
                         textAlign = TextAlign.Center,
                         modifier = Modifier.padding(16.dp)
                     )
