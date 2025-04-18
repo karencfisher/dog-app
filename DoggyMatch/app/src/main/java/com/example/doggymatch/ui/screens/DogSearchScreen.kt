@@ -1,5 +1,6 @@
 package com.example.doggymatch.ui.screens
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,6 +14,7 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
@@ -23,6 +25,7 @@ import androidx.lifecycle.viewmodel.MutableCreationExtras
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.doggymatch.DoggyMatchApplication
 import com.example.doggymatch.ui.components.DogCardsList
+import com.example.doggymatch.ui.components.LoadingAnimation
 import com.example.doggymatch.viewmodels.DogSearchViewModel
 import com.example.doggymatch.viewmodels.DogSearchViewModel.Companion.BREED_ID_KEY
 
@@ -106,9 +109,24 @@ fun DogSearchScreen(
         }
 
         if (isLoading) {
-            Text(text = "Loading...")
+            LoadingAnimation(
+                pawSize = 50,
+                pawSpacing = 50
+            )
         } else if (error != null) {
-            Text(text = "Error: $error")
+            println("Error: $error")
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = "An error occurred",
+                    style = MaterialTheme.typography.headlineMedium,
+                    color = MaterialTheme.colorScheme.error,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(16.dp)
+                )
+            }
         } else {
             DogCardsList(
                 dogs = dogs,
