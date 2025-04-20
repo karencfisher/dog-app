@@ -95,10 +95,10 @@ class DogsBreedsSelectorsViewModel(
     }
 
     // Modify getIdByAllFields to use the stored state values
-    fun getIdByAllFields() {
+    fun getIdByFields() {
         viewModelScope.launch {
             // Get the breed IDs that match the criteria using internal state values
-            val breedIds = dogsBreedsSelectorsRepository.getIdByAllFields(
+            val breedIds = dogsBreedsSelectorsRepository.getIdByFields(
                 _selectedSize.value,
                 _selectedPopularity.value,
                 _selectedEnergy.value,
@@ -107,7 +107,7 @@ class DogsBreedsSelectorsViewModel(
                 _selectedShedding.value,
                 _selectedDemeanor.value,
                 _selectedFriendliness.value
-            ) ?: emptyList()
+            )
 
             // Update the selected status in the descriptions table
             dogBreedsDescriptionsRepository.updateSelectedStatus(breedIds)

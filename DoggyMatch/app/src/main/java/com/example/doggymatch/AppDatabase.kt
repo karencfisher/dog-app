@@ -16,7 +16,7 @@ import com.example.doggymatch.models.SelectedDogs
     DogBreedsSelectors::class,
     Organizations::class,
     SelectedDogs::class
-], version = 9)
+], version = 10)
 abstract class AppDatabase: RoomDatabase() {
     abstract val dogBreedsDescriptionsDao: DogsBreedsDescriptionsDao
     abstract val dogBreedsSelectorsDao: DogsBreedsSelectorsDao

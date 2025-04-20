@@ -141,7 +141,7 @@ import com.example.doggymatch.viewmodels.DogsBreedsSelectorsViewModel
             Button(
                 onClick = {
                     // The ViewModel already has the selected values
-                    viewModel.getIdByAllFields()
+                    viewModel.getIdByFields()
                     goToDescriptions()
                 },
                 modifier = Modifier.padding(top = 16.dp),

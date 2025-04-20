@@ -14,4 +14,5 @@ data class DogBreedsDescriptions(
     @ColumnInfo(name = "imageUrl") val imageUrl: String,
     @ColumnInfo(name = "rescueApiId") val rescueApiId: Int,
     @ColumnInfo(name = "selected") val selected: Int = 0,
+    @ColumnInfo(name = "matchScore") val matchScore: Int = 0,
 )
