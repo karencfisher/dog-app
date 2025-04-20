@@ -24,6 +24,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
@@ -39,6 +43,7 @@ import com.example.doggymatch.ui.screens.DogsFavoritesScreen
 import com.example.doggymatch.ui.screens.HomeScreen
 import com.example.doggymatch.ui.screens.OrgMapScreen
 import com.example.doggymatch.ui.screens.OrganizationDetailsScreen
+import com.example.doggymatch.ui.screens.SplashScreen
 import com.example.doggymatch.ui.theme.DoggyMatchTheme
 
 class MainActivity : ComponentActivity() {
@@ -48,136 +53,150 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
+            var showSplash by remember { mutableStateOf(true) }
+
             DoggyMatchTheme {
-                Scaffold(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .background(MaterialTheme.colorScheme.background),
-                    topBar = {
-                        CenterAlignedTopAppBar(
-                            colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                if (showSplash) {
+                    SplashScreen(onSplashFinished = { showSplash = false })
+                } else {
+                    Scaffold(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .background(MaterialTheme.colorScheme.background),
+                        topBar = {
+                            CenterAlignedTopAppBar(
+                                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                                    containerColor = MaterialTheme.colorScheme.secondaryContainer,
+                                    titleContentColor = MaterialTheme.colorScheme.tertiary,
+                                ),
+                                modifier = Modifier.height(130.dp),
+                                title = {
+                                    Column(
+                                        horizontalAlignment = Alignment.CenterHorizontally,
+                                        modifier = Modifier
+                                            .fillMaxWidth()
+                                            .padding(top = 36.dp)
+                                    ) {
+                                        Text(
+                                            text = "Doggy Match",
+                                            textAlign = TextAlign.Center,
+                                            style = MaterialTheme.typography.titleLarge
+                                        )
+                                        Text(
+                                            "Technology making the world a better place one dog at a time",
+                                            textAlign = TextAlign.Center,
+                                            style = MaterialTheme.typography.bodyMedium
+                                        )
+                                    }
+                                }
+                            )
+                        },
+                        bottomBar = {
+                            BottomAppBar(
+                                modifier = Modifier.height(56.dp),
                                 containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                                titleContentColor = MaterialTheme.colorScheme.tertiary,
-                            ),
-                            modifier = Modifier.height(130.dp),
-                            title = {
-                                Column(
-                                    horizontalAlignment = Alignment.CenterHorizontally,
-                                    modifier = Modifier
-                                        .fillMaxWidth()
-                                        .padding(top = 36.dp)
-                                ) {
-                                    Text(
-                                        text = "Doggy Match",
-                                        textAlign = TextAlign.Center,
-                                        style = MaterialTheme.typography.titleLarge
-                                    )
-                                    Text(
-                                        "Technology making the world a better place one dog at a time",
-                                        textAlign = TextAlign.Center,
-                                        style = MaterialTheme.typography.bodyMedium
-                                    )
-                                }
-                            }
-                        )
-                    },
-                    bottomBar = {
-                        BottomAppBar(
-                            modifier = Modifier.height(56.dp),
-                            containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                            contentColor = MaterialTheme.colorScheme.tertiary,
-                        ) {
-                            Row(
-                                modifier = Modifier.fillMaxWidth(),
+                                contentColor = MaterialTheme.colorScheme.tertiary,
                             ) {
-                                IconButton(
-                                    onClick = { navController.navigate(Destinations.Home) }
+                                Row(
+                                    modifier = Modifier.fillMaxWidth(),
                                 ) {
-                                    Icon(
-                                        imageVector = Icons.Default.Home,
-                                        contentDescription = "Home",
-                                        modifier = Modifier.size(30.dp)
-                                    )
-                                }
-                                IconButton(onClick = { navController.popBackStack() }) {
-                                    Icon(
-                                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                                        contentDescription = "Back",
-                                        modifier = Modifier.size(30.dp)
-                                    )
+                                    IconButton(
+                                        onClick = { navController.navigate(Destinations.Home) }
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.Home,
+                                            contentDescription = "Home",
+                                            modifier = Modifier.size(30.dp)
+                                        )
+                                    }
+                                    IconButton(onClick = { navController.popBackStack() }) {
+                                        Icon(
+                                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                                            contentDescription = "Back",
+                                            modifier = Modifier.size(30.dp)
+                                        )
+                                    }
                                 }
                             }
                         }
-                    }
-                ) { innerPadding ->
-                    NavHost(
-                        navController = navController,
-                        startDestination = Destinations.Home,
-                        modifier = Modifier.padding(innerPadding)
-                    ) {
-                        composable<Destinations.Home> {
-                            HomeScreen(goToScreen = { screen ->
-                                when (screen) {
-                                    "BreedSelection" -> navController.navigate(Destinations.BreedSelection)
-                                    "BreedDescription" -> navController.navigate(Destinations.BreedDescriptions)
-                                    "DogDetails" -> navController.navigate(Destinations.DogDetails)
-                                    else -> {}
-                                }
-                            })
-                        }
-                        composable<Destinations.BreedSelection> {
-                            DogsBreedsSelectorsScreen(goToDescriptions = {
-                                navController.navigate(Destinations.BreedDescriptions)
-                            })
-                        }
-                        composable<Destinations.BreedDescriptions> {
-                            DogsBreedsDescriptionsScreen(
-                                goToDogSearch = { breedId, breedName ->
-                                    navController.navigate(
-                                        Destinations.DogSearch(
-                                            breedId,
-                                            breedName = breedName
-                                        )
-                                    )
+                    ) { innerPadding ->
+                        NavHost(
+                            navController = navController,
+                            startDestination = Destinations.Home,
+                            modifier = Modifier.padding(innerPadding)
+                        ) {
+                            composable<Destinations.Home> {
+                                HomeScreen(goToScreen = { screen ->
+                                    when (screen) {
+                                        "BreedSelection" -> navController.navigate(Destinations.BreedSelection)
+                                        "BreedDescription" -> navController.navigate(Destinations.BreedDescriptions)
+                                        "DogDetails" -> navController.navigate(Destinations.DogDetails)
+                                        else -> {}
+                                    }
                                 })
-                        }
-                        composable<Destinations.DogSearch> {
-                            DogSearchScreen(
-                                breedId = it.toRoute<Destinations.DogSearch>().breedId,
-                                breedName = it.toRoute<Destinations.DogSearch>().breedName,
-                                goToOrganizationDetails = { dogId ->
-                                    navController.navigate(Destinations.OrganizationDetails(dogId))
-                                }
-                            )
-                        }
-                        composable<Destinations.DogDetails> {
-                            DogsFavoritesScreen(
-                                goToOrganizationDetails = { orgId ->
-                                    navController.navigate(Destinations.OrganizationDetails(orgId))
-                                }
-                            )
-                        }
-                        composable<Destinations.OrganizationDetails> {
-                            OrganizationDetailsScreen(
-                                orgId = it.toRoute<Destinations.OrganizationDetails>().orgId,
-                                goToMap = { orgName, latitude, longitude ->
-                                    navController.navigate(
-                                        Destinations.OrgMapScreen(
-                                            orgName,
-                                            latitude,
-                                            longitude
+                            }
+                            composable<Destinations.BreedSelection> {
+                                DogsBreedsSelectorsScreen(goToDescriptions = {
+                                    navController.navigate(Destinations.BreedDescriptions)
+                                })
+                            }
+                            composable<Destinations.BreedDescriptions> {
+                                DogsBreedsDescriptionsScreen(
+                                    goToDogSearch = { breedId, breedName ->
+                                        navController.navigate(
+                                            Destinations.DogSearch(
+                                                breedId,
+                                                breedName = breedName
+                                            )
                                         )
-                                    )
-                                }
-                            )
-                        }
-                        composable<Destinations.OrgMapScreen> {
-                            val orgDetails = it.toRoute<Destinations.OrgMapScreen>()
-                            OrgMapScreen(
-                                orgName = orgDetails.orgName,
-                                latitude = orgDetails.latitude,
-                                longitude = orgDetails.longitude
-                            )
+                                    })
+                            }
+                            composable<Destinations.DogSearch> {
+                                DogSearchScreen(
+                                    breedId = it.toRoute<Destinations.DogSearch>().breedId,
+                                    breedName = it.toRoute<Destinations.DogSearch>().breedName,
+                                    goToOrganizationDetails = { dogId ->
+                                        navController.navigate(
+                                            Destinations.OrganizationDetails(
+                                                dogId
+                                            )
+                                        )
+                                    }
+                                )
+                            }
+                            composable<Destinations.DogDetails> {
+                                DogsFavoritesScreen(
+                                    goToOrganizationDetails = { orgId ->
+                                        navController.navigate(
+                                            Destinations.OrganizationDetails(
+                                                orgId
+                                            )
+                                        )
+                                    }
+                                )
+                            }
+                            composable<Destinations.OrganizationDetails> {
+                                OrganizationDetailsScreen(
+                                    orgId = it.toRoute<Destinations.OrganizationDetails>().orgId,
+                                    goToMap = { orgName, latitude, longitude ->
+                                        navController.navigate(
+                                            Destinations.OrgMapScreen(
+                                                orgName,
+                                                latitude,
+                                                longitude
+                                            )
+                                        )
+                                    }
+                                )
+                            }
+                            composable<Destinations.OrgMapScreen> {
+                                val orgDetails = it.toRoute<Destinations.OrgMapScreen>()
+                                OrgMapScreen(
+                                    orgName = orgDetails.orgName,
+                                    latitude = orgDetails.latitude,
+                                    longitude = orgDetails.longitude
+                                )
+                            }
                         }
                     }
                 }

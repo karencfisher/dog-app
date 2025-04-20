@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- res/values/themes.xml -->
 
     <style name="Theme.DoggyMatch" parent="android:Theme.Material.Light.NoActionBar" />
+
 </resources>

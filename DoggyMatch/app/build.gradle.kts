@@ -56,6 +56,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.core.splashscreen)
     implementation(libs.osmdroid.android)
     implementation(libs.logging.interceptor)
     implementation(libs.retrofit)

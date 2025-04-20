@@ -66,12 +66,11 @@ fun LoadingAnimation(
     // Wrap with a Box to center content
     Box(
         modifier = modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.TopCenter
     ) {
         // Row for the paw prints
         Row(
             horizontalArrangement = Arrangement.spacedBy(pawSpacing.dp),
-            verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(pawSpacing.dp),
         ) {
             Box(
