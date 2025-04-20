@@ -37,7 +37,7 @@ class DogsBreedsSelectorsRepository(
         return dogsBreedsSelectorsDao.getFriendliness()
     }
 
-    suspend fun getIdByAllFields(
+    suspend fun getIdByFields(
         size: String,
         popularity: String,
         energy: String,
@@ -46,8 +46,8 @@ class DogsBreedsSelectorsRepository(
         shedding: String,
         demeanor: String,
         friendliness: String
-    ): List<Int>? {
-        return dogsBreedsSelectorsDao.getIdByAllFields(
+    ): List<DogsBreedsSelectorsDao.BreedMatch> {
+        return dogsBreedsSelectorsDao.getIdByFields(
             size, popularity, energy, trainability, grooming, shedding, demeanor, friendliness
         )
     }

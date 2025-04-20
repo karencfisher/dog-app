@@ -30,13 +30,22 @@ abstract class DogsBreedsSelectorsDao {
     abstract suspend fun getFriendliness(): List<String>
 
     @Query("""
-        SELECT breedId FROM DogBreedsSelectors
-        WHERE size = :size AND popularity = :popularity AND energy = :energy AND
-              trainability = :trainability AND grooming = :grooming AND
-              shedding = :shedding AND demeanor = :demeanor AND
-              friendliness = :friendliness
+        SELECT breedId,
+        (CASE WHEN size = :size THEN 1 ELSE 0 END +
+         CASE WHEN popularity = :popularity THEN 1 ELSE 0 END +
+         CASE WHEN energy = :energy THEN 1 ELSE 0 END +
+         CASE WHEN trainability = :trainability THEN 1 ELSE 0 END +
+         CASE WHEN grooming = :grooming THEN 1 ELSE 0 END +
+         CASE WHEN shedding = :shedding THEN 1 ELSE 0 END +
+         CASE WHEN demeanor = :demeanor THEN 1 ELSE 0 END +
+         CASE WHEN friendliness = :friendliness THEN 1 ELSE 0 END)
+         AS matchScore
+        FROM DogBreedsSelectors
+        WHERE matchScore >= 6
+        ORDER BY matchScore DESC
+        LIMIT 5
     """)
-    abstract suspend fun getIdByAllFields(
+    abstract suspend fun getIdByFields(
         size: String,
         popularity: String,
         energy: String,
@@ -45,5 +54,11 @@ abstract class DogsBreedsSelectorsDao {
         shedding: String,
         demeanor: String,
         friendliness: String
-    ): List<Int>?
+    ): List<BreedMatch>
+
+    // Data class to hold the result
+    data class BreedMatch(
+        val breedId: Int,
+        val matchScore: Int
+    )
 }

@@ -53,6 +53,12 @@ fun DogBreedCard(breed: DogBreedsDescriptions, goToDogSearch: (Int) -> Unit) {
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier.weight(1f)
                 )
+                Text(
+                    text = "Matches ${breed.matchScore}/8 attributes",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.secondary,
+                    modifier = Modifier.padding(start = 8.dp)
+                )
             }
             Spacer(modifier = Modifier.height(8.dp))
             AnimatedVisibility(visible = isVisible) {
