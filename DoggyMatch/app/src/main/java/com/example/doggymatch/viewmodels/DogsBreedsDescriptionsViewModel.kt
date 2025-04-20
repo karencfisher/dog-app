@@ -17,6 +17,10 @@ class DogsBreedsDescriptionsViewModel(
 ) : ViewModel() {
     private val _selectedDogBreeds = MutableStateFlow<List<DogBreedsDescriptions>>(emptyList())
     val selectedDogBreeds: StateFlow<List<DogBreedsDescriptions>> = _selectedDogBreeds
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading
+    private val _error = MutableStateFlow<String?>(null)
+    val error: StateFlow<String?> = _error
 
     init {
         loadSelectedDogBreeds()
@@ -24,7 +28,14 @@ class DogsBreedsDescriptionsViewModel(
 
     private fun loadSelectedDogBreeds() {
         viewModelScope.launch {
-            _selectedDogBreeds.value = dogsBreedsDescriptionsRepository.getSelectedDogBreedDescriptions()
+            _isLoading.value = true
+            try {
+                _selectedDogBreeds.value = dogsBreedsDescriptionsRepository.getSelectedDogBreedDescriptions()
+            } catch (e: Exception) {
+                _error.value = "Error: ${e.message}"
+            } finally {
+                _isLoading.value = false
+            }
         }
     }
 

@@ -11,14 +11,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.doggymatch.models.SelectedDogs
 import com.example.doggymatch.viewmodels.DogSearchViewModel
-import kotlinx.coroutines.launch
 
 @Composable
 fun DogCardsList(
@@ -26,14 +24,6 @@ fun DogCardsList(
     viewModel: DogSearchViewModel,
     goToOrganizationDetails: (Int) -> Unit = {}
 ) {
-    val coroutineScope = rememberCoroutineScope()
-    fun isDogInSelectedDogs(dogId: Int): Boolean {
-        coroutineScope.launch {
-            viewModel.isDogInSelectedDogs(dogId)
-        }
-        return false
-    }
-
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -67,17 +57,12 @@ fun DogCardsList(
                     items(dogs) { dog ->
                         DogCard(
                             dog = dog,
+                            viewModel = viewModel,
                             saveFavorite = { favDog ->
                                 viewModel.addDogToSelectedDogs(favDog)
                             },
                             removeFavorite = { favDog ->
                                 viewModel.removeDogFromSelectedDogs(favDog)
-                            },
-                            isFavorite = { dogId, callback ->
-                                coroutineScope.launch {
-                                    val isFavorite = viewModel.isDogInSelectedDogs(dogId)
-                                    callback(isFavorite)
-                                }
                             },
                             goToOrganizationDetails = { orgId ->
                                 goToOrganizationDetails(orgId)

@@ -178,10 +178,9 @@ class MainActivity : ComponentActivity() {
                             composable<Destinations.OrganizationDetails> {
                                 OrganizationDetailsScreen(
                                     orgId = it.toRoute<Destinations.OrganizationDetails>().orgId,
-                                    goToMap = { orgName, latitude, longitude ->
+                                    goToMap = { latitude, longitude ->
                                         navController.navigate(
                                             Destinations.OrgMapScreen(
-                                                orgName,
                                                 latitude,
                                                 longitude
                                             )
@@ -192,7 +191,6 @@ class MainActivity : ComponentActivity() {
                             composable<Destinations.OrgMapScreen> {
                                 val orgDetails = it.toRoute<Destinations.OrgMapScreen>()
                                 OrgMapScreen(
-                                    orgName = orgDetails.orgName,
                                     latitude = orgDetails.latitude,
                                     longitude = orgDetails.longitude
                                 )

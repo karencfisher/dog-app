@@ -34,6 +34,7 @@ class OrganizationDetailsViewModel (
 
     private fun loadOrganizationDetails() {
         viewModelScope.launch {
+            _isLoading.value = true
             _organization.value = organizationsRepository.getOrganizationById(orgId)
             if (_organization.value == null) {
                 try {
@@ -47,11 +48,9 @@ class OrganizationDetailsViewModel (
                     }
                 } catch (e: Exception) {
                     _error.value = "Network error: ${e.message}"
-                } finally {
-                    _isLoading.value = false
                 }
-
             }
+            _isLoading.value = false
         }
     }
 

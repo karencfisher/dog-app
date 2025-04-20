@@ -27,7 +27,7 @@ import com.example.doggymatch.models.Organizations
 @Composable
 fun OrganizationCard(
     organization: Organizations,
-    goToMap: (String, Double, Double) -> Unit = { _, _, _ -> },
+    goToMap: (Double, Double) -> Unit = { _, _ -> },
 ) {
     var isVisible by remember { mutableStateOf(false) }
 
@@ -173,7 +173,6 @@ fun OrganizationCard(
                     Button(
                         onClick = {
                             goToMap(
-                                organization.name ?: "Unknown Organization",
                                 organization.latitude?.toDouble() ?: 0.0,
                                 organization.longitude?.toDouble() ?: 0.0
                             )

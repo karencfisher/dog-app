@@ -21,6 +21,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.doggymatch.DoggyMatchApplication
 import com.example.doggymatch.viewmodels.DogSearchViewModel
 import com.example.doggymatch.ui.components.DogCardsList
+import com.example.doggymatch.ui.components.ErrorMessage
+import com.example.doggymatch.ui.components.LoadingAnimation
 
 @Composable
 fun DogsFavoritesScreen(
@@ -32,6 +34,8 @@ fun DogsFavoritesScreen(
         })
 ) {
     val dogs by viewModel.dogs.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+    val error by viewModel.error.collectAsState()
 
     LaunchedEffect(Unit) {
         viewModel.getSelectedDogs()
@@ -55,12 +59,31 @@ fun DogsFavoritesScreen(
                 textAlign = TextAlign.Center
             )
         }
-        DogCardsList(
-            dogs = dogs,
-            viewModel = viewModel,
-            goToOrganizationDetails = { orgId ->
-                goToOrganizationDetails(orgId)
-            }
-        )
+
+        if (isLoading) {
+            LoadingAnimation(
+                pawSize = 50,
+                pawSpacing = 50
+            )
+        } else if (error != null) {
+            println("Error: $error")
+            ErrorMessage()
+        } else if (dogs.isEmpty()) {
+            Text(
+                text = "No favorite dogs found",
+                style = MaterialTheme.typography.headlineMedium,
+                color = MaterialTheme.colorScheme.secondary,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(16.dp)
+            )
+        } else {
+            DogCardsList(
+                dogs = dogs,
+                viewModel = viewModel,
+                goToOrganizationDetails = { orgId ->
+                    goToOrganizationDetails(orgId)
+                }
+            )
+        }
     }
 }

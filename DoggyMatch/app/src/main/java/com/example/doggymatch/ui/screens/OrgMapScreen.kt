@@ -15,7 +15,6 @@ import com.example.doggymatch.ui.components.OsmMapView
 
 @Composable
 fun OrgMapScreen(
-    orgName: String,
     latitude: Double,
     longitude: Double,
 ) {

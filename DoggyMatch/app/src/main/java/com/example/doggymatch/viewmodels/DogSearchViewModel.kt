@@ -35,6 +35,9 @@ class DogSearchViewModel(
     private val _error = MutableStateFlow<String?>(null)
     val error: StateFlow<String?> = _error
 
+    private val _isDogSelected = MutableStateFlow(false)
+    val isDogSelected: StateFlow<Boolean> = _isDogSelected
+
     private val _postalCode = MutableStateFlow("90210")
     val postalCode: StateFlow<String> = _postalCode
 
@@ -85,22 +88,26 @@ class DogSearchViewModel(
     }
     fun getSelectedDogs() {
         viewModelScope.launch {
+            _isLoading.value = true
+            _error.value = null
             try {
                 val selectedDogs = selectedDogsRepository.getSelectedDogs()
                 _dogs.value = selectedDogs
             } catch (e: Exception) {
                 _error.value = "Failed to fetch selected dogs: ${e.message}"
+            } finally {
+                _isLoading.value = false
             }
         }
     }
 
-    suspend fun isDogInSelectedDogs(dogId: Int): Boolean {
-        return try {
-            val dog = selectedDogsRepository.getSelectedDogById(dogId)
-            dog != null
-        } catch (e: Exception) {
-            _error.value = "Failed to check if dog is in selected dogs: ${e.message}"
-            false
+    fun checkIfDogIsSelected(dogId: Int) {
+        viewModelScope.launch {
+            try {
+                _isDogSelected.value = selectedDogsRepository.getSelectedDogById(dogId) != null
+            } catch (e: Exception) {
+                _error.value = "Failed to check if dog is in selected dogs: ${e.message}"
+            }
         }
     }
 
@@ -127,7 +134,6 @@ class DogSearchViewModel(
         viewModelScope.launch {
             _isLoading.value = true
             _error.value = null
-
             try {
                 val body = RescueRequestBody(
                     data = DataWrapper(

@@ -9,7 +9,5 @@ class Destinations {
     @Serializable class DogSearch(val breedId: Int, val breedName: String)
     @Serializable object DogDetails
     @Serializable class OrganizationDetails(val orgId: Int)
-    @Serializable class OrgMapScreen(
-        val orgName: String, val latitude: Double, val longitude: Double
-    )
+    @Serializable class OrgMapScreen(val latitude: Double, val longitude: Double)
 }

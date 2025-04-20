@@ -14,6 +14,8 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -24,13 +26,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import com.example.doggymatch.models.SelectedDogs
+import com.example.doggymatch.viewmodels.DogSearchViewModel
 
 @Composable
 fun DogCard(
     dog: SelectedDogs,
+    viewModel: DogSearchViewModel,
     saveFavorite: (SelectedDogs) -> Unit,
     removeFavorite: (SelectedDogs) -> Unit,
-    isFavorite: (Int, (Boolean) -> Unit) -> Unit,
     goToOrganizationDetails: (Int) -> Unit = {}
 ) {
     Card(
@@ -39,14 +42,17 @@ fun DogCard(
             .padding(vertical = 8.dp)
     ) {
         var isVisible by remember { mutableStateOf(false) }
-        var isFav by remember { mutableStateOf(false) }
         var favoriteButtonText by remember { mutableStateOf("Add to favorites") }
+        val isDogSelected = viewModel.isDogSelected.collectAsState(false)
 
-        dog.dogId?.let { dogId ->
-            isFavorite(dogId) { result ->
-                isFav = result
-                favoriteButtonText = if (result) "Remove from favorites" else "Add to favorites"
-            }
+        LaunchedEffect(dog.dogId) {
+            dog.dogId?.let { viewModel.checkIfDogIsSelected(it) }
+        }
+
+        favoriteButtonText = if (isDogSelected.value) {
+            "Remove from favorites"
+        } else {
+            "Add to favorites"
         }
 
         Column(
