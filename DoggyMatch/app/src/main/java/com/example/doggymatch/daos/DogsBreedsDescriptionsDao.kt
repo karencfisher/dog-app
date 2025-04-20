@@ -6,7 +6,7 @@ import com.example.doggymatch.models.DogBreedsDescriptions
 
 @Dao
 abstract class DogsBreedsDescriptionsDao {
-    @Query("SELECT * FROM dogBreedsDescription WHERE selected = 1")
+    @Query("SELECT * FROM dogBreedsDescription WHERE selected = 1 ORDER BY matchScore DESC")
     abstract suspend fun getSelectedDogBreedDescriptions(): List<DogBreedsDescriptions>
 
     @Query("UPDATE DogBreedsDescription SET selected = 0, matchScore = 0")

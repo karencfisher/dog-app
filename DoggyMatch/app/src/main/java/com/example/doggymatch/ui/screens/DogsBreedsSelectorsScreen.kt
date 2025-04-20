@@ -14,12 +14,14 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.doggymatch.ui.components.AttributesDropdown
 import com.example.doggymatch.viewmodels.DogsBreedsSelectorsViewModel
+import kotlinx.coroutines.launch
 
 @Composable
     fun DogsBreedsSelectorsScreen(
@@ -46,6 +48,9 @@ import com.example.doggymatch.viewmodels.DogsBreedsSelectorsViewModel
         val selectedShedding = viewModel.selectedShedding.collectAsState()
         val selectedDemeanor = viewModel.selectedDemeanor.collectAsState()
         val selectedFriendliness = viewModel.selectedFriendliness.collectAsState()
+
+        // Create a coroutine scope for launching coroutines
+        val coroutineScope = rememberCoroutineScope()
 
         Column(
             modifier = Modifier
@@ -140,9 +145,15 @@ import com.example.doggymatch.viewmodels.DogsBreedsSelectorsViewModel
 
             Button(
                 onClick = {
-                    // The ViewModel already has the selected values
-                    viewModel.getIdByFields()
-                    goToDescriptions()
+                    // Create a coroutine in viewModelScope
+                    coroutineScope.launch {
+                        // Wait for database operations to complete
+                        val job = viewModel.getIdByFields()
+                        job.join()
+
+                        // Only navigate after database operations are complete
+                        goToDescriptions()
+                    }
                 },
                 modifier = Modifier.padding(top = 16.dp),
                 colors = ButtonDefaults.buttonColors(

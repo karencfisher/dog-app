@@ -41,6 +41,14 @@ abstract class DogsBreedsSelectorsDao {
          CASE WHEN friendliness = :friendliness THEN 1 ELSE 0 END)
          AS matchScore
         FROM DogBreedsSelectors
+        WHERE (CASE WHEN size = :size THEN 1 ELSE 0 END +
+         CASE WHEN popularity = :popularity THEN 1 ELSE 0 END +
+         CASE WHEN energy = :energy THEN 1 ELSE 0 END +
+         CASE WHEN trainability = :trainability THEN 1 ELSE 0 END +
+         CASE WHEN grooming = :grooming THEN 1 ELSE 0 END +
+         CASE WHEN shedding = :shedding THEN 1 ELSE 0 END +
+         CASE WHEN demeanor = :demeanor THEN 1 ELSE 0 END +
+         CASE WHEN friendliness = :friendliness THEN 1 ELSE 0 END) >= 6
         ORDER BY matchScore DESC
         LIMIT 5
     """)

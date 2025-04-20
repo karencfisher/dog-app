@@ -12,6 +12,7 @@ import com.example.doggymatch.respositories.DogsBreedsDescriptionsRepository
 
 
 import com.example.doggymatch.respositories.DogsBreedsSelectorsRepository
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class DogsBreedsSelectorsViewModel(
@@ -95,8 +96,8 @@ class DogsBreedsSelectorsViewModel(
     }
 
     // Modify getIdByAllFields to use the stored state values
-    fun getIdByFields() {
-        viewModelScope.launch {
+    fun getIdByFields(): Job {
+        return viewModelScope.launch {
             // Get the breed IDs that match the criteria using internal state values
             val breedIds = dogsBreedsSelectorsRepository.getIdByFields(
                 _selectedSize.value,
