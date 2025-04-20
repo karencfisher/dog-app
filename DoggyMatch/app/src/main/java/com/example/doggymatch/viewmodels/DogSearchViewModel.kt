@@ -15,6 +15,7 @@ import com.example.doggymatch.datasources.RetrofitClient
 import com.example.doggymatch.models.Animal
 import com.example.doggymatch.models.SelectedDogs
 import com.example.doggymatch.respositories.SelectedDogsRepository
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -113,8 +114,8 @@ class DogSearchViewModel(
         }
     }
 
-    fun checkIfDogIsSelected(dogId: Int) {
-        viewModelScope.launch {
+    fun checkIfDogIsSelected(dogId: Int): Job {
+        return viewModelScope.launch {
             try {
                 _isDogSelected.value = selectedDogsRepository.getSelectedDogById(dogId) != null
             } catch (e: Exception) {

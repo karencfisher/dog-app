@@ -46,10 +46,7 @@ fun DogCard(
         val isDogSelected = viewModel.isDogSelected.collectAsState(false)
 
         LaunchedEffect(dog.dogId) {
-            dog.dogId?.let { viewModel.checkIfDogIsSelected(it) }
-        }
-
-        LaunchedEffect(isDogSelected.value) {
+            dog.dogId?.let { viewModel.checkIfDogIsSelected(it) }?.join()
             favoriteButtonText = if (isDogSelected.value) {
                 "Remove from favorites"
             } else {
