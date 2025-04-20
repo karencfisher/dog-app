@@ -49,10 +49,12 @@ fun DogCard(
             dog.dogId?.let { viewModel.checkIfDogIsSelected(it) }
         }
 
-        favoriteButtonText = if (isDogSelected.value) {
-            "Remove from favorites"
-        } else {
-            "Add to favorites"
+        LaunchedEffect(isDogSelected.value) {
+            favoriteButtonText = if (isDogSelected.value) {
+                "Remove from favorites"
+            } else {
+                "Add to favorites"
+            }
         }
 
         Column(

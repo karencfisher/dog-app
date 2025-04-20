@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 class DogSearchViewModel(
     private val breedId: Int?,
     private val selectedDogsRepository: SelectedDogsRepository
-) : ViewModel(){
+) : ViewModel() {
 
     private var _animals: List<Animal> = emptyList()
 
@@ -44,9 +44,21 @@ class DogSearchViewModel(
     private val _miles = MutableStateFlow(50)
     val miles: StateFlow<Int> = _miles
 
+    init {
+        // Initialize with default values or fetch from a repository
+        _postalCode.value = "90210"
+        _miles.value = 50
+
+        if (breedId != null) {
+            fetchAnimals(breedId, _postalCode.value, _miles.value)
+        } else {
+            _error.value = "Breed ID is not set"
+        }
+    }
+
     fun searchAnimals(postalCode: String, miles: Int) {
         if (breedId != null) {
-            fetchAnimals(breedId, postalCode, miles)
+            fetchAnimals(breedId, _postalCode.value, miles)
         } else {
             _error.value = "Breed ID is not set"
         }
