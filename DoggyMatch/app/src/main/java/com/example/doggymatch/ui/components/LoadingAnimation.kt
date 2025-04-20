@@ -58,7 +58,7 @@ fun LoadingAnimation(
             .offset {
                 IntOffset(
                     x = 0,  // No horizontal movement
-                    y = lerp(0, 250, anchor)
+                    y = lerp(0, 500, anchor)
                 )
             }
             .alpha(lerp(0f, 1f, anchor))

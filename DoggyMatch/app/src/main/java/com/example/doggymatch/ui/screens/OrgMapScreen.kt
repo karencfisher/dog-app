@@ -55,8 +55,7 @@ fun OrgMapScreen(
                         OsmMapView(
                             latitude = latitude,
                             longitude = longitude,
-                            zoomLevel = 10.0,
-                            markerTitle = orgName,
+                            zoomLevel = 12.0,
                             modifier = Modifier.fillMaxSize()
                         )
                     }

@@ -19,8 +19,7 @@ fun OsmMapView(
     modifier: Modifier = Modifier,
     latitude: Double,
     longitude: Double,
-    zoomLevel: Double = 15.0,
-    markerTitle: String = "Location",
+    zoomLevel: Double,
     onMapReady: (MapView) -> Unit = {}
 ) {
     val context = LocalContext.current
