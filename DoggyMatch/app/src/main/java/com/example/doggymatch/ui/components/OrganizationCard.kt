@@ -21,6 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.doggymatch.models.Organizations
 
@@ -64,6 +65,7 @@ fun OrganizationCard(
                         Text(
                             "About (click to ${if (isVisible) "hide" else "show"})",
                             style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold,
                             color = MaterialTheme.colorScheme.secondary,
                             modifier = Modifier.padding(bottom = 8.dp),
                         )
@@ -86,6 +88,7 @@ fun OrganizationCard(
                         text = "Adoption Process",
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.secondary,
+                        fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(bottom = 8.dp)
 
                     )
@@ -104,6 +107,7 @@ fun OrganizationCard(
                         text = "Contact Information",
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.secondary,
+                        fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Text(
@@ -141,6 +145,7 @@ fun OrganizationCard(
                         text = "Location",
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.secondary,
+                        fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
                     Text(
