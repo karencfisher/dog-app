@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.doggymatch.ui.components.ErrorMessage
 import com.example.doggymatch.ui.components.OsmMapView
 
 @Composable
@@ -39,16 +40,10 @@ fun OrgMapScreen(
                 ) {
                     if (latitude == 0.0 || longitude == 0.0) {
                         // Display "Map not available" message in the center
-                        Box(
-                            modifier = Modifier.fillMaxSize(),
-                            contentAlignment = androidx.compose.ui.Alignment.Center
-                        ) {
-                            Text(
-                                text = "Map not available",
-                                style = MaterialTheme.typography.headlineMedium,
-                                color = MaterialTheme.colorScheme.onBackground,
-                            )
-                        }
+                        ErrorMessage(
+                            message = "Map not available",
+                            kind = "info"
+                        )
                     } else {
                         // Show the map
                         OsmMapView(

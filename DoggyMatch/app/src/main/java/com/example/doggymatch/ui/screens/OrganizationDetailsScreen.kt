@@ -38,10 +38,11 @@ fun OrganizationDetailsScreen(
     } else if (error != null) {
         println("Error: $error")
         ErrorMessage()
-    } else {
-        // Display organization details
-        organization?.let {
-            OrganizationCard(it, goToMap)
-        }
+    } else organization?.let { OrganizationCard(it, goToMap)
+    } ?: run {
+        ErrorMessage(
+            message = "No organization found",
+            kind = "info",
+        )
     }
 }

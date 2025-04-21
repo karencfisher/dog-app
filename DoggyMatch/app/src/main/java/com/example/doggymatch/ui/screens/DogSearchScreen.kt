@@ -115,6 +115,12 @@ fun DogSearchScreen(
         } else if (error != null) {
             println("Error: $error")
             ErrorMessage()
+        } else if (dogs.isEmpty()) {
+            ErrorMessage(
+                message = "No dogs found",
+                note = "Please try again with a different postal code or distance",
+                kind = "info"
+            )
         } else {
             DogCardsList(
                 dogs = dogs,

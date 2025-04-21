@@ -31,44 +31,21 @@ fun DogCardsList(
             modifier = Modifier.fillMaxSize(),
             color = MaterialTheme.colorScheme.background
         ) {
-            if (dogs.isEmpty()) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-                ) {
-                    Text(
-                        text = "No dogs found",
-                        style = MaterialTheme.typography.headlineMedium,
-                        color = MaterialTheme.colorScheme.secondary,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(16.dp)
+            LazyColumn {
+                items(dogs) { dog ->
+                    DogCard(
+                        dog = dog,
+                        viewModel = viewModel,
+                        saveFavorite = { favDog ->
+                            viewModel.addDogToSelectedDogs(favDog)
+                        },
+                        removeFavorite = { favDog ->
+                            viewModel.removeDogFromSelectedDogs(favDog)
+                        },
+                        goToOrganizationDetails = { orgId ->
+                            goToOrganizationDetails(orgId)
+                        }
                     )
-                    Text(
-                        text = "If searching adjust the postal code and/or miles, and try again",
-                        style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.secondary,
-                        textAlign = TextAlign.Center,
-                        modifier = Modifier.padding(16.dp)
-                    )
-                }
-            } else {
-                LazyColumn {
-                    items(dogs) { dog ->
-                        DogCard(
-                            dog = dog,
-                            viewModel = viewModel,
-                            saveFavorite = { favDog ->
-                                viewModel.addDogToSelectedDogs(favDog)
-                            },
-                            removeFavorite = { favDog ->
-                                viewModel.removeDogFromSelectedDogs(favDog)
-                            },
-                            goToOrganizationDetails = { orgId ->
-                                goToOrganizationDetails(orgId)
-                            }
-                        )
-                    }
                 }
             }
         }

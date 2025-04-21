@@ -56,19 +56,10 @@ fun DogsBreedsDescriptionsScreen(
             println("Error: $error")
             ErrorMessage()
         } else if (selectedDogBreeds.isEmpty()) {
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = "No dog breeds match your selection.",
-                    style = MaterialTheme.typography.headlineMedium,
-                    color = MaterialTheme.colorScheme.secondary,
-                    textAlign = TextAlign.Center,
-                    modifier = Modifier.padding(16.dp)
-                )
-            }
+            ErrorMessage(
+                message = "No dog breeds match your selection",
+                kind = "info"
+            )
         } else {
             LazyColumn(
                 modifier = Modifier.fillMaxSize(),

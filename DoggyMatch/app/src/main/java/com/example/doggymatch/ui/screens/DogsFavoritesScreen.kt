@@ -69,12 +69,10 @@ fun DogsFavoritesScreen(
             println("Error: $error")
             ErrorMessage()
         } else if (dogs.isEmpty()) {
-            Text(
-                text = "No favorite dogs found",
-                style = MaterialTheme.typography.headlineMedium,
-                color = MaterialTheme.colorScheme.secondary,
-                textAlign = TextAlign.Center,
-                modifier = Modifier.padding(16.dp)
+            ErrorMessage(
+                message = "No favorite dogs saved",
+                note = "Search for your favorite mutts today!",
+                kind = "info"
             )
         } else {
             DogCardsList(

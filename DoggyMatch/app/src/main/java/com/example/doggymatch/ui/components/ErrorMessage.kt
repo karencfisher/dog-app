@@ -13,16 +13,28 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ErrorMessage() {
+fun ErrorMessage(
+    message: String = "An error occurred",
+    note: String = "",
+    kind: String = "error",
+) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "An error occurred",
+            text = message,
             style = MaterialTheme.typography.headlineMedium,
-            color = MaterialTheme.colorScheme.error,
+            color = if (kind == "error") MaterialTheme.colorScheme.error else
+                MaterialTheme.colorScheme.secondary,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(16.dp)
+        )
+        Text(
+            text = note,
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(16.dp)
         )
