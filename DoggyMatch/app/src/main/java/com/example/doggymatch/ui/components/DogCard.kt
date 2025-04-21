@@ -94,7 +94,7 @@ fun DogCard(
                                 contentScale = ContentScale.Inside
                             )
                         }
-                    Text(
+                    LinkifyTextView(
                         text = dog.description ?: "No description available",
                         color = MaterialTheme.colorScheme.secondary
                     )

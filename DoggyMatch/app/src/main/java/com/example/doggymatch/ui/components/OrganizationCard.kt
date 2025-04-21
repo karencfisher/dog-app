@@ -72,11 +72,11 @@ fun OrganizationCard(
                         visible = isVisible,
                         modifier = Modifier.padding(bottom = 8.dp)
                     ) {
-                        Text(
+                        LinkifyTextView(
                             text = organization.about ?: "No description available",
                             style = MaterialTheme.typography.bodyLarge,
                             color = MaterialTheme.colorScheme.secondary,
-                            modifier = Modifier.padding(bottom = 8.dp)
+                            modifier = Modifier.padding(bottom = 8.dp),
                         )
                     }
                     HorizontalDivider(
@@ -89,15 +89,17 @@ fun OrganizationCard(
                         modifier = Modifier.padding(bottom = 8.dp)
 
                     )
-                    Text(
+                    LinkifyTextView(
                         text = organization.adoptionProcess ?: "No adoption process available",
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
+
                     HorizontalDivider(
                         modifier = Modifier.padding(vertical = 8.dp)
                     )
+
                     Text(
                         text = "Contact Information",
                         style = MaterialTheme.typography.titleMedium,
@@ -110,27 +112,31 @@ fun OrganizationCard(
                         color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
+
                     Text(
                         text = "Email: ${organization.email ?: "No email available"}",
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
-                    Text(
+
+                    LinkifyTextView(
                         text = "Website: ${organization.website ?: "No website available"}",
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
-                    Text(
+                    LinkifyTextView(
                         text = "Facebook: ${organization.facebook ?: "No Facebook available"}",
                         style = MaterialTheme.typography.bodyLarge,
                         color = MaterialTheme.colorScheme.secondary,
                         modifier = Modifier.padding(bottom = 8.dp)
                     )
+
                     HorizontalDivider(
                         modifier = Modifier.padding(vertical = 8.dp)
                     )
+
                     Text(
                         text = "Location",
                         style = MaterialTheme.typography.titleMedium,
