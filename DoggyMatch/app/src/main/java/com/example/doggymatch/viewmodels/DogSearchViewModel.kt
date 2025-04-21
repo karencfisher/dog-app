@@ -1,5 +1,11 @@
 package com.example.doggymatch.viewmodels
 
+import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.doublePreferencesKey
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewModelScope
@@ -19,10 +25,15 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import androidx.datastore.preferences.preferencesDataStore
+import kotlinx.coroutines.flow.first
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class DogSearchViewModel(
     private val breedId: Int?,
-    private val selectedDogsRepository: SelectedDogsRepository
+    private val selectedDogsRepository: SelectedDogsRepository,
+    private val dataStore: DataStore<Preferences>
 ) : ViewModel() {
 
     private var _animals: List<Animal> = emptyList()
@@ -39,17 +50,47 @@ class DogSearchViewModel(
     private val _isDogSelected = MutableStateFlow(false)
     val isDogSelected: StateFlow<Boolean> = _isDogSelected
 
-    private val _postalCode = MutableStateFlow("90210")
+    private val _postalCode = MutableStateFlow("")
     val postalCode: StateFlow<String> = _postalCode
 
-    private val _miles = MutableStateFlow(50)
+    private val _miles = MutableStateFlow(0)
     val miles: StateFlow<Int> = _miles
 
-    init {
-        // Initialize with default values or fetch from a repository
-        _postalCode.value = "90210"
-        _miles.value = 50
+    val POSTALCODE_KEY = stringPreferencesKey("postal_code")
+    val MILES_KEY = doublePreferencesKey("miles")
 
+    private fun saveSettingsToDataStore(newPostalCode: String, newMiles: Int) {
+        viewModelScope.launch {
+            dataStore.edit { preferences ->
+                preferences[POSTALCODE_KEY] = newPostalCode
+                preferences[MILES_KEY] = newMiles.toDouble()
+            }
+            // Update the local state values
+            _postalCode.value = newPostalCode
+            _miles.value = newMiles
+        }
+    }
+
+    init {
+        // First load from DataStore, then search with retrieved values
+        viewModelScope.launch {
+            // Read settings first
+            dataStore.data.first().let { preferences ->
+                val savedPostalCode = preferences[POSTALCODE_KEY] ?: ""
+                _postalCode.value = savedPostalCode.ifEmpty { "90210" }
+
+                val savedMiles = preferences[MILES_KEY]?.toInt() ?: 50
+                _miles.value = savedMiles
+
+                // Now fetch with the retrieved values
+                if (breedId != null) {
+                    fetchAnimals(breedId, _postalCode.value, _miles.value)
+                }
+            }
+        }
+    }
+
+    fun searchAnimals() {
         if (breedId != null) {
             fetchAnimals(breedId, _postalCode.value, _miles.value)
         } else {
@@ -57,20 +98,14 @@ class DogSearchViewModel(
         }
     }
 
-    fun searchAnimals(postalCode: String, miles: Int) {
-        if (breedId != null) {
-            fetchAnimals(breedId, _postalCode.value, miles)
-        } else {
-            _error.value = "Breed ID is not set"
-        }
-    }
-
     fun setPostalCode(postalCode: String) {
         _postalCode.value = postalCode
+        saveSettingsToDataStore(_postalCode.value, _miles.value)
     }
 
     fun setMiles(miles: Int) {
         _miles.value = miles
+        saveSettingsToDataStore(_postalCode.value, _miles.value)
     }
 
     fun addDogToSelectedDogs(dog: SelectedDogs) {
@@ -185,9 +220,11 @@ class DogSearchViewModel(
                 // Try to get breedId from extras, but don't fail if missing
                 val breedId = runCatching { this[BREED_ID_KEY] }.getOrNull()
                 val app = this[APPLICATION_KEY] as DoggyMatchApplication
+                val dataStore = app.applicationContext.dataStore
                 DogSearchViewModel(
                     breedId,
-                    app.selectedDogsRepository
+                    app.selectedDogsRepository,
+                    dataStore
                 )
             }
         }

@@ -2,6 +2,9 @@ package com.example.doggymatch
 
 import android.app.Application
 import android.content.Context
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
 import androidx.room.Room
 import com.example.doggymatch.respositories.DogsBreedsDescriptionsRepository
 import com.example.doggymatch.respositories.DogsBreedsSelectorsRepository
@@ -9,8 +12,10 @@ import com.example.doggymatch.respositories.OrganizationsRepository
 import com.example.doggymatch.respositories.SelectedDogsRepository
 import org.osmdroid.config.Configuration
 
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
 class DoggyMatchApplication: Application() {
+    val dataStore get() = applicationContext.dataStore
     override fun onCreate() {
         super.onCreate()
 

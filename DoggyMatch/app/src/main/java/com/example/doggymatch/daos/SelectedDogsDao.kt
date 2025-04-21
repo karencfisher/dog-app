@@ -9,7 +9,7 @@ import com.example.doggymatch.models.SelectedDogs
 
 @Dao
 abstract class SelectedDogsDao {
-    @Query("SELECT * FROM SelectedDogs")
+    @Query("SELECT * FROM SelectedDogs ORDER BY distance ASC")
     abstract suspend fun getAllSelectedDogs(): List<SelectedDogs>
 
     @Query("SELECT * FROM SelectedDogs WHERE dogId = :id")

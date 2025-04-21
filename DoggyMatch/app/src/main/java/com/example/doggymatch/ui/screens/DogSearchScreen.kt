@@ -48,7 +48,7 @@ fun DogSearchScreen(
     val keyboardController = LocalSoftwareKeyboardController.current
 
     fun searchAnimals() {
-        viewModel.searchAnimals(postalCode, miles)
+        viewModel.searchAnimals()
         keyboardController?.hide()
     }
 
