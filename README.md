@@ -72,3 +72,4 @@ There is positive potential for this project. Some of the possible directions ma
 - Additional search modalities, such as listing rescue organizations in one's area and searching on criteria other than breed. 
 - Additional platforms to include iOS and Web.
 - Additional API or other database searches for available adoptees.
+- Add cats, and possibly other types of pets
