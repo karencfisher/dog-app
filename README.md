@@ -50,7 +50,7 @@ https://rescuegroups.org/services/adoptable-pet-data-api/
 
 ## Rescue Group API
 
-Currently available for adoptable dogs is from the **Rescue Groups Adoptable Pet Data API**:
+Currently available information for adoptable dogs is from the **Rescue Groups Adoptable Pet Data API**:
 
 https://rescuegroups.org/services/adoptable-pet-data-api/
 
