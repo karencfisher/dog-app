@@ -18,7 +18,7 @@ truly humanitarian product.
 
 Here are some screenshots of the application:
 
-<table>
+<table style="">
   <tr>
     <td><img src="screenshots/Screenshot1.jpg" alt="Screenshot 1" width="200"/></td>
     <td>&nbsp;<td>
@@ -26,7 +26,6 @@ Here are some screenshots of the application:
     <td>&nbsp;<td>
     <td><img src="screenshots/Screenshot3.jpg" alt="Screenshot 3" width="200"/></td>
   </tr>
-  <tr><td>&nbsp;<td></tr>
   <tr>
     <td><img src="screenshots/Screenshot4.jpg" alt="Screenshot 4" width="200"/></td>
     <td>&nbsp;<td>
